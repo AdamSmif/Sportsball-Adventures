@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.7069, 53.4189 )
+
+[node name="BeachDemoComplete" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -0.803299 )
+rotation = 1.5708
+shape = SubResource( 1 )

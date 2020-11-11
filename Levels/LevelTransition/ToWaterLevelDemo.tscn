@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ToWaterLevelDemo.gd" type="Script" id=1]
+[ext_resource path="res://Assets/hubassets/pond.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+height = 30.8804
+
+[node name="ToWaterLevelDemo" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0.573143, -2.10152 )
+rotation = 1.5708
+shape = SubResource( 1 )
