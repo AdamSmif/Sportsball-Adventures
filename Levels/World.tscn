@@ -47,30 +47,29 @@ MAX_SPEED = 5
 
 [node name="Ocean" parent="." instance=ExtResource( 25 )]
 position = Vector2( 303.263, 526.705 )
-frame = 2
+frame = 1
 
 [node name="Ocean2" parent="." instance=ExtResource( 25 )]
 position = Vector2( 559.074, 526.523 )
-frame = 1
 
 [node name="Ocean3" parent="." instance=ExtResource( 25 )]
 position = Vector2( 812.435, 526.523 )
+frame = 2
 
 [node name="Ocean7" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1069.43, 526.523 )
-frame = 2
+frame = 1
 
 [node name="Ocean4" parent="." instance=ExtResource( 25 )]
 position = Vector2( 47.0103, 527.286 )
-frame = 2
+frame = 1
 
 [node name="Ocean5" parent="." instance=ExtResource( 25 )]
 position = Vector2( -281.99, 527.286 )
-frame = 2
+frame = 1
 
 [node name="Ocean6" parent="." instance=ExtResource( 25 )]
 position = Vector2( -537.99, 527.286 )
-frame = 1
 
 [node name="Sky" type="Sprite" parent="."]
 show_behind_parent = true
@@ -150,7 +149,7 @@ mass = 0.102041
 physics_material_override = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -742.515, 493.299 )
+position = Vector2( -752.536, 498.31 )
 
 [node name="BeachSound" type="AudioStreamPlayer2D" parent="Player"]
 position = Vector2( 620.694, -485.502 )
