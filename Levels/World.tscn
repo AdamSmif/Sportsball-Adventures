@@ -47,29 +47,30 @@ MAX_SPEED = 5
 
 [node name="Ocean" parent="." instance=ExtResource( 25 )]
 position = Vector2( 303.263, 526.705 )
-frame = 1
+frame = 2
 
 [node name="Ocean2" parent="." instance=ExtResource( 25 )]
 position = Vector2( 559.074, 526.523 )
+frame = 1
 
 [node name="Ocean3" parent="." instance=ExtResource( 25 )]
 position = Vector2( 812.435, 526.523 )
-frame = 2
 
 [node name="Ocean7" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1069.43, 526.523 )
-frame = 1
+frame = 2
 
 [node name="Ocean4" parent="." instance=ExtResource( 25 )]
 position = Vector2( 47.0103, 527.286 )
-frame = 1
+frame = 2
 
 [node name="Ocean5" parent="." instance=ExtResource( 25 )]
 position = Vector2( -281.99, 527.286 )
-frame = 1
+frame = 2
 
 [node name="Ocean6" parent="." instance=ExtResource( 25 )]
 position = Vector2( -537.99, 527.286 )
+frame = 1
 
 [node name="Sky" type="Sprite" parent="."]
 show_behind_parent = true
@@ -255,6 +256,7 @@ position = Vector2( 139.577, 495.213 )
 position = Vector2( 352, 512 )
 scale = Vector2( 10, 10 )
 stream = ExtResource( 8 )
+autoplay = true
 
 [node name="Soccer" parent="." instance=ExtResource( 18 )]
 position = Vector2( 174.378, 532.059 )
