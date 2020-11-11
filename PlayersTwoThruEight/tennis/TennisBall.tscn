@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://PlayersTwoThruEight/tennis/tennisballl1.png" type="Texture" id=1]
+[ext_resource path="res://PlayersTwoThruEight/tennis/tennisballl2.png" type="Texture" id=2]
+[ext_resource path="res://PlayersTwoThruEight/tennis/TennisBall.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+
+[node name="TennisBall" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "idle"
+speed_scale = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 1.25, 1.25 )
+shape = SubResource( 2 )

@@ -1,0 +1,94 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Player/player1_run3.png" type="Texture" id=1]
+[ext_resource path="res://Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Player/player1_fall1.png" type="Texture" id=3]
+[ext_resource path="res://Player/player1_run2.png" type="Texture" id=4]
+[ext_resource path="res://Player/player1_idle1.png" type="Texture" id=5]
+[ext_resource path="res://Player/player1_jump1.png" type="Texture" id=6]
+[ext_resource path="res://Player/player1_jump2.png" type="Texture" id=7]
+[ext_resource path="res://Player/player1_run1.png" type="Texture" id=8]
+[ext_resource path="res://Player/player1_run4.png" type="Texture" id=9]
+[ext_resource path="res://Player/Jump.wav" type="AudioStream" id=10]
+[ext_resource path="res://Player/Coin.wav" type="AudioStream" id=11]
+[ext_resource path="res://Player/player1_throw.png" type="Texture" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "fire",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 18.0369 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "up"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -0.0153142, 6.85169 )
+scale = Vector2( 0.75, 0.5 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 250, -125 )
+current = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 17, 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CoinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}

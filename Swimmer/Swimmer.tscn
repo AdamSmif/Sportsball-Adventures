@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Swimmer/swimmer4.png" type="Texture" id=3]
+[ext_resource path="res://Swimmer/swimmer1.png" type="Texture" id=4]
+[ext_resource path="res://Swimmer/swimmer2.png" type="Texture" id=5]
+[ext_resource path="res://Swimmer/Swimmer.gd" type="Script" id=6]
+[ext_resource path="res://Swimmer/swimmer3.png" type="Texture" id=7]
+[ext_resource path="res://Player/Coin.wav" type="AudioStream" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7.34469, 11.6105 )
+
+[node name="Swimmer" type="KinematicBody2D"]
+script = ExtResource( 6 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="CoinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )

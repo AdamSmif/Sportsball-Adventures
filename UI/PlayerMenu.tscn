@@ -1,0 +1,57 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Player/player1_run3.png" type="Texture" id=1]
+[ext_resource path="res://Player/player1_run1.png" type="Texture" id=2]
+[ext_resource path="res://Player/player1_run4.png" type="Texture" id=3]
+[ext_resource path="res://Player/player1_run2.png" type="Texture" id=4]
+[ext_resource path="res://UI/PlayerMenu.gd" type="Script" id=5]
+[ext_resource path="res://Player/player1_jump2.png" type="Texture" id=6]
+[ext_resource path="res://Player/player1_jump1.png" type="Texture" id=7]
+[ext_resource path="res://Player/player1_fall1.png" type="Texture" id=8]
+[ext_resource path="res://Player/player1_throw.png" type="Texture" id=9]
+[ext_resource path="res://Player/player1_idle1.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "fire",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7.02977, 9.02234 )
+
+[node name="PlayerMenu" type="KinematicBody2D"]
+script = ExtResource( 5 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "fire"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.178951, 6.90868 )
+shape = SubResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 17, 11 )
