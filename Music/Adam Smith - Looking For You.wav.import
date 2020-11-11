@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Adam Smith - Looking For You.wav-24425a3d333fd354a5f17c1cabad9601.sample"
+
+[deps]
+
+source_file="res://Music/Adam Smith - Looking For You.wav"
+dest_files=[ "res://.import/Adam Smith - Looking For You.wav-24425a3d333fd354a5f17c1cabad9601.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
