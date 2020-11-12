@@ -8,12 +8,7 @@ const MAX_SPEED = 250
 const ACCELERATION = 150
 const JUMP_HEIGHT = -600 
 const GRAVITY = 20
- 
-var can_jump = false
-var dub_jumps = 0
-var max_num_dub_jumps = 1
 var motion = Vector2()
-var is_jumping = false
 var coyote_time
 
 # Attack Variables
@@ -37,8 +32,6 @@ func _physics_process(_delta):
 	motion.y += GRAVITY
 	var friction = false
 
-
-
 # Throw
 	if Input.is_action_just_pressed("fire_%s" % id):
 		$Sprite.play("fire")
@@ -49,13 +42,13 @@ func _physics_process(_delta):
 
 # Movment
 	if Input.is_action_pressed('right_%s' % id):
-		motion.x = min(motion.x + ACCELERATION, MAX_SPEED)
+		motion.x = lerp(motion.x + ACCELERATION, MAX_SPEED, .75)
 		$Sprite.flip_h = false
 		$Sprite.play("right")
 		if sign($Position2D.position.x) == -1:
 			$Position2D.position.x *= -1
 	elif Input.is_action_pressed('left_%s' % id):
-		motion.x = max(motion.x - ACCELERATION, -MAX_SPEED)
+		motion.x = lerp(motion.x - ACCELERATION, -MAX_SPEED, .75)
 		$Sprite.flip_h = true
 		$Sprite.play("right")
 		if sign($Position2D.position.x) == 1:
@@ -64,6 +57,23 @@ func _physics_process(_delta):
 		motion.x = 0
 		$Sprite.play("idle")
 		friction = true
+		
+# Movment 2
+#	if Input.get_action_strength('right_%s' % id):
+#		motion.x = min(motion.x + ACCELERATION, MAX_SPEED)
+#		$Sprite.flip_h = false
+#		$Sprite.play("right")
+#	elif Input.get_action_strength('left_%s' % id):
+#		motion.x = max(motion.x - ACCELERATION, -MAX_SPEED)
+#		$Sprite.flip_h = true
+#		$Sprite.play("right")
+#		if sign($Position2D.position.x) == 1:
+#			$Position2D.position.x *= -1
+#	else:
+#		motion.x = 0
+#		$Sprite.play("idle")
+#		friction = true
+
 		
 # # Throw
 #	if Input.is_action_just_pressed("fire_%s" % id):

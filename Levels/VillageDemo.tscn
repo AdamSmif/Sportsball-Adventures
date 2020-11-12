@@ -183,7 +183,7 @@ texture = ExtResource( 14 )
 position = Vector2( -138.771, -432.838 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -192.359, -1030.24 )
+position = Vector2( -264.46, -453.434 )
 
 [node name="GreenGrip" parent="." instance=ExtResource( 16 )]
 position = Vector2( -105.297, -458.057 )
@@ -307,25 +307,21 @@ texture = ExtResource( 20 )
 position = Vector2( -199.104, -444.429 )
 stream = ExtResource( 21 )
 volume_db = 5.149
-autoplay = true
 max_distance = 800.0
 
 [node name="Village Theme2" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 806.555, -454.832 )
 stream = ExtResource( 21 )
 volume_db = 5.149
-autoplay = true
 max_distance = 800.0
 
 [node name="Village Theme3" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( -920.405, -456.566 )
 stream = ExtResource( 21 )
 volume_db = 5.149
-autoplay = true
 max_distance = 800.0
 
 [node name="Night Theme" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( -122.187, -1376.09 )
 stream = ExtResource( 22 )
-autoplay = true
 max_distance = 300.0
