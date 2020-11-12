@@ -649,6 +649,7 @@ position = Vector2( 394.544, 172.432 )
 scale = Vector2( 2, 2 )
 
 [node name="TreeHub6" parent="." instance=ExtResource( 8 )]
+modulate = Color( 0.784314, 0.0705882, 0.909804, 1 )
 position = Vector2( 579.308, 112.295 )
 scale = Vector2( 2, 2 )
 
