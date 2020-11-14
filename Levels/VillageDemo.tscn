@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/BeachTile.tscn" type="PackedScene" id=2]
@@ -21,7 +21,6 @@
 [ext_resource path="res://Assets/galaxy+X.tga" type="Texture" id=19]
 [ext_resource path="res://Assets/clouds.png" type="Texture" id=20]
 [ext_resource path="res://Music/villagedemo.wav" type="AudioStream" id=21]
-[ext_resource path="res://Music/Goodnight Mom _ Dad.wav" type="AudioStream" id=22]
 [ext_resource path="res://Enemies+Allies/Vern Avocado/VernAcovado.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Assets/golflag.png" type="Texture" id=24]
 
@@ -320,13 +319,6 @@ max_distance = 800.0
 [node name="Village Theme3" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( -920.405, -456.566 )
 stream = ExtResource( 21 )
-volume_db = 5.149
-autoplay = true
-max_distance = 800.0
-
-[node name="Village Theme4" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( -216.833, -1257.06 )
-stream = ExtResource( 22 )
 volume_db = 5.149
 autoplay = true
 max_distance = 800.0
