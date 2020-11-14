@@ -153,7 +153,6 @@ position = Vector2( 49.8559, 328.81 )
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PlayerMenu"]
 position = Vector2( 275.68, -67.691 )
 stream = ExtResource( 15 )
-autoplay = true
 
 [node name="Basketball" parent="." instance=ExtResource( 6 )]
 position = Vector2( 97.4518, 267.193 )
