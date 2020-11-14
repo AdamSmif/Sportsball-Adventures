@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://hoopstick.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Dumbell.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Hoop.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Tiles/BeachTile.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Music/Holidayz2.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Timer.gd" type="Script" id=9]
 [ext_resource path="res://Assets/beach.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Basketball.tscn" type="PackedScene" id=11]
@@ -45,27 +46,30 @@ MAX_SPEED = 5
 
 [node name="Ocean" parent="." instance=ExtResource( 25 )]
 position = Vector2( 303.263, 526.705 )
+frame = 2
 
 [node name="Ocean2" parent="." instance=ExtResource( 25 )]
 position = Vector2( 559.074, 526.523 )
-frame = 2
+frame = 1
 
 [node name="Ocean3" parent="." instance=ExtResource( 25 )]
 position = Vector2( 812.435, 526.523 )
-frame = 1
 
 [node name="Ocean7" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1069.43, 526.523 )
+frame = 2
 
 [node name="Ocean4" parent="." instance=ExtResource( 25 )]
 position = Vector2( 47.0103, 527.286 )
+frame = 2
 
 [node name="Ocean5" parent="." instance=ExtResource( 25 )]
 position = Vector2( -281.99, 527.286 )
+frame = 2
 
 [node name="Ocean6" parent="." instance=ExtResource( 25 )]
 position = Vector2( -537.99, 527.286 )
-frame = 2
+frame = 1
 
 [node name="Sky" type="Sprite" parent="."]
 show_behind_parent = true
@@ -249,6 +253,7 @@ position = Vector2( 139.577, 495.213 )
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 352, 512 )
 scale = Vector2( 10, 10 )
+stream = ExtResource( 8 )
 autoplay = true
 
 [node name="Soccer" parent="." instance=ExtResource( 18 )]
@@ -259,12 +264,12 @@ mass = 0.03
 position = Vector2( 356.608, 544.158 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 2178.88
-margin_top = 382.041
-margin_right = 2279.88
-margin_bottom = 405.041
+margin_left = 2456.33
+margin_top = 372.743
+margin_right = 2583.33
+margin_bottom = 402.743
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "First Digit Is 1"
+text = "Hit The Net To Proceed"
 __meta__ = {
 "_edit_use_anchors_": false
 }
