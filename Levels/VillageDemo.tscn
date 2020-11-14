@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/BeachTile.tscn" type="PackedScene" id=2]
@@ -21,10 +21,9 @@
 [ext_resource path="res://Assets/galaxy+X.tga" type="Texture" id=19]
 [ext_resource path="res://Assets/clouds.png" type="Texture" id=20]
 [ext_resource path="res://Music/villagedemo.wav" type="AudioStream" id=21]
-[ext_resource path="res://Music/Goodnight Mom & Dad.wav" type="AudioStream" id=22]
+[ext_resource path="res://Music/Goodnight Mom _ Dad.wav" type="AudioStream" id=22]
 [ext_resource path="res://Enemies+Allies/Vern Avocado/VernAcovado.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Assets/golflag.png" type="Texture" id=24]
-[ext_resource path="res://Assets/basket.png" type="Texture" id=25]
 
 [node name="VillageDemo" type="Node2D"]
 modulate = Color( 0.686275, 0.317647, 0.552941, 1 )
@@ -184,7 +183,7 @@ texture = ExtResource( 14 )
 position = Vector2( -138.771, -432.838 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -264.46, -453.434 )
+position = Vector2( -604.469, -469.472 )
 
 [node name="GreenGrip" parent="." instance=ExtResource( 16 )]
 position = Vector2( -105.297, -458.057 )
@@ -325,12 +324,9 @@ volume_db = 5.149
 autoplay = true
 max_distance = 800.0
 
-[node name="Night Theme" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( -122.187, -1376.09 )
+[node name="Village Theme4" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -216.833, -1257.06 )
 stream = ExtResource( 22 )
+volume_db = 5.149
 autoplay = true
-max_distance = 300.0
-
-[node name="basket" type="Sprite" parent="Night Theme"]
-position = Vector2( 1360.59, 941.086 )
-texture = ExtResource( 25 )
+max_distance = 800.0
