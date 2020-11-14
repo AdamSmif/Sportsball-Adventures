@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/soccer.png-08197a30ce6e316c97be818133776ebe.stex"
+path="res://.import/oceansunsetbackground.png-ba86cb2f1f898ee3977de5a5687bd390.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://soccer.png"
-dest_files=[ "res://.import/soccer.png-08197a30ce6e316c97be818133776ebe.stex" ]
+source_file="res://Assets/oceansunsetbackground.png"
+dest_files=[ "res://.import/oceansunsetbackground.png-ba86cb2f1f898ee3977de5a5687bd390.stex" ]
 
 [params]
 

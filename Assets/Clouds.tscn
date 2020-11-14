@@ -1,11 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/clouds.png" type="Texture" id=1]
-[ext_resource path="res://Sprite.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Clouds.gd" type="Script" id=2]
 
 [node name="Clouds" type="KinematicBody2D"]
 script = ExtResource( 2 )
-MAX_SPEED = 50
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

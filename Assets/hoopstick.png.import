@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/speaker.png-045bf6684b83b55b088824f14e175d16.stex"
+path="res://.import/hoopstick.png-4d059449cfe16f58d469a182a40caefe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://speaker.png"
-dest_files=[ "res://.import/speaker.png-045bf6684b83b55b088824f14e175d16.stex" ]
+source_file="res://Assets/hoopstick.png"
+dest_files=[ "res://.import/hoopstick.png-4d059449cfe16f58d469a182a40caefe.stex" ]
 
 [params]
 
