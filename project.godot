@@ -18,6 +18,7 @@ _global_script_class_icons={
 config/name="Sportsball Adventures"
 run/main_scene="res://UI/TitleScreen.tscn"
 config/icon="res://icon.png"
+config/windows_native_icon="res://icon-export.ico"
 
 [display]
 
