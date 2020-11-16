@@ -200,8 +200,8 @@ position = Vector2( 192, 192 )
 position = Vector2( 426.889, 187.431 )
 
 [node name="VolleyballNet" parent="." instance=ExtResource( 18 )]
-position = Vector2( 177.783, 336.03 )
+position = Vector2( 177.783, 334.769 )
 
 [node name="rollerblades" parent="." instance=ExtResource( 19 )]
-position = Vector2( 436.615, 247.411 )
+position = Vector2( 437.245, 247.411 )
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
