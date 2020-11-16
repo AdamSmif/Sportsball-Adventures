@@ -4,10 +4,10 @@ extends KinematicBody2D
 export var id = 1
 
 # Movement
-const MAX_SPEED = 250
-const ACCELERATION = 150
-const JUMP_HEIGHT = -600 
-const GRAVITY = 20
+export var  MAX_SPEED = 250
+export var  ACCELERATION = 150
+export var JUMP_HEIGHT = -600 
+export var GRAVITY = 20
  
 var can_jump = false
 var dub_jumps = 0
