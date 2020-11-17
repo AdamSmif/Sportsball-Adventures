@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Assets/Golfcart/GolfCart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/GrassTiles.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/hubassets/evergreentree.png" type="Texture" id=13]
 [ext_resource path="res://Assets/VillageAssets/window1.png" type="Texture" id=14]
 [ext_resource path="res://Assets/VillageAssets/HouseYellow.png" type="Texture" id=15]
+[ext_resource path="res://Assets/golflag.png" type="Texture" id=16]
 
 [sub_resource type="TileSet" id=1]
 0/name = "GrassTiles.png 0"
@@ -766,3 +767,11 @@ texture = ExtResource( 14 )
 position = Vector2( 288.775, 330.025 )
 scale = Vector2( 2, 1 )
 world_scene = "res://Levels/VillageDemo.tscn"
+
+[node name="golflag" type="Sprite" parent="."]
+position = Vector2( 197, 301 )
+texture = ExtResource( 16 )
+
+[node name="Exit5" parent="." instance=ExtResource( 12 )]
+position = Vector2( 197, 309 )
+world_scene = "res://Levels/golfworld/GolfWorld1-1.tscn"
