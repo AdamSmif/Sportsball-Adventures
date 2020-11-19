@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Swimmer/Swimmer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/submarine/Submarine.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/BeachTile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Bottle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Music/Deep Blue.wav" type="AudioStream" id=4]
@@ -19,9 +19,6 @@ color = Color( 0.305882, 1, 0.917647, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Swimmer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 65.5714, 56.2055 )
 
 [node name="BeachTile" parent="." instance=ExtResource( 2 )]
 position = Vector2( -468.792, 241.483 )
@@ -61,3 +58,9 @@ world_scene = "res://Levels/HubTest.tscn"
 [node name="basket" type="Sprite" parent="."]
 position = Vector2( -259.459, 282.54 )
 texture = ExtResource( 5 )
+
+[node name="Submarine" parent="." instance=ExtResource( 1 )]
+position = Vector2( 56.4293, 80.1847 )
+
+[node name="Camera2D" type="Camera2D" parent="Submarine"]
+current = true
