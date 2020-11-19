@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/sunsetsky.png" type="Texture" id=1]
 [ext_resource path="res://UI/StartGame.gd" type="Script" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://PlayersTwoThruEight/BaseballBat.tscn" type="PackedScene" id=11]
 [ext_resource path="res://PlayersTwoThruEight/GolfballPlayer/GolfballPlayer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://PlayersTwoThruEight/FootballGuy.tscn" type="PackedScene" id=13]
-[ext_resource path="res://PogoPlayer/PogoPlayer.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Music/Gridiron Game 1_5.wav" type="AudioStream" id=15]
 [ext_resource path="res://PlayersTwoThruEight/tennis/TennisBall.tscn" type="PackedScene" id=16]
 [ext_resource path="res://PlayersTwoThruEight/PingPongPaddle/PingPongPaddle.tscn" type="PackedScene" id=17]
@@ -186,9 +185,6 @@ position = Vector2( 523.609, 147.259 )
 
 [node name="GolfballPlayer" parent="." instance=ExtResource( 12 )]
 position = Vector2( 512, 224 )
-
-[node name="PogoPlayer" parent="." instance=ExtResource( 14 )]
-position = Vector2( 478.855, 324.409 )
 
 [node name="Basket" parent="." instance=ExtResource( 5 )]
 position = Vector2( 426.039, 320.149 )
