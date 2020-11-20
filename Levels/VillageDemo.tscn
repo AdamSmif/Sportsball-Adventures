@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/BeachTile.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Assets/galaxy+X.tga" type="Texture" id=19]
 [ext_resource path="res://Assets/clouds.png" type="Texture" id=20]
 [ext_resource path="res://Music/villagedemo.wav" type="AudioStream" id=21]
+[ext_resource path="res://PlayersTwoThruEight/AllPlayers.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Enemies+Allies/Vern Avocado/VernAcovado.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Assets/golflag.png" type="Texture" id=24]
 
@@ -322,3 +323,6 @@ stream = ExtResource( 21 )
 volume_db = 5.149
 autoplay = true
 max_distance = 800.0
+
+[node name="AllPlayers" parent="." instance=ExtResource( 22 )]
+position = Vector2( -547.547, -528.917 )

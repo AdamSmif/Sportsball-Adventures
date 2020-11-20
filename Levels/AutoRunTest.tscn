@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Assets/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/autorun/PlayerAutoRun.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Levels/Exit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/BowlingPin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Tiles/chilltileset.png" type="Texture" id=7]
+[ext_resource path="res://PlayersTwoThruEight/AllPlayers.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -534,3 +535,6 @@ position = Vector2( 129.387, 159.268 )
 [node name="Camera2D" type="Camera2D" parent="PlayerAutoRun"]
 offset = Vector2( 200, -125 )
 current = true
+
+[node name="AllPlayers" parent="." instance=ExtResource( 8 )]
+position = Vector2( 192.637, 50.1712 )
