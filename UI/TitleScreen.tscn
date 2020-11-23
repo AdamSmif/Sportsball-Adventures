@@ -148,12 +148,13 @@ tile_data = PoolIntArray( -851981, 0, 4, -851980, 0, 196609, -851979, 0, 196609,
 position = Vector2( 320, 192 )
 current = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 323.211, 338.291 )
+stream = ExtResource( 15 )
+autoplay = true
+
 [node name="PlayerMenu" parent="." instance=ExtResource( 4 )]
 position = Vector2( 49.8559, 328.81 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PlayerMenu"]
-position = Vector2( 275.68, -67.691 )
-stream = ExtResource( 15 )
 
 [node name="Basketball" parent="." instance=ExtResource( 6 )]
 position = Vector2( 97.4518, 267.193 )
