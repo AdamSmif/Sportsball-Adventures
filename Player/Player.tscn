@@ -13,7 +13,6 @@
 [ext_resource path="res://Music/Coin.wav" type="AudioStream" id=11]
 [ext_resource path="res://Player/player1_throw.png" type="Texture" id=12]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 9 ) ],
@@ -31,14 +30,14 @@ animations = [ {
 "name": "idle",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "fire",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -88,7 +87,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CoinSound" type="AudioStreamPlayer2D" parent="."]
+[node name="BottleSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 11 )
 __meta__ = {
 "_edit_lock_": true

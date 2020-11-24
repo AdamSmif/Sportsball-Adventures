@@ -95,7 +95,11 @@ func add_bottle():
 	print("I have these many bottles: ", bottles_needed)
 	
 func _on_Bottle_body_entered(_delta):
-	$CoinSound.play()
+	$BottleSound.play()
 
 func _on_FallZone_body_entered(body):
 	get_tree().change_scene(lose_level_world_scene)
+
+
+func Bottle_Sound_Effect(body):
+	$BottleSound.play()

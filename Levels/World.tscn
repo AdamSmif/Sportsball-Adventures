@@ -121,46 +121,47 @@ scale = Vector2( 2.5, 2.5 )
 
 [node name="Ocean" parent="." instance=ExtResource( 25 )]
 position = Vector2( 303.263, 526.705 )
-frame = 1
 
 [node name="Ocean2" parent="." instance=ExtResource( 25 )]
 position = Vector2( 559.074, 526.523 )
+frame = 2
 
 [node name="Ocean3" parent="." instance=ExtResource( 25 )]
 position = Vector2( 812.435, 526.523 )
-frame = 2
+frame = 1
 
 [node name="Ocean7" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1069.43, 526.523 )
-frame = 1
 
 [node name="Ocean10" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1325.78, 525.804 )
+frame = 2
 
 [node name="Ocean11" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1582.94, 525.804 )
+frame = 2
 
 [node name="Ocean12" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1839.2, 526.398 )
+frame = 2
 
 [node name="Ocean4" parent="." instance=ExtResource( 25 )]
 position = Vector2( 47.0103, 527.286 )
-frame = 1
 
 [node name="Ocean5" parent="." instance=ExtResource( 25 )]
 position = Vector2( -281.99, 527.286 )
-frame = 1
 
 [node name="Ocean6" parent="." instance=ExtResource( 25 )]
 position = Vector2( -537.99, 527.286 )
+frame = 2
 
 [node name="Ocean8" parent="." instance=ExtResource( 25 )]
 position = Vector2( -792.99, 527.286 )
-frame = 2
+frame = 1
 
 [node name="Ocean9" parent="." instance=ExtResource( 25 )]
 position = Vector2( -842.99, 527.286 )
-frame = 2
+frame = 1
 
 [node name="Sky" type="Sprite" parent="."]
 show_behind_parent = true
@@ -337,9 +338,6 @@ gravity_scale = 10.0
 [node name="Hurdle" parent="." instance=ExtResource( 13 )]
 position = Vector2( 279.707, 553.451 )
 
-[node name="Bottle" parent="." instance=ExtResource( 17 )]
-position = Vector2( 139.577, 495.213 )
-
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 352, 512 )
 scale = Vector2( 10, 10 )
@@ -397,5 +395,7 @@ detects_cliffs = false
 [node name="FallZone" parent="." instance=ExtResource( 24 )]
 position = Vector2( 877.872, 1287.95 )
 lose_level_world_scene = "res://Levels/World.tscn"
+
+[node name="Bottle" parent="." instance=ExtResource( 17 )]
+position = Vector2( -234.745, 449.4 )
 [connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_Timer_timeout"]
-[connection signal="body_entered" from="Bottle" to="Player" method="_on_Bottle_body_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/bottle.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Bottle.gd" type="Script" id=2]
+[ext_resource path="res://Music/Coin.wav" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 13.6058
@@ -32,6 +33,11 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 3.39618, -54.3388 ), Vector2( 2.26413, -19.245 ) ]
 }
 
+[sub_resource type="Animation" id=4]
+resource_name = "spin"
+length = 1.1
+loop = true
+
 [node name="Bottle" type="Area2D"]
 collision_layer = 0
 script = ExtResource( 2 )
@@ -43,6 +49,7 @@ scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.440109, -0.125555 )
 rotation = 0.523599
 frames = SubResource( 2 )
 frame = 1
@@ -50,5 +57,9 @@ playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/bounce = SubResource( 3 )
+anims/spin = SubResource( 4 )
+
+[node name="BottleSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_Bottle_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

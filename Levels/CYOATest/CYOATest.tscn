@@ -34,4 +34,4 @@ texture = ExtResource( 4 )
 
 [node name="Exit" parent="." instance=ExtResource( 3 )]
 position = Vector2( 521.495, 352.538 )
-world_scene = "res://Levels/HubTest.tscn"
+next_world_scene = "res://Levels/HubTest.tscn"
