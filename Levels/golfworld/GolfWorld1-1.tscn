@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Tiles/GolfTile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/hubassets/evergreentree.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Enemies+Allies/Gronkobot/Gronkobot.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/brycepaintingtest.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Hurdle.png" type="Texture" id=8]
+[ext_resource path="res://Assets/FallZone.tscn" type="PackedScene" id=9]
 
 [node name="GolfWorld1-1" type="Node2D"]
 
@@ -151,7 +152,6 @@ position = Vector2( 963.984, 266.053 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 56.1502, 223.262 )
-world_scene = "res://Levels/golfworld/GolfWorld1-1.tscn"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
 
@@ -162,13 +162,12 @@ texture = ExtResource( 7 )
 
 [node name="Exit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1705.98, 269.101 )
-world_scene = "res://Levels/HubTest.tscn"
+next_world_scene = "res://Levels/HubTest.tscn"
 
 [node name="Hurdle" type="Sprite" parent="."]
 position = Vector2( 1704.61, 265.444 )
 texture = ExtResource( 8 )
 
-[node name="OoB" parent="." instance=ExtResource( 4 )]
-position = Vector2( -215.914, 716.206 )
-scale = Vector2( 100000, 1 )
-world_scene = "res://Levels/golfworld/GolfWorld1-1.tscn"
+[node name="FallZone" parent="." instance=ExtResource( 9 )]
+position = Vector2( 214.412, 990.868 )
+lose_level_world_scene = "res://Levels/golfworld/GolfWorld1-1.tscn"

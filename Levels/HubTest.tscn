@@ -82,15 +82,14 @@ texture = ExtResource( 5 )
 
 [node name="Exit" parent="." instance=ExtResource( 12 )]
 position = Vector2( 159.685, 190.113 )
-world_scene = "res://Levels/World.tscn"
+next_world_scene = "res://Levels/World.tscn"
 
 [node name="Exit2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 511.162, 113.19 )
-world_scene = "res://Levels/SwimTest.tscn"
+next_world_scene = "res://Levels/SwimTest.tscn"
 
 [node name="Exit3" parent="." instance=ExtResource( 12 )]
 position = Vector2( 285.423, 86.9632 )
-world_scene = "res://Levels/AutoRunTest.tscn"
 
 [node name="HouseYellow" type="Sprite" parent="."]
 position = Vector2( 290.537, 322.063 )
@@ -113,9 +112,9 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 14 )
 
 [node name="Exit4" parent="." instance=ExtResource( 12 )]
-position = Vector2( 288.775, 330.025 )
+position = Vector2( 289.632, 330.025 )
 scale = Vector2( 2, 1 )
-world_scene = "res://Levels/VillageDemo.tscn"
+next_world_scene = "res://Levels/VillageDemo.tscn"
 
 [node name="golflag" type="Sprite" parent="."]
 position = Vector2( 197, 301 )
@@ -123,7 +122,7 @@ texture = ExtResource( 16 )
 
 [node name="Exit5" parent="." instance=ExtResource( 12 )]
 position = Vector2( 197, 309 )
-world_scene = "res://Levels/golfworld/GolfWorld1-1.tscn"
+next_world_scene = "res://Levels/golfworld/GolfWorld1-1.tscn"
 
 [node name="thepogostickitself" type="Sprite" parent="."]
 position = Vector2( 556.346, 266.456 )
@@ -131,7 +130,7 @@ texture = ExtResource( 17 )
 
 [node name="Exit6" parent="." instance=ExtResource( 12 )]
 position = Vector2( 562.932, 273.641 )
-world_scene = "res://Levels/PogoTestLevel.tscn"
+next_world_scene = "res://Levels/PogoTestLevel.tscn"
 
 [node name="AllPlayers" parent="." instance=ExtResource( 18 )]
 position = Vector2( 334.77, 304.139 )
@@ -142,12 +141,12 @@ texture = ExtResource( 19 )
 
 [node name="Exit7" parent="." instance=ExtResource( 12 )]
 position = Vector2( 676.256, 186.12 )
-world_scene = "res://Levels/SkateBoardTest.tscn"
+next_world_scene = "res://Levels/SkateBoardTest.tscn"
 
 [node name="Exit8" parent="." instance=ExtResource( 12 )]
 position = Vector2( 224.57, 239.341 )
-world_scene = "res://Levels/CYOATest/CYOATest.tscn"
+next_world_scene = "res://Levels/CYOATest/CYOATest.tscn"
 
 [node name="bottle" type="Sprite" parent="."]
-position = Vector2( 225.168, 233.952 )
+position = Vector2( 225.737, 234.521 )
 texture = ExtResource( 20 )

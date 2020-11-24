@@ -523,7 +523,7 @@ position = Vector2( 176, 800 )
 [node name="Exit" parent="." instance=ExtResource( 5 )]
 position = Vector2( 20000, -833.569 )
 scale = Vector2( 1, 100 )
-world_scene = "res://Levels/HubTest.tscn"
+next_world_scene = "res://Levels/HubTest.tscn"
 
 [node name="BowlingPin" parent="." instance=ExtResource( 6 )]
 position = Vector2( 600, 88 )

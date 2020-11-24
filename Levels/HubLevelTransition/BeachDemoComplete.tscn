@@ -1,11 +1,30 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="GDScript" id=2]
+script/source = "# WorldComplete.gd
+extends Area2D
+
+export(String, FILE, \"*.tscn\") var world_scene
+
+func _physics_process(_delta):
+	var bodies = get_overlapping_bodies()
+#	print(bodies)
+	for body in bodies:
+		if body.name == \"Player\" or \"GolfCartPlayer\" or \"CYOAPlayer\" or \"PlayerAutoRun\" or \"PlayerSkateBoard\" or \"PogostickPlayer\" or \"Submarine\":
+			$NextLevelSound.play()
+			get_tree().change_scene(world_scene)
+
+"
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10.7069, 53.4189 )
 
-[node name="BeachDemoComplete" type="Area2D"]
+[node name="FallZone" type="Area2D"]
+collision_layer = 4
+script = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -0.803299 )
-rotation = 1.5708
+scale = Vector2( 100, 5 )
 shape = SubResource( 1 )

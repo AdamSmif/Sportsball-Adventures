@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/BeachTile.tscn" type="PackedScene" id=2]
@@ -24,7 +24,8 @@
 [ext_resource path="res://PlayersTwoThruEight/AllPlayers.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Enemies+Allies/Vern Avocado/VernAcovado.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Assets/golflag.png" type="Texture" id=24]
-[ext_resource path="res://Assets/Bottle.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Assets/FallZone.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Assets/Bottle.tscn" type="PackedScene" id=26]
 
 [node name="VillageDemo" type="Node2D"]
 modulate = Color( 0.686275, 0.317647, 0.552941, 1 )
@@ -149,7 +150,7 @@ position = Vector2( 104.655, -444.899 )
 
 [node name="Exit" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1248, -416 )
-world_scene = "res://Levels/HubTest.tscn"
+next_world_scene = "res://Levels/HubTest.tscn"
 
 [node name="DanSmith" parent="." instance=ExtResource( 12 )]
 position = Vector2( 341.36, -418.278 )
@@ -185,124 +186,129 @@ position = Vector2( -138.771, -432.838 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -604.469, -469.472 )
-collision_mask = 30
-world_scene = "res://Levels/VillageDemo.tscn"
+collision_mask = 31
+lose_level_world_scene = "res://Levels/VillageDemo.tscn"
+bottle_world_scene = "res://Levels/World.tscn"
 
-[node name="GreenGrip" parent="." instance=ExtResource( 16 )]
+[node name="RockClimbingGrips" type="YSort" parent="."]
+
+[node name="GreenGrip" parent="RockClimbingGrips" instance=ExtResource( 16 )]
 position = Vector2( -105.297, -458.057 )
 
-[node name="PinkGrip" parent="." instance=ExtResource( 17 )]
+[node name="PinkGrip" parent="RockClimbingGrips" instance=ExtResource( 17 )]
 position = Vector2( -140.442, -472.121 )
 
-[node name="PinkGrip3" parent="." instance=ExtResource( 17 )]
+[node name="PinkGrip3" parent="RockClimbingGrips" instance=ExtResource( 17 )]
 position = Vector2( -99.4298, -678.159 )
 
-[node name="PinkGrip5" parent="." instance=ExtResource( 17 )]
+[node name="PinkGrip5" parent="RockClimbingGrips" instance=ExtResource( 17 )]
 position = Vector2( -120.96, -869.358 )
 rotation = 3.00741
 
-[node name="PinkGrip2" parent="." instance=ExtResource( 17 )]
+[node name="PinkGrip2" parent="RockClimbingGrips" instance=ExtResource( 17 )]
 position = Vector2( -102.854, -556.23 )
 
-[node name="PinkGrip4" parent="." instance=ExtResource( 17 )]
+[node name="PinkGrip4" parent="RockClimbingGrips" instance=ExtResource( 17 )]
 position = Vector2( -159.106, -740.912 )
 
-[node name="PinkGrip6" parent="." instance=ExtResource( 17 )]
+[node name="PinkGrip6" parent="RockClimbingGrips" instance=ExtResource( 17 )]
 position = Vector2( -150.499, -832.042 )
 
-[node name="PinkGrip7" parent="." instance=ExtResource( 17 )]
+[node name="PinkGrip7" parent="RockClimbingGrips" instance=ExtResource( 17 )]
 position = Vector2( -103.185, -957.196 )
 
-[node name="PinkGrip8" parent="." instance=ExtResource( 17 )]
+[node name="PinkGrip8" parent="RockClimbingGrips" instance=ExtResource( 17 )]
 position = Vector2( -103.185, -957.196 )
 
-[node name="PinkGrip9" parent="." instance=ExtResource( 17 )]
+[node name="PinkGrip9" parent="RockClimbingGrips" instance=ExtResource( 17 )]
 position = Vector2( -112.245, -944.406 )
 
-[node name="PurpleGrip" parent="." instance=ExtResource( 18 )]
+[node name="PurpleGrip" parent="RockClimbingGrips" instance=ExtResource( 18 )]
 position = Vector2( -103.294, -485.368 )
 
-[node name="PurpleGrip2" parent="." instance=ExtResource( 18 )]
+[node name="PurpleGrip2" parent="RockClimbingGrips" instance=ExtResource( 18 )]
 position = Vector2( -101.557, -908.958 )
 
-[node name="PurpleGrip6" parent="." instance=ExtResource( 18 )]
+[node name="PurpleGrip6" parent="RockClimbingGrips" instance=ExtResource( 18 )]
 position = Vector2( -90.8987, -944.131 )
 
-[node name="PurpleGrip5" parent="." instance=ExtResource( 18 )]
+[node name="PurpleGrip5" parent="RockClimbingGrips" instance=ExtResource( 18 )]
 position = Vector2( -142.96, -842.357 )
 
-[node name="PurpleGrip3" parent="." instance=ExtResource( 18 )]
+[node name="PurpleGrip3" parent="RockClimbingGrips" instance=ExtResource( 18 )]
 position = Vector2( -133.679, -698.166 )
 
-[node name="PurpleGrip4" parent="." instance=ExtResource( 18 )]
+[node name="PurpleGrip4" parent="RockClimbingGrips" instance=ExtResource( 18 )]
 position = Vector2( -97.9029, -837.569 )
 
-[node name="GreenGrip4" parent="." instance=ExtResource( 16 )]
+[node name="GreenGrip4" parent="RockClimbingGrips" instance=ExtResource( 16 )]
 position = Vector2( -144.552, -650.44 )
 
-[node name="GreenGrip5" parent="." instance=ExtResource( 16 )]
+[node name="GreenGrip5" parent="RockClimbingGrips" instance=ExtResource( 16 )]
 position = Vector2( -103.279, -729.91 )
 
-[node name="GreenGrip6" parent="." instance=ExtResource( 16 )]
+[node name="GreenGrip6" parent="RockClimbingGrips" instance=ExtResource( 16 )]
 position = Vector2( -146.378, -979.133 )
 
-[node name="GreenGrip3" parent="." instance=ExtResource( 16 )]
+[node name="GreenGrip3" parent="RockClimbingGrips" instance=ExtResource( 16 )]
 position = Vector2( -139.637, -588.259 )
 
-[node name="BlueGrip2" parent="." instance=ExtResource( 13 )]
+[node name="BlueGrip2" parent="RockClimbingGrips" instance=ExtResource( 13 )]
 position = Vector2( -104.158, -510.997 )
 
-[node name="BlueGrip4" parent="." instance=ExtResource( 13 )]
+[node name="BlueGrip4" parent="RockClimbingGrips" instance=ExtResource( 13 )]
 position = Vector2( -141.625, -520.136 )
 
-[node name="BlueGrip3" parent="." instance=ExtResource( 13 )]
+[node name="BlueGrip3" parent="RockClimbingGrips" instance=ExtResource( 13 )]
 position = Vector2( -100.107, -618.835 )
 
-[node name="BlueGrip5" parent="." instance=ExtResource( 13 )]
+[node name="BlueGrip5" parent="RockClimbingGrips" instance=ExtResource( 13 )]
 position = Vector2( -126.7, -774.486 )
 
-[node name="BlueGrip7" parent="." instance=ExtResource( 13 )]
+[node name="BlueGrip7" parent="RockClimbingGrips" instance=ExtResource( 13 )]
 position = Vector2( -153.409, -926.349 )
 
-[node name="BlueGrip8" parent="." instance=ExtResource( 13 )]
+[node name="BlueGrip8" parent="RockClimbingGrips" instance=ExtResource( 13 )]
 position = Vector2( -106.563, -1004.11 )
 
-[node name="BlueGrip6" parent="." instance=ExtResource( 13 )]
+[node name="BlueGrip6" parent="RockClimbingGrips" instance=ExtResource( 13 )]
 position = Vector2( -100.666, -806.956 )
 
-[node name="clouds" type="Sprite" parent="."]
+[node name="Clouds" type="YSort" parent="."]
+
+[node name="clouds" type="Sprite" parent="Clouds"]
 position = Vector2( -181.019, -913.244 )
 texture = ExtResource( 20 )
 
-[node name="clouds2" type="Sprite" parent="."]
+[node name="clouds2" type="Sprite" parent="Clouds"]
 position = Vector2( -32.5236, -912.445 )
 texture = ExtResource( 20 )
 
-[node name="clouds3" type="Sprite" parent="."]
+[node name="clouds3" type="Sprite" parent="Clouds"]
 position = Vector2( -375.532, -916.462 )
 texture = ExtResource( 20 )
 
-[node name="clouds4" type="Sprite" parent="."]
+[node name="clouds4" type="Sprite" parent="Clouds"]
 position = Vector2( 98.4488, -881.597 )
 texture = ExtResource( 20 )
 
-[node name="clouds6" type="Sprite" parent="."]
+[node name="clouds6" type="Sprite" parent="Clouds"]
 position = Vector2( -5.36615, -854.525 )
 texture = ExtResource( 20 )
 
-[node name="clouds9" type="Sprite" parent="."]
+[node name="clouds9" type="Sprite" parent="Clouds"]
 position = Vector2( -5.36615, -854.525 )
 texture = ExtResource( 20 )
 
-[node name="clouds5" type="Sprite" parent="."]
+[node name="clouds5" type="Sprite" parent="Clouds"]
 position = Vector2( -284.633, -901.489 )
 texture = ExtResource( 20 )
 
-[node name="clouds7" type="Sprite" parent="."]
+[node name="clouds7" type="Sprite" parent="Clouds"]
 position = Vector2( -213.544, -835.601 )
 texture = ExtResource( 20 )
 
-[node name="clouds8" type="Sprite" parent="."]
+[node name="clouds8" type="Sprite" parent="Clouds"]
 position = Vector2( -359.191, -821.73 )
 texture = ExtResource( 20 )
 
@@ -330,14 +336,31 @@ max_distance = 800.0
 [node name="AllPlayers" parent="." instance=ExtResource( 22 )]
 position = Vector2( -547.547, -528.917 )
 
-[node name="OoB" parent="." instance=ExtResource( 11 )]
-position = Vector2( -375.429, 433.703 )
-scale = Vector2( 10000, 10 )
-collision_layer = 4
-world_scene = "res://Levels/VillageDemo.tscn"
+[node name="Bottle" parent="." instance=ExtResource( 26 )]
+position = Vector2( -691.273, -422.523 )
 
-[node name="Bottle" parent="." instance=ExtResource( 25 )]
-position = Vector2( -643.102, -436.403 )
+[node name="Bottle2" parent="." instance=ExtResource( 26 )]
+position = Vector2( -1011.05, -440.374 )
 
-[node name="Bottle2" parent="." instance=ExtResource( 25 )]
-position = Vector2( -722.966, -453.67 )
+[node name="Bottle3" parent="." instance=ExtResource( 26 )]
+position = Vector2( -1058.55, -450.802 )
+
+[node name="Bottle4" parent="." instance=ExtResource( 26 )]
+position = Vector2( -872.99, -440.133 )
+
+[node name="Bottle5" parent="." instance=ExtResource( 26 )]
+position = Vector2( -471.309, -423.54 )
+
+[node name="Bottle6" parent="." instance=ExtResource( 26 )]
+position = Vector2( -378.211, -438.328 )
+
+[node name="Bottle7" parent="." instance=ExtResource( 26 )]
+position = Vector2( -319.549, -436.523 )
+
+[node name="Bottle8" parent="." instance=ExtResource( 26 )]
+position = Vector2( -271.716, -441.035 )
+
+[node name="FallZone" parent="." instance=ExtResource( 25 )]
+position = Vector2( -327.978, 378.538 )
+collision_layer = 5
+lose_level_world_scene = "res://Levels/VillageDemo.tscn"

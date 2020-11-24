@@ -2,9 +2,12 @@ extends KinematicBody2D
 
 # Player Number
 export var id = 1
-
+# Coin Amount
+var bottles_needed = 0
 # Level Respawn
-export(String, FILE, "*.tscn") var world_scene
+export(String, FILE, "*.tscn") var lose_level_world_scene
+# Next Level For Bottle Colelcting Levels
+export(String, FILE, "*.tscn") var bottle_world_scene
 
 # Movement
 export var MAX_SPEED = 250
@@ -60,34 +63,6 @@ func _physics_process(_delta):
 		motion.x = 0
 		$Sprite.play("idle")
 		friction = true
-		
-# Movment 2
-#	if Input.get_action_strength('right_%s' % id):
-#		motion.x = min(motion.x + ACCELERATION, MAX_SPEED)
-#		$Sprite.flip_h = false
-#		$Sprite.play("right")
-#	elif Input.get_action_strength('left_%s' % id):
-#		motion.x = max(motion.x - ACCELERATION, -MAX_SPEED)
-#		$Sprite.flip_h = true
-#		$Sprite.play("right")
-#		if sign($Position2D.position.x) == 1:
-#			$Position2D.position.x *= -1
-#	else:
-#		motion.x = 0
-#		$Sprite.play("idle")
-#		friction = true
-
-		
-# # Throw
-#	if Input.is_action_just_pressed("fire_%s" % id):
-#		var throwInstance = throw.instance()
-#		if sign($Position2D.position.x) == 1:
-#			throw.set_throw_direction(1)
-#		else:
-#			throw.set_throw_direction(-1)
-#		get_tree().get_root().add_child(throwInstance)
-#		throwInstance.position = $Position2D.global_position
-		
 
 	if coyote_time.is_stopped():
 		motion.y += GRAVITY
@@ -110,12 +85,17 @@ func _physics_process(_delta):
 	var _was_on_floor = is_on_floor()
 	# For interacting with rigid bodies
 	motion = move_and_slide(motion, Vector2.UP, false, 4, PI/4, false)
-	
+
+#Bottle Colelcting Code
+	if bottles_needed == 8:
+		get_tree().change_scene(bottle_world_scene)
+
+func add_bottle():
+	bottles_needed = bottles_needed + 1
+	print("I have these many bottles: ", bottles_needed)
 	
 func _on_Bottle_body_entered(_delta):
 	$CoinSound.play()
-	score += 1
-	print(score)
 
 func _on_FallZone_body_entered(body):
-	get_tree().change_scene(world_scene)
+	get_tree().change_scene(lose_level_world_scene)
