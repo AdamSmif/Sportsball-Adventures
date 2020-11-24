@@ -1,8 +1,16 @@
 extends KinematicBody2D
 
 export var id = 1
-const MAX_SPEED = 75
-const ACCELERATION = 30
+# Coin Amount
+var bottles_needed = 0
+# Level Respawn
+# export(String, FILE, "*.tscn")
+var lose_level_world_scene
+# Next Level For Bottle Colelcting Levels
+export(String, FILE, "*.tscn") var bottle_world_scene
+
+export var MAX_SPEED = 75
+export var ACCELERATION = 30
 
 # Score 
 var score = 0

@@ -52,7 +52,6 @@ shape = SubResource( 1 )
 position = Vector2( -0.440109, -0.125555 )
 rotation = 0.523599
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

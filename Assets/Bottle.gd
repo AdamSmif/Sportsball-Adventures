@@ -1,7 +1,7 @@
 extends Area2D
 
 func _on_Bottle_body_entered(body):
-#	$BottleSound.play()
+#	$BotstleSound.play()
 	$AnimationPlayer.play("bounce")
 	body.add_bottle()
 	queue_free()
