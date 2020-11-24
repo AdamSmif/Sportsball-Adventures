@@ -3,6 +3,9 @@ extends KinematicBody2D
 # Player Number
 export var id = 1
 
+# Level Respawn
+export(String, FILE, "*.tscn") var world_scene
+
 # Movement
 export var MAX_SPEED = 250
 export  var ACCELERATION = 150
@@ -114,8 +117,5 @@ func _on_Bottle_body_entered(_delta):
 	score += 1
 	print(score)
 
-
-
-
-
-
+func _on_FallZone_body_entered(body):
+	get_tree().change_scene(world_scene)

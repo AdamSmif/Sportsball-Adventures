@@ -10,8 +10,9 @@
 [ext_resource path="res://Player/player1_run1.png" type="Texture" id=8]
 [ext_resource path="res://Player/player1_run4.png" type="Texture" id=9]
 [ext_resource path="res://Player/Jump.wav" type="AudioStream" id=10]
-[ext_resource path="res://Player/Coin.wav" type="AudioStream" id=11]
+[ext_resource path="res://Music/Coin.wav" type="AudioStream" id=11]
 [ext_resource path="res://Player/player1_throw.png" type="Texture" id=12]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

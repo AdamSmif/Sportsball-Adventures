@@ -151,7 +151,6 @@ current = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 323.211, 338.291 )
 stream = ExtResource( 15 )
-autoplay = true
 
 [node name="PlayerMenu" parent="." instance=ExtResource( 4 )]
 position = Vector2( 49.8559, 328.81 )

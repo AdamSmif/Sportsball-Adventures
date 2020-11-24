@@ -7,7 +7,7 @@ func _physics_process(_delta):
 	var bodies = get_overlapping_bodies()
 #	print(bodies)
 	for body in bodies:
-		if body.name == "GolfballPlayer" or "Player" or "Swimmer" or "PogoPlayer" or "AutoRunner" or "GolfCart":
+		if body.name == "Player":
 			$NextLevelSound.play()
 			get_tree().change_scene(world_scene)
 
