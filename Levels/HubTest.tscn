@@ -90,6 +90,7 @@ next_world_scene = "res://Levels/SwimTest.tscn"
 
 [node name="Exit3" parent="." instance=ExtResource( 12 )]
 position = Vector2( 285.423, 86.9632 )
+next_world_scene = "res://Levels/AutoRunTest.tscn"
 
 [node name="HouseYellow" type="Sprite" parent="."]
 position = Vector2( 290.537, 322.063 )
@@ -136,7 +137,7 @@ next_world_scene = "res://Levels/PogoTestLevel.tscn"
 position = Vector2( 334.77, 304.139 )
 
 [node name="bowlingball1" type="Sprite" parent="."]
-position = Vector2( 287.284, 82.7668 )
+position = Vector2( 287.284, 84.6668 )
 texture = ExtResource( 19 )
 
 [node name="Exit7" parent="." instance=ExtResource( 12 )]

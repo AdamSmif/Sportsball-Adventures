@@ -5,7 +5,8 @@ export var id = 1
 # Coin Amount
 var bottles_needed = 0
 # Level Respawn
-export(String, FILE, "*.tscn") var lose_level_world_scene
+# export(String, FILE, "*.tscn")
+var lose_level_world_scene
 # Next Level For Bottle Colelcting Levels
 export(String, FILE, "*.tscn") var bottle_world_scene
 
