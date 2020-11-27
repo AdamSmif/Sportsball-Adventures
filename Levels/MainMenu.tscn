@@ -1,13 +1,8 @@
-[gd_scene load_steps=4 format=2]
-
-[ext_resource path="res://Menu.gd" type="Script" id=1]
-[ext_resource path="res://World/sunsetsky.png" type="Texture" id=2]
-[ext_resource path="res://Fonts/SportTheme.tres" type="Theme" id=3]
+[gd_scene format=2]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -15,7 +10,6 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 321.668, 192.141 )
 scale = Vector2( 0.623525, 0.633724 )
-texture = ExtResource( 2 )
 
 [node name="Title" type="Label" parent="."]
 margin_left = 204.987
@@ -35,7 +29,6 @@ margin_right = 434.0
 margin_bottom = 252.0
 text = "Start Game"
 align = 1
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
