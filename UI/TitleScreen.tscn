@@ -1,15 +1,11 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Assets/sunsetsky.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Ocean/Ocean.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/StartGame.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Tiles/BeachTile.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/PlayerMenu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Basket.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Basketball.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/mountain.png" type="Texture" id=7]
-[ext_resource path="res://Assets/bg_stadium.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Soccer.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Hurdle.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/FallZone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/nightsky/NightSkyAnimated.tscn" type="PackedScene" id=6]
 [ext_resource path="res://PlayersTwoThruEight/BaseballBat.tscn" type="PackedScene" id=11]
 [ext_resource path="res://PlayersTwoThruEight/GolfballPlayer/GolfballPlayer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://PlayersTwoThruEight/FootballGuy.tscn" type="PackedScene" id=13]
@@ -18,18 +14,6 @@
 [ext_resource path="res://PlayersTwoThruEight/PingPongPaddle/PingPongPaddle.tscn" type="PackedScene" id=17]
 [ext_resource path="res://PlayersTwoThruEight/volleyballnet/VolleyballNet.tscn" type="PackedScene" id=18]
 [ext_resource path="res://PlayersTwoThruEight/rolletskatesplayer/rollerblades.tscn" type="PackedScene" id=19]
-
-[sub_resource type="PhysicsMaterial" id=1]
-rough = true
-bounce = 1000.0
-
-[sub_resource type="PhysicsMaterial" id=2]
-rough = true
-bounce = 1000.0
-
-[sub_resource type="PhysicsMaterial" id=3]
-rough = true
-bounce = 1000.0
 
 [node name="Control" type="Control"]
 anchor_left = 0.5
@@ -42,84 +26,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="sunsetsky" type="Sprite" parent="."]
-visible = false
-position = Vector2( 320, 176 )
-scale = Vector2( 0.75, 0.8 )
-texture = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="NightSkyAnimated" parent="." instance=ExtResource( 6 )]
+position = Vector2( 320, 192 )
 
-[node name="mountain" type="Sprite" parent="."]
-visible = false
-position = Vector2( 324.745, 161.096 )
-scale = Vector2( 6, 6 )
-texture = ExtResource( 7 )
+[node name="NightSkyAnimated3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 960, 192 )
+frame = 1
 
-[node name="bg_stadium" type="Sprite" parent="."]
-position = Vector2( 320, 128 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="bg_stadium2" type="Sprite" parent="."]
-position = Vector2( 960, 128 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="bg_stadium3" type="Sprite" parent="."]
-position = Vector2( -320, 128 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 255.0
-margin_top = 25.0
-margin_right = 388.0
-margin_bottom = 52.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="NightSkyAnimated2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -320, 192 )
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 margin_left = 256.0
-margin_top = 256.0
+margin_top = 64.0
 margin_right = 389.0
-margin_bottom = 283.0
-color = Color( 0, 0, 0, 1 )
+margin_bottom = 91.0
+color = Color( 0, 0, 0.00392157, 1 )
 __meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Title" type="Label" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -160.0
-margin_top = 32.0
-margin_right = 161.0
-margin_bottom = 64.0
-text = "Super Sports Deluxe"
-align = 1
-__meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 260.124
-margin_top = 262.598
-margin_right = 385.124
-margin_bottom = 276.598
+margin_left = 258.039
+margin_top = 70.5727
+margin_right = 386.039
+margin_bottom = 84.5727
 text = "Press Start Or Enter"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -139,12 +70,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Ocean" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 288 )
+frame = 1
+
+[node name="Ocean2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256, 288 )
+
+[node name="Ocean3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 288 )
+frame = 2
+
 [node name="BeachTile" parent="." instance=ExtResource( 3 )]
-modulate = Color( 0.113725, 0.494118, 0.0235294, 1 )
 position = Vector2( 288, 352 )
 collision_layer = 2
 collision_mask = 3
-tile_data = PoolIntArray( -851981, 0, 4, -851980, 0, 196609, -851979, 0, 196609, -851978, 0, 196609, -851977, 0, 196609, -851976, 0, 196609, -851975, 0, 196609, -851974, 0, 196609, -851973, 0, 196609, -851972, 0, 196609, -851971, 0, 196609, -851970, 0, 196609, -851969, 0, 196609, -917504, 0, 196609, -917503, 0, 196609, -917502, 0, 196609, -917501, 0, 196609, -917500, 0, 196609, -917499, 0, 196609, -917498, 0, 196609, -917497, 0, 196609, -917496, 0, 196609, -917495, 0, 196609, -917494, 0, 196609, -917493, 0, 196609, -917492, 0, 196609, -917491, 0, 196609, -917490, 0, 7, -786445, 0, 65539, -851954, 0, 65539, -720909, 0, 65539, -786418, 0, 65539, -655373, 0, 65539, -720882, 0, 65539, -589837, 0, 65539, -655346, 0, 65539, -524301, 0, 65539, -589810, 0, 65539, -458765, 0, 65539, -524274, 0, 65539, -393229, 0, 65539, -458738, 0, 65539, -327693, 0, 65539, -393202, 0, 65539, -262157, 0, 65539, -327666, 0, 65539, -196621, 0, 65539, -262130, 0, 65539, -131085, 0, 65539, -196594, 0, 65539, -65549, 0, 65539, -131058, 0, 65539, -13, 0, 65539, -65522, 0, 65539, 65522, 0, 0, 65523, 0, 65544, 65524, 0, 1, 65525, 0, 1, 65526, 0, 1, 65527, 0, 1, 65528, 0, 1, 65529, 0, 1, 65530, 0, 1, 65531, 0, 1, 65532, 0, 1, 65533, 0, 1, 65534, 0, 1, 65535, 0, 1, 0, 0, 1, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 6, 0, 1, 7, 0, 1, 8, 0, 1, 9, 0, 1, 10, 0, 1, 11, 0, 1, 12, 0, 1, 13, 0, 1, 14, 0, 65544, 15, 0, 1, 16, 0, 1, 17, 0, 1, 18, 0, 1, 19, 0, 1, 20, 0, 1, 21, 0, 1, 22, 0, 1, 23, 0, 1, 24, 0, 1, 25, 0, 1, 26, 0, 1, 27, 0, 1, 28, 0, 2, 131058, 0, 131072, 131059, 0, 131073, 131060, 0, 131073, 131061, 0, 131073, 131062, 0, 131073, 131063, 0, 131073, 131064, 0, 131073, 131065, 0, 131073, 131066, 0, 131073, 131067, 0, 131073, 131068, 0, 131073, 131069, 0, 131073, 131070, 0, 131073, 131071, 0, 131073, 65536, 0, 131073, 65537, 0, 131073, 65538, 0, 131073, 65539, 0, 131073, 65540, 0, 131073, 65541, 0, 131073, 65542, 0, 131073, 65543, 0, 131073, 65544, 0, 131073, 65545, 0, 131073, 65546, 0, 131073, 65547, 0, 131073, 65548, 0, 131073, 65549, 0, 131073, 65550, 0, 131073, 65551, 0, 131073, 65552, 0, 131073, 65553, 0, 131073, 65554, 0, 131073, 65555, 0, 131073, 65556, 0, 131073, 65557, 0, 131073, 65558, 0, 131073, 65559, 0, 131073, 65560, 0, 131073, 65561, 0, 131073, 65562, 0, 131073, 65563, 0, 131073, 65564, 0, 131074 )
+tile_data = PoolIntArray( -851981, 0, 4, -851980, 0, 196609, -851979, 0, 196609, -851978, 0, 196609, -851977, 0, 196609, -851976, 0, 196609, -851975, 0, 196609, -851974, 0, 196609, -851973, 0, 196609, -851972, 0, 196609, -851971, 0, 196609, -851970, 0, 196609, -851969, 0, 196609, -917504, 0, 196609, -917503, 0, 196609, -917502, 0, 196609, -917501, 0, 196609, -917500, 0, 196609, -917499, 0, 196609, -917498, 0, 196609, -917497, 0, 196609, -917496, 0, 196609, -917495, 0, 196609, -917494, 0, 196609, -917493, 0, 196609, -917492, 0, 196609, -917491, 0, 196609, -917490, 0, 7, -786445, 0, 65539, -851954, 0, 65539, -720909, 0, 65539, -786419, 0, 196608, -786418, 0, 262151, -655373, 0, 65539, -720882, 0, 65539, -589837, 0, 65539, -655346, 0, 65539, -524301, 0, 65539, -589810, 0, 65539, -458765, 0, 65539, -524274, 0, 65539, -393229, 0, 65539, -458738, 0, 65539, -327693, 0, 65539, -393202, 0, 65539, -262157, 0, 65539, -327666, 0, 65539, -196621, 0, 131076, -196620, 0, 1, -196619, 0, 1, -196618, 0, 1, -196617, 0, 1, -196616, 0, 1, -196615, 0, 1, -196614, 0, 1, -196613, 0, 1, -196612, 0, 1, -196611, 0, 1, -196610, 0, 1, -196609, 0, 2, -262130, 0, 65539, -131085, 0, 65536, -131084, 0, 65537, -131083, 0, 65537, -131082, 0, 65537, -131081, 0, 65537, -131080, 0, 65537, -131079, 0, 65537, -131078, 0, 65537, -131077, 0, 65537, -131076, 0, 65537, -131075, 0, 65537, -131074, 0, 65537, -131073, 0, 131077, -196608, 0, 2, -196597, 0, 0, -196596, 0, 1, -196595, 0, 1, -196594, 0, 131079, -65549, 0, 65536, -65548, 0, 65537, -65547, 0, 65537, -65546, 0, 65537, -65545, 0, 65537, -65544, 0, 65537, -65543, 0, 65537, -65542, 0, 65537, -65541, 0, 65537, -65540, 0, 65537, -65539, 0, 65537, -65538, 0, 65537, -65537, 0, 65537, -131072, 0, 65538, -131061, 0, 65536, -131060, 0, 65537, -131059, 0, 65537, -131058, 0, 65538, -13, 0, 65536, -12, 0, 65537, -11, 0, 65537, -10, 0, 65537, -9, 0, 65537, -8, 0, 65537, -7, 0, 65537, -6, 0, 65537, -5, 0, 65537, -4, 0, 65537, -3, 0, 65537, -2, 0, 65537, -1, 0, 65537, -65536, 0, 131077, -65535, 0, 2, -65525, 0, 65536, -65524, 0, 65537, -65523, 0, 65537, -65522, 0, 65538, 65522, 0, 0, 65523, 0, 131078, 65524, 0, 65537, 65525, 0, 65537, 65526, 0, 65537, 65527, 0, 65537, 65528, 0, 65537, 65529, 0, 65537, 65530, 0, 65537, 65531, 0, 65537, 65532, 0, 65537, 65533, 0, 65537, 65534, 0, 65537, 65535, 0, 65537, 0, 0, 65537, 1, 0, 131077, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 6, 0, 1, 7, 0, 1, 8, 0, 1, 9, 0, 1, 10, 0, 1, 11, 0, 131078, 12, 0, 65537, 13, 0, 65537, 14, 0, 131077, 15, 0, 1, 16, 0, 1, 17, 0, 1, 18, 0, 1, 19, 0, 1, 20, 0, 1, 21, 0, 1, 22, 0, 1, 23, 0, 1, 24, 0, 1, 25, 0, 1, 26, 0, 1, 27, 0, 1, 28, 0, 2, 131058, 0, 131072, 131059, 0, 131073, 131060, 0, 131073, 131061, 0, 131073, 131062, 0, 131073, 131063, 0, 131073, 131064, 0, 131073, 131065, 0, 131073, 131066, 0, 131073, 131067, 0, 131073, 131068, 0, 131073, 131069, 0, 131073, 131070, 0, 131073, 131071, 0, 131073, 65536, 0, 131073, 65537, 0, 131073, 65538, 0, 131073, 65539, 0, 131073, 65540, 0, 131073, 65541, 0, 131073, 65542, 0, 131073, 65543, 0, 131073, 65544, 0, 131073, 65545, 0, 131073, 65546, 0, 131073, 65547, 0, 131073, 65548, 0, 131073, 65549, 0, 131073, 65550, 0, 131073, 65551, 0, 131073, 65552, 0, 131073, 65553, 0, 131073, 65554, 0, 131073, 65555, 0, 131073, 65556, 0, 131073, 65557, 0, 131073, 65558, 0, 131073, 65559, 0, 131073, 65560, 0, 131073, 65561, 0, 131073, 65562, 0, 131073, 65563, 0, 131073, 65564, 0, 131074 )
+
+[node name="PlayerMenu" parent="." instance=ExtResource( 4 )]
+position = Vector2( 272, 200 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 320, 192 )
@@ -154,58 +98,34 @@ current = true
 position = Vector2( 323.211, 338.291 )
 stream = ExtResource( 15 )
 
-[node name="PlayerMenu" parent="." instance=ExtResource( 4 )]
-position = Vector2( 49.8559, 328.81 )
-
-[node name="Basketball" parent="." instance=ExtResource( 6 )]
-position = Vector2( 97.4518, 267.193 )
-mass = 0.01
-physics_material_override = SubResource( 1 )
-
-[node name="Basketball2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 444.195, 296.261 )
-physics_material_override = SubResource( 2 )
-
-[node name="Basketball3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 549.048, 95.8976 )
-physics_material_override = SubResource( 3 )
-
-[node name="Soccer" parent="." instance=ExtResource( 9 )]
-position = Vector2( 544, 320 )
-
-[node name="Hurdle" parent="." instance=ExtResource( 10 )]
-position = Vector2( 288, 320 )
-
-[node name="Hurdle2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 352, 320 )
-
 [node name="FootballGuy" parent="." instance=ExtResource( 13 )]
-position = Vector2( 184.849, 136.692 )
+position = Vector2( 29.0497, 34.0924 )
 collision_layer = 64
 
 [node name="BaseballBat" parent="." instance=ExtResource( 11 )]
-position = Vector2( 523.609, 147.259 )
+position = Vector2( 616, 48 )
 collision_layer = 32
 
 [node name="GolfballPlayer" parent="." instance=ExtResource( 12 )]
-position = Vector2( 512, 224 )
+position = Vector2( 616, 128 )
 collision_layer = 64
 
-[node name="Basket" parent="." instance=ExtResource( 5 )]
-position = Vector2( 426.039, 320.149 )
-
 [node name="TennisBall" parent="." instance=ExtResource( 16 )]
-position = Vector2( 192, 192 )
+position = Vector2( 25.7507, 122.65 )
 collision_layer = 64
 
 [node name="PingPongPaddle" parent="." instance=ExtResource( 17 )]
-position = Vector2( 426.889, 187.431 )
+position = Vector2( 24, 200 )
 collision_layer = 64
 
 [node name="VolleyballNet" parent="." instance=ExtResource( 18 )]
-position = Vector2( 177.783, 334.769 )
+position = Vector2( 317.877, 34.2176 )
 
 [node name="rollerblades" parent="." instance=ExtResource( 19 )]
-position = Vector2( 437.245, 247.411 )
+position = Vector2( 608, 192 )
 collision_layer = 64
+
+[node name="FallZone" parent="." instance=ExtResource( 5 )]
+position = Vector2( 152, 648 )
+lose_level_world_scene = "res://UI/TitleScreen.tscn"
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

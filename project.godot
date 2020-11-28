@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "DialogueAction",
+"language": "GDScript",
+"path": "res://Dialogue/DialogueAction.gd"
+} ]
 _global_script_class_icons={
-
+"DialogueAction": ""
 }
 
 [application]
@@ -26,7 +31,7 @@ config/windows_native_icon="res://icon-export.ico"
 window/size/width=640
 window/size/height=380
 window/size/test_width=1280
-window/size/test_height=720
+window/size/test_height=760
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
