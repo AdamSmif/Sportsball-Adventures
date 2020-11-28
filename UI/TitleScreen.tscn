@@ -28,10 +28,10 @@ __meta__ = {
 
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 192 )
+frame = 0
 
 [node name="NightSkyAnimated3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 960, 192 )
-frame = 1
 
 [node name="NightSkyAnimated2" parent="." instance=ExtResource( 6 )]
 position = Vector2( -320, 192 )
@@ -79,7 +79,6 @@ position = Vector2( 256, 288 )
 
 [node name="Ocean3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 288 )
-frame = 2
 
 [node name="BeachTile" parent="." instance=ExtResource( 3 )]
 position = Vector2( 288, 352 )
