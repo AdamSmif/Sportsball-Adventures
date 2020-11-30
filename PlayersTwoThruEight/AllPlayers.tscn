@@ -11,22 +11,22 @@
 [node name="AllPlayers" type="YSort"]
 
 [node name="GolfballPlayer" parent="." instance=ExtResource( 7 )]
-position = Vector2( 18.6266, 34.5949 )
+position = Vector2( 16, 64 )
 
 [node name="PingPongPaddle" parent="." instance=ExtResource( 5 )]
-position = Vector2( 59.7916, 38.2703 )
+position = Vector2( 16, 128 )
 
 [node name="rollerblades" parent="." instance=ExtResource( 1 )]
-position = Vector2( 109.778, 36.065 )
+position = Vector2( 16, 192 )
 
 [node name="TennisBall" parent="." instance=ExtResource( 2 )]
-position = Vector2( 170.055, 36.8001 )
+position = Vector2( 568, 192 )
 
 [node name="VolleyballNet" parent="." instance=ExtResource( 6 )]
-position = Vector2( 236.948, 39.0054 )
+position = Vector2( 312, 64 )
 
 [node name="BaseballBat" parent="." instance=ExtResource( 3 )]
-position = Vector2( 311.192, 40.4756 )
+position = Vector2( 576, 128 )
 
 [node name="FootballGuy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 363.383, 43.4159 )
+position = Vector2( 576, 64 )
