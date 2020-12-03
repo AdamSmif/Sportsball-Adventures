@@ -246,9 +246,6 @@ position = Vector2( 528, 416 )
 mass = 0.102041
 physics_material_override = SubResource( 1 )
 
-[node name="Gronkobot" parent="." instance=ExtResource( 14 )]
-position = Vector2( 2453.45, 315.017 )
-
 [node name="hoopnet" parent="." instance=ExtResource( 12 )]
 position = Vector2( 526.044, 508.747 )
 scale = Vector2( 3, 3 )
@@ -379,15 +376,26 @@ id = 3
 position = Vector2( 2502.6, 301.608 )
 id = 2
 
+<<<<<<< HEAD
 [node name="Gronkobot2" parent="." instance=ExtResource( 14 )]
 position = Vector2( -462.887, 521.963 )
 
 [node name="Gronkobot3" parent="." instance=ExtResource( 14 )]
 position = Vector2( -545.146, 509.231 )
-direction = 1
-
+=======
 [node name="Gronkobot4" parent="." instance=ExtResource( 14 )]
 position = Vector2( -475.321, 364.21 )
+direction = 1
+detects_cliffs = false
+
+[node name="Gronkobot5" parent="." instance=ExtResource( 14 )]
+position = Vector2( -551.949, 505.227 )
+>>>>>>> d6842a82097c6dd016162d1c79f29d2cc207f756
+direction = 1
+detects_cliffs = false
+
+[node name="Gronkobot6" parent="." instance=ExtResource( 14 )]
+position = Vector2( 2222.64, 286.889 )
 direction = 1
 detects_cliffs = false
 

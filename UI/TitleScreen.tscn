@@ -74,14 +74,14 @@ __meta__ = {
 
 [node name="Ocean" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512, 288 )
-frame = 1
+frame = 2
 
 [node name="Ocean2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 256, 288 )
+frame = 1
 
 [node name="Ocean3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 288 )
-frame = 2
 
 [node name="BeachTile" parent="." instance=ExtResource( 3 )]
 position = Vector2( 288, 352 )
