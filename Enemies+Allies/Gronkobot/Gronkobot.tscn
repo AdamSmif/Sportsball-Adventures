@@ -20,12 +20,3 @@ shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-<<<<<<< HEAD
-=======
-
-[node name="floor_checker" type="RayCast2D" parent="."]
-position = Vector2( 4.55881, 0.964997 )
-scale = Vector2( 0.5, 1 )
-enabled = true
-cast_to = Vector2( 0, 20 )
->>>>>>> d6842a82097c6dd016162d1c79f29d2cc207f756

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/BeachTile.tscn" type="PackedScene" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://Assets/golflag.png" type="Texture" id=24]
 [ext_resource path="res://Assets/FallZone.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Assets/Bottle.tscn" type="PackedScene" id=26]
+[ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=27]
 
 [node name="VillageDemo" type="Node2D"]
 modulate = Color( 0.686275, 0.317647, 0.552941, 1 )
@@ -34,10 +35,10 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -4296.54
-margin_top = -407.0
-margin_right = 4379.46
-margin_bottom = 1006.0
+margin_left = -4296.0
+margin_top = -408.0
+margin_right = 4380.0
+margin_bottom = 1005.0
 color = Color( 0.219608, 0.921569, 0.231373, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -47,36 +48,57 @@ __meta__ = {
 position = Vector2( -32, -648 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="villagebackground2" type="Sprite" parent="."]
 position = Vector2( 478.481, -640 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="villagebackground3" type="Sprite" parent="."]
 position = Vector2( 989.292, -640 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="villagebackground4" type="Sprite" parent="."]
 position = Vector2( 1504, -640 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="villagebackground5" type="Sprite" parent="."]
 position = Vector2( -544, -648 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="villagebackground6" type="Sprite" parent="."]
 position = Vector2( -1056, -648 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="villagebackground7" type="Sprite" parent="."]
 position = Vector2( -1568, -648 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="galaxy+X" type="Sprite" parent="villagebackground7"]
 position = Vector2( 1110.72, -1540.84 )
@@ -184,7 +206,7 @@ texture = ExtResource( 14 )
 position = Vector2( -138.771, -432.838 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -604.469, -469.472 )
+position = Vector2( -744, -432 )
 collision_mask = 31
 bottle_world_scene = "res://Levels/World.tscn"
 
@@ -331,31 +353,43 @@ max_distance = 800.0
 [node name="AllPlayers" parent="." instance=ExtResource( 22 )]
 position = Vector2( -778.018, -715.067 )
 
-[node name="Bottle" parent="." instance=ExtResource( 26 )]
-position = Vector2( -691.273, -422.523 )
+[node name="Bottles" type="YSort" parent="."]
 
-[node name="Bottle2" parent="." instance=ExtResource( 26 )]
-position = Vector2( -1011.05, -440.374 )
+[node name="Bottle" parent="Bottles" instance=ExtResource( 26 )]
+position = Vector2( -664, -424 )
 
-[node name="Bottle3" parent="." instance=ExtResource( 26 )]
-position = Vector2( -1058.55, -450.802 )
+[node name="Bottle2" parent="Bottles" instance=ExtResource( 26 )]
+position = Vector2( -624, -424 )
 
-[node name="Bottle4" parent="." instance=ExtResource( 26 )]
-position = Vector2( -872.99, -440.133 )
+[node name="Bottle3" parent="Bottles" instance=ExtResource( 26 )]
+position = Vector2( -592, -424 )
 
-[node name="Bottle5" parent="." instance=ExtResource( 26 )]
-position = Vector2( -471.309, -423.54 )
+[node name="Bottle4" parent="Bottles" instance=ExtResource( 26 )]
+position = Vector2( -544, -424 )
 
-[node name="Bottle6" parent="." instance=ExtResource( 26 )]
-position = Vector2( -378.211, -438.328 )
+[node name="Bottle5" parent="Bottles" instance=ExtResource( 26 )]
+position = Vector2( -504, -424 )
 
-[node name="Bottle7" parent="." instance=ExtResource( 26 )]
-position = Vector2( -319.549, -436.523 )
+[node name="Bottle6" parent="Bottles" instance=ExtResource( 26 )]
+position = Vector2( -448, -424 )
 
-[node name="Bottle8" parent="." instance=ExtResource( 26 )]
-position = Vector2( -271.716, -441.035 )
+[node name="Bottle7" parent="Bottles" instance=ExtResource( 26 )]
+position = Vector2( -392, -424 )
+
+[node name="Bottle8" parent="Bottles" instance=ExtResource( 26 )]
+position = Vector2( -344, -424 )
 
 [node name="FallZone" parent="." instance=ExtResource( 25 )]
 position = Vector2( -327.978, 378.538 )
 collision_layer = 5
 lose_level_world_scene = "res://Levels/VillageDemo.tscn"
+
+[node name="HUD" parent="." instance=ExtResource( 27 )]
+[connection signal="bottle_collected" from="Bottles/Bottle" to="HUD" method="_on_bottle_collected"]
+[connection signal="bottle_collected" from="Bottles/Bottle2" to="HUD" method="_on_bottle_collected"]
+[connection signal="bottle_collected" from="Bottles/Bottle3" to="HUD" method="_on_bottle_collected"]
+[connection signal="bottle_collected" from="Bottles/Bottle4" to="HUD" method="_on_bottle_collected"]
+[connection signal="bottle_collected" from="Bottles/Bottle5" to="HUD" method="_on_bottle_collected"]
+[connection signal="bottle_collected" from="Bottles/Bottle6" to="HUD" method="_on_bottle_collected"]
+[connection signal="bottle_collected" from="Bottles/Bottle7" to="HUD" method="_on_bottle_collected"]
+[connection signal="bottle_collected" from="Bottles/Bottle8" to="HUD" method="_on_bottle_collected"]

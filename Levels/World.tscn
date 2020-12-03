@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/hoopstick.png" type="Texture" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://Assets/FallZone.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Assets/Ocean/Ocean.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Assets/Clouds.tscn" type="PackedScene" id=26]
+[ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=27]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 50.0
@@ -246,6 +247,9 @@ position = Vector2( 528, 416 )
 mass = 0.102041
 physics_material_override = SubResource( 1 )
 
+[node name="Gronkobot" parent="." instance=ExtResource( 14 )]
+position = Vector2( 2453.45, 315.017 )
+
 [node name="hoopnet" parent="." instance=ExtResource( 12 )]
 position = Vector2( 526.044, 508.747 )
 scale = Vector2( 3, 3 )
@@ -376,26 +380,15 @@ id = 3
 position = Vector2( 2502.6, 301.608 )
 id = 2
 
-<<<<<<< HEAD
 [node name="Gronkobot2" parent="." instance=ExtResource( 14 )]
 position = Vector2( -462.887, 521.963 )
 
 [node name="Gronkobot3" parent="." instance=ExtResource( 14 )]
 position = Vector2( -545.146, 509.231 )
-=======
+direction = 1
+
 [node name="Gronkobot4" parent="." instance=ExtResource( 14 )]
 position = Vector2( -475.321, 364.21 )
-direction = 1
-detects_cliffs = false
-
-[node name="Gronkobot5" parent="." instance=ExtResource( 14 )]
-position = Vector2( -551.949, 505.227 )
->>>>>>> d6842a82097c6dd016162d1c79f29d2cc207f756
-direction = 1
-detects_cliffs = false
-
-[node name="Gronkobot6" parent="." instance=ExtResource( 14 )]
-position = Vector2( 2222.64, 286.889 )
 direction = 1
 detects_cliffs = false
 
@@ -403,6 +396,12 @@ detects_cliffs = false
 position = Vector2( 877.872, 1287.95 )
 lose_level_world_scene = "res://Levels/World.tscn"
 
-[node name="Bottle" parent="." instance=ExtResource( 17 )]
-position = Vector2( -234.745, 449.4 )
+[node name="Bottles" type="YSort" parent="."]
+
+[node name="Bottle" parent="Bottles" instance=ExtResource( 17 )]
+position = Vector2( -695.325, 518.468 )
+
+[node name="HUD" parent="." instance=ExtResource( 27 )]
+bottle_world_scene = "res://Levels/HubTest.tscn"
 [connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_Timer_timeout"]
+[connection signal="bottle_collected" from="Bottles/Bottle" to="HUD" method="_on_bottle_collected"]
