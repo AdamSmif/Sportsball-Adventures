@@ -16,3 +16,5 @@ shape = SubResource( 1 )
 
 [node name="NextLevelSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+volume_db = -13.453
+pitch_scale = 0.88

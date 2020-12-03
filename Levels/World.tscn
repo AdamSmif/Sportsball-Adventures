@@ -342,7 +342,6 @@ position = Vector2( 279.707, 553.451 )
 position = Vector2( 352, 512 )
 scale = Vector2( 10, 10 )
 stream = ExtResource( 8 )
-autoplay = true
 
 [node name="Soccer" parent="." instance=ExtResource( 18 )]
 position = Vector2( 174.378, 532.059 )
@@ -381,10 +380,10 @@ position = Vector2( 2502.6, 301.608 )
 id = 2
 
 [node name="Gronkobot2" parent="." instance=ExtResource( 14 )]
-position = Vector2( -463.305, 516.946 )
+position = Vector2( -462.887, 521.963 )
 
 [node name="Gronkobot3" parent="." instance=ExtResource( 14 )]
-position = Vector2( -544.728, 514.937 )
+position = Vector2( -545.146, 509.231 )
 direction = 1
 
 [node name="Gronkobot4" parent="." instance=ExtResource( 14 )]
