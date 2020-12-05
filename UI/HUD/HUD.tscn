@@ -12,11 +12,11 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="DynamicFont" id=2]
-size = 52
+size = 32
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 40
+size = 32
 font_data = ExtResource( 3 )
 
 [node name="HUD" type="CanvasLayer"]
@@ -24,20 +24,20 @@ script = ExtResource( 1 )
 bottle_world_scene = "res://Levels/World.tscn"
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = 24.0
-margin_top = 32.0
-margin_right = 216.0
-margin_bottom = 88.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 112.0
+margin_bottom = 48.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BottleIcon" type="TextureRect" parent="."]
-margin_left = 24.0
-margin_top = 32.0
-margin_right = 72.0
-margin_bottom = 80.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 48.0
+margin_bottom = 48.0
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -45,10 +45,11 @@ __meta__ = {
 }
 
 [node name="x" type="Label" parent="."]
-margin_left = 64.0
-margin_top = 24.0
-margin_right = 88.0
-margin_bottom = 87.0
+visible = false
+margin_left = 8.0
+margin_top = 48.0
+margin_right = 32.0
+margin_bottom = 88.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.211765, 0.717647, 0.243137, 1 )
 text = "x"
@@ -57,10 +58,10 @@ __meta__ = {
 }
 
 [node name="Bottles" type="Label" parent="."]
-margin_left = 96.0
-margin_top = 40.0
-margin_right = 160.0
-margin_bottom = 88.0
+margin_left = 40.0
+margin_top = 8.0
+margin_right = 64.0
+margin_bottom = 47.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "#"
@@ -70,10 +71,10 @@ __meta__ = {
 }
 
 [node name="x2" type="Label" parent="."]
-margin_left = 128.0
-margin_top = 32.0
-margin_right = 198.0
-margin_bottom = 95.0
+margin_left = 64.0
+margin_top = 8.0
+margin_right = 98.0
+margin_bottom = 47.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "/8"
