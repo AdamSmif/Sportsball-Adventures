@@ -204,22 +204,6 @@ position = Vector2( 2703.38, 154.911 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 22 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -752.536, 498.31 )
-
-[node name="BeachSound" type="AudioStreamPlayer2D" parent="Player"]
-position = Vector2( 620.694, -485.502 )
-autoplay = true
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Player/ParallaxBackground"]
-
-[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground/ParallaxLayer"]
-visible = false
-position = Vector2( -637.737, 476.382 )
-texture = ExtResource( 10 )
-
 [node name="voxeltest3" type="Sprite" parent="."]
 visible = false
 position = Vector2( -462.564, 353.42 )
@@ -399,5 +383,21 @@ position = Vector2( -695.325, 518.468 )
 
 [node name="HUD" parent="." instance=ExtResource( 27 )]
 bottle_world_scene = "res://Levels/HubTest.tscn"
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -752.536, 498.31 )
+
+[node name="BeachSound" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2( 620.694, -485.502 )
+autoplay = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Player/ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground/ParallaxLayer"]
+visible = false
+position = Vector2( -637.737, 476.382 )
+texture = ExtResource( 10 )
 [connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_Timer_timeout"]
 [connection signal="bottle_collected" from="Bottles/Bottle" to="HUD" method="_on_bottle_collected"]

@@ -87,20 +87,19 @@ func _physics_process(_delta):
 	# For interacting with rigid bodies
 	motion = move_and_slide(motion, Vector2.UP, false, 4, PI/4, false)
 
-#Bottle Colelcting Code
-#	if bottles_needed == 8:
-#		get_tree().change_scene(bottle_world_scene)
-#
-#func add_bottle():
-#	bottles_needed = bottles_needed + 1
-#	print("I have these many bottles: ", bottles_needed)
-	
-#func _on_Bottle_body_entered(_delta):
-#	$BottleSound.play()
 
 func _on_FallZone_body_entered(body):
 	get_tree().change_scene(lose_level_world_scene)
-
-
-#func Bottle_Sound_Effect(body):
-#	$BottleSound.play()
+	
+	
+#func bounce():
+#	motion.y = JUMP_HEIGHT * 0.7
+#
+#func ouch(var enemyposx):
+#	set_modulate(Color(1,0.3,0.3,0.4))
+#	motion.y = JUMP_HEIGHT * 0.5
+#
+#	if position.x < enemyposx:
+#		motion.x = -800
+#	elif position.x > enemyposx:
+#		motion.x = 800

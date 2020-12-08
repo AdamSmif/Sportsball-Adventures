@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+export var speed = 50
 var velocity = Vector2()
 #-1 move left +1 move right
 export var direction = -1
@@ -24,6 +25,28 @@ func _physics_process(delta):
 	#gravity
 	velocity.y += 5
 	
-	velocity.x = 50 * direction
+	velocity.x = speed * direction
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
+
+## damage detection
+#func _on_top_checker_body_entered(body):
+#	$Sprite.play("squashed")
+#	speed = 0
+#	set_collision_layer_bit(4,false)
+#	set_collision_mask_bit(0,false)	
+#	$top_checker.set_collision_layer_bit(4,false)
+#	$top_checker.set_collision_mask_bit(0,false)
+#	$sides_checker.set_collision_layer_bit(4,false)
+#	$sides_checker.set_collision_mask_bit(0,false)
+#	$Timer.start()
+##	body.bounce()
+#
+#
+#func _on_sides_checker_body_entered(body):
+#	print("yeet")
+##	body.ouch(position.x)
+#
+#
+#func _on_Timer_timeout():
+#	queue_free()
