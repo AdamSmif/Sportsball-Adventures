@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Tiles/GolfTile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/hubassets/evergreentree.png" type="Texture" id=2]
@@ -11,6 +11,14 @@
 [ext_resource path="res://Assets/FallZone.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/golfbackgroundplatform.png" type="Texture" id=10]
 [ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Weather Effects/RainEffect.tscn" type="PackedScene" id=12]
+
+[sub_resource type="Environment" id=5]
+background_mode = 4
+glow_enabled = true
+glow_strength = 1.04
+glow_bloom = 0.09
+glow_blend_mode = 0
 
 [sub_resource type="TileSet" id=1]
 0/name = "golfbackgroundplatform.png 0"
@@ -94,6 +102,9 @@ extents = Vector2( 224, 10 )
 extents = Vector2( 192, 10 )
 
 [node name="GolfWorld1-1" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 5 )
 
 [node name="Clouds" type="YSort" parent="."]
 visible = false
@@ -257,6 +268,7 @@ one_way_collision = true
 position = Vector2( 963.984, 266.053 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
+modulate = Color( 1.23, 1, 1, 1 )
 position = Vector2( -548.292, 200.652 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
@@ -285,3 +297,7 @@ lose_level_world_scene = "res://Levels/golfworld/GolfWorld1-1.tscn"
 
 [node name="Gronkobot2" parent="." instance=ExtResource( 6 )]
 position = Vector2( -1262.08, 202.284 )
+
+[node name="RainEffect" parent="." instance=ExtResource( 12 )]
+position = Vector2( -559.254, -150.176 )
+scale = Vector2( 3, 3 )
