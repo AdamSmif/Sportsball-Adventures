@@ -7,7 +7,7 @@
 [ext_resource path="res://Enemies+Allies/Gronkobot/gronkobot5.png" type="Texture" id=5]
 [ext_resource path="res://Enemies+Allies/Gronkobot/gronkobot2.png" type="Texture" id=6]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
@@ -20,7 +20,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 11.8641, 21.8218 )
 
 [node name="Gronkobot" type="KinematicBody2D"]
@@ -31,7 +31,7 @@ script = ExtResource( 2 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.110184, 0 )
 scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 frame = 3
 playing = true
 __meta__ = {
@@ -41,7 +41,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.366034, 2.93893 )
 scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="floor_checker" type="RayCast2D" parent="."]
 enabled = true

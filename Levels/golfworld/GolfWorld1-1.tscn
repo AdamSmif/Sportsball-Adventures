@@ -12,13 +12,7 @@
 [ext_resource path="res://Assets/golfbackgroundplatform.png" type="Texture" id=10]
 [ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Weather Effects/RainEffect.tscn" type="PackedScene" id=12]
-
-[sub_resource type="Environment" id=1]
-background_mode = 4
-glow_enabled = true
-glow_strength = 1.04
-glow_bloom = 0.09
-glow_blend_mode = 0
+[ext_resource path="res://Assets/Shaders/StandardGlow.tscn" type="PackedScene" id=13]
 
 [sub_resource type="TileSet" id=2]
 0/name = "golfbackgroundplatform.png 0"
@@ -29,6 +23,10 @@ glow_blend_mode = 0
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
 1/name = "golfbackgroundplatform.png 1"
@@ -39,6 +37,10 @@ glow_blend_mode = 0
 1/tile_mode = 0
 1/occluder_offset = Vector2( 0, 0 )
 1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
 2/name = "golfbackgroundplatform.png 2"
@@ -49,6 +51,10 @@ glow_blend_mode = 0
 2/tile_mode = 0
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
 2/shapes = [  ]
 2/z_index = 0
 3/name = "golfbackgroundplatform.png 3"
@@ -59,6 +65,10 @@ glow_blend_mode = 0
 3/tile_mode = 0
 3/occluder_offset = Vector2( 0, 0 )
 3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
 3/shapes = [  ]
 3/z_index = 0
 4/name = "golfbackgroundplatform.png 4"
@@ -69,6 +79,10 @@ glow_blend_mode = 0
 4/tile_mode = 0
 4/occluder_offset = Vector2( 0, 0 )
 4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
 4/shapes = [  ]
 4/z_index = 0
 5/name = "golfbackgroundplatform.png 5"
@@ -79,6 +93,10 @@ glow_blend_mode = 0
 5/tile_mode = 0
 5/occluder_offset = Vector2( 0, 0 )
 5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
 5/shapes = [  ]
 5/z_index = 0
 6/name = "golfbackgroundplatform.png 6"
@@ -89,6 +107,10 @@ glow_blend_mode = 0
 6/tile_mode = 0
 6/occluder_offset = Vector2( 0, 0 )
 6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
 6/shapes = [  ]
 6/z_index = 0
 
@@ -103,8 +125,7 @@ extents = Vector2( 192, 10 )
 
 [node name="GolfWorld1-1" type="Node2D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
+[node name="StandardGlow" parent="." instance=ExtResource( 13 )]
 
 [node name="Clouds" type="YSort" parent="."]
 visible = false
@@ -299,5 +320,5 @@ lose_level_world_scene = "res://Levels/golfworld/GolfWorld1-1.tscn"
 position = Vector2( -1262.08, 202.284 )
 
 [node name="RainEffect" parent="." instance=ExtResource( 12 )]
-position = Vector2( -559.254, -150.176 )
+position = Vector2( -536, -288 )
 scale = Vector2( 3, 3 )
