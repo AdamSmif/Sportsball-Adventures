@@ -156,7 +156,30 @@ frame = 1
 position = Vector2( -537.99, 527.286 )
 
 [node name="Ocean8" parent="." instance=ExtResource( 25 )]
-position = Vector2( -792.99, 527.286 )
+position = Vector2( -790.885, 527.286 )
+frame = 2
+
+[node name="Ocean13" parent="." instance=ExtResource( 25 )]
+position = Vector2( -790.885, 592.286 )
+frame = 1
+
+[node name="Ocean14" parent="." instance=ExtResource( 25 )]
+position = Vector2( -536, 592 )
+frame = 1
+
+[node name="Ocean15" parent="." instance=ExtResource( 25 )]
+position = Vector2( -792, 656 )
+
+[node name="Ocean16" parent="." instance=ExtResource( 25 )]
+position = Vector2( -536, 656 )
+
+[node name="Ocean17" parent="." instance=ExtResource( 25 )]
+position = Vector2( -600, 704 )
+frame = 2
+
+[node name="Ocean18" parent="." instance=ExtResource( 25 )]
+position = Vector2( -736, 750 )
+scale = Vector2( 5, 5 )
 frame = 2
 
 [node name="Ocean9" parent="." instance=ExtResource( 25 )]
@@ -371,7 +394,7 @@ position = Vector2( 2502.6, 301.608 )
 id = 2
 
 [node name="FallZone" parent="." instance=ExtResource( 24 )]
-position = Vector2( 877.872, 1287.95 )
+position = Vector2( 912, 984 )
 lose_level_world_scene = "res://Levels/World.tscn"
 
 [node name="Bottles" type="YSort" parent="."]
