@@ -122,69 +122,71 @@ scale = Vector2( 2.5, 2.5 )
 
 [node name="Ocean" parent="." instance=ExtResource( 25 )]
 position = Vector2( 303.263, 526.705 )
-frame = 1
+frame = 2
 
 [node name="Ocean2" parent="." instance=ExtResource( 25 )]
 position = Vector2( 559.074, 526.523 )
+frame = 1
 
 [node name="Ocean3" parent="." instance=ExtResource( 25 )]
 position = Vector2( 812.435, 526.523 )
-frame = 2
 
 [node name="Ocean7" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1069.43, 526.523 )
-frame = 1
+frame = 2
 
 [node name="Ocean10" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1325.78, 525.804 )
+frame = 1
 
 [node name="Ocean11" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1582.94, 525.804 )
+frame = 1
 
 [node name="Ocean12" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1839.2, 526.398 )
+frame = 1
 
 [node name="Ocean4" parent="." instance=ExtResource( 25 )]
 position = Vector2( 47.0103, 527.286 )
-frame = 1
+frame = 2
 
 [node name="Ocean5" parent="." instance=ExtResource( 25 )]
 position = Vector2( -281.99, 527.286 )
-frame = 1
+frame = 2
 
 [node name="Ocean6" parent="." instance=ExtResource( 25 )]
 position = Vector2( -537.99, 527.286 )
+frame = 1
 
 [node name="Ocean8" parent="." instance=ExtResource( 25 )]
 position = Vector2( -790.885, 527.286 )
-frame = 2
 
 [node name="Ocean13" parent="." instance=ExtResource( 25 )]
 position = Vector2( -790.885, 592.286 )
-frame = 1
+frame = 2
 
 [node name="Ocean14" parent="." instance=ExtResource( 25 )]
 position = Vector2( -536, 592 )
-frame = 1
+frame = 2
 
 [node name="Ocean15" parent="." instance=ExtResource( 25 )]
 position = Vector2( -792, 656 )
+frame = 1
 
 [node name="Ocean16" parent="." instance=ExtResource( 25 )]
 position = Vector2( -536, 656 )
+frame = 1
 
 [node name="Ocean17" parent="." instance=ExtResource( 25 )]
 position = Vector2( -600, 704 )
-frame = 2
 
 [node name="Ocean18" parent="." instance=ExtResource( 25 )]
 position = Vector2( -736, 750 )
 scale = Vector2( 5, 5 )
-frame = 2
 
 [node name="Ocean9" parent="." instance=ExtResource( 25 )]
 position = Vector2( -842.99, 527.286 )
-frame = 2
 
 [node name="Sky" type="Sprite" parent="."]
 show_behind_parent = true
