@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/hoopstick.png" type="Texture" id=2]
@@ -13,13 +13,12 @@
 [ext_resource path="res://Assets/Basketball.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/hoopnet.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Hurdle.tscn" type="PackedScene" id=13]
+[ext_resource path="res://PlayersTwoThruEight/AllPlayers.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Levels/Exit.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Basket.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Bottle.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Soccer.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Assets/Speakers.tscn" type="PackedScene" id=19]
-[ext_resource path="res://PlayersTwoThruEight/BaseballBat.tscn" type="PackedScene" id=20]
-[ext_resource path="res://PlayersTwoThruEight/GolfballPlayer/GolfballPlayer.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Assets/voxeltest.png" type="Texture" id=22]
 [ext_resource path="res://Assets/pyramidtest.png" type="Texture" id=23]
 [ext_resource path="res://Assets/FallZone.tscn" type="PackedScene" id=24]
@@ -377,14 +376,6 @@ next_world_scene = "res://Levels/HubTest.tscn"
 [node name="Basket" parent="." instance=ExtResource( 16 )]
 position = Vector2( 2558.53, 320.412 )
 
-[node name="GolfballPlayer" parent="." instance=ExtResource( 21 )]
-position = Vector2( 2334.95, 302.91 )
-id = 3
-
-[node name="BaseballBat" parent="." instance=ExtResource( 20 )]
-position = Vector2( 2502.6, 301.608 )
-id = 2
-
 [node name="FallZone" parent="." instance=ExtResource( 24 )]
 position = Vector2( 912, 984 )
 lose_level_world_scene = "res://Levels/World.tscn"
@@ -415,5 +406,8 @@ texture = ExtResource( 10 )
 
 [node name="FootballBot" parent="." instance=ExtResource( 28 )]
 position = Vector2( -520, 520 )
+
+[node name="AllPlayers" parent="." instance=ExtResource( 14 )]
+position = Vector2( -800, 160 )
 [connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_Timer_timeout"]
 [connection signal="bottle_collected" from="Bottles/Bottle" to="HUD" method="_on_bottle_collected"]

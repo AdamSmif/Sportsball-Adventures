@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="PlayerCamera" type="Camera2D"]
+offset = Vector2( 250, -125 )
+current = true
+__meta__ = {
+"_edit_lock_": true
+}
