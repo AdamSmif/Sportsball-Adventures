@@ -6,6 +6,6 @@ ambient_light_color = Color( 0.8, 0.137255, 0.839216, 1 )
 fog_sun_amount = 0.15
 fog_depth_begin = 1460.5
 glow_enabled = true
-glow_intensity = 1.77
+glow_intensity = 0.51
 glow_blend_mode = 0
 glow_hdr_threshold = 0.23
