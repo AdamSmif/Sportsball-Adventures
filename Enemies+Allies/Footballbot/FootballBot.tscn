@@ -27,7 +27,7 @@ extents = Vector2( 11.2063, 24.9923 )
 extents = Vector2( 12.4627, 4.02503 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 17.5659, 15.8713 )
+extents = Vector2( 17.108, 15.8713 )
 
 [node name="FootballBot" type="KinematicBody2D"]
 scale = Vector2( 0.5, 0.5 )
@@ -38,7 +38,6 @@ script = ExtResource( 3 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.159576, 0.797058 )
 frames = SubResource( 1 )
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
