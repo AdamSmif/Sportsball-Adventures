@@ -206,7 +206,7 @@ texture = ExtResource( 14 )
 position = Vector2( -138.771, -432.838 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -744, -432 )
+position = Vector2( -714.127, -428.91 )
 collision_mask = 31
 bottle_world_scene = "res://Levels/World.tscn"
 

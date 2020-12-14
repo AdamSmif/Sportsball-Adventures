@@ -18,13 +18,14 @@ animations = [ {
 extents = Vector2( 12.5264, 10.6608 )
 
 [node name="MuscleBot" type="KinematicBody2D"]
+collision_layer = 16
+collision_mask = 99
 script = ExtResource( 5 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.356216, -44.0868 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -35,3 +36,5 @@ shape = SubResource( 2 )
 [node name="floor_checker" type="RayCast2D" parent="."]
 position = Vector2( 0.170181, 0.405825 )
 scale = Vector2( 0.5, 0.5 )
+enabled = true
+collision_mask = 2
