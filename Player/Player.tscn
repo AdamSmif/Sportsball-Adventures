@@ -35,14 +35,14 @@ animations = [ {
 "name": "fall",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "fire",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "jump",
 "speed": 5.0
 } ]
 
@@ -92,3 +92,8 @@ stream = ExtResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

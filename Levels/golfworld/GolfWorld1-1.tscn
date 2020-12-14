@@ -289,20 +289,6 @@ one_way_collision = true
 [node name="Gronkobot" parent="." instance=ExtResource( 6 )]
 position = Vector2( 963.984, 266.053 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-modulate = Color( 1.23, 1, 1, 1 )
-position = Vector2( -548.292, 200.652 )
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
-
-[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground"]
-position = Vector2( 293.391, 135.909 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Exit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1705.98, 269.101 )
 next_world_scene = "res://Levels/HubTest.tscn"
@@ -323,3 +309,17 @@ scale = Vector2( 3, 3 )
 
 [node name="FootballBot" parent="." instance=ExtResource( 14 )]
 position = Vector2( -480, 216 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+modulate = Color( 1.23, 1, 1, 1 )
+position = Vector2( -548.292, 200.652 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
+
+[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground"]
+position = Vector2( 293.391, 135.909 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}

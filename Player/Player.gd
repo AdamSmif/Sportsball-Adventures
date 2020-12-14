@@ -92,14 +92,23 @@ func _on_FallZone_body_entered(body):
 	get_tree().change_scene(lose_level_world_scene)
 	
 	
-#func bounce():
-#	motion.y = JUMP_HEIGHT * 0.7
-#
-#func ouch(var enemyposx):
-#	set_modulate(Color(1,0.3,0.3,0.4))
-#	motion.y = JUMP_HEIGHT * 0.5
-#
-#	if position.x < enemyposx:
-#		motion.x = -800
-#	elif position.x > enemyposx:
-#		motion.x = 800
+func bounce():
+	motion.y = JUMP_HEIGHT * 0.7
+	
+func ouch(var enemyposx):
+	print("ouch!")
+	set_modulate(Color(1,0.3,0.3,0.4))
+	motion.y = JUMP_HEIGHT * 0.7
+	
+	if position.x < enemyposx:
+		motion.x = -800
+	elif position.x > enemyposx:
+		motion.x = 800
+		
+	Input.action_release("left_%s" % id)
+	Input.action_release("right_%s" % id)
+	
+	$Timer.start()
+	
+func _on_Timer_timeout():
+	get_tree().change_scene("res://Levels/golfworld/GolfWorld1-1.tscn")

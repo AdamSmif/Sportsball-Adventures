@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 const SPEED = 500
 const GRAVITY = 2
+var JUMP_HEIGHT = -600 
 var velocity = Vector2()
 var direction = 1
 # 1 is right -1 is left
@@ -20,3 +21,6 @@ func _physics_process(delta):
 	
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
+	
+func bounce():
+	velocity.y = JUMP_HEIGHT * 0.7
