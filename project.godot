@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="Sportsball Adventures"
 run/main_scene="res://UI/TitleScreen.tscn"
+boot_splash/image="res://icon.png"
 config/icon="res://icon.png"
 config/macos_native_icon="res://icon-export.icns"
 config/windows_native_icon="res://icon-export.ico"
@@ -28,7 +29,7 @@ window/size/height=380
 window/size/test_width=1280
 window/size/test_height=760
 window/stretch/mode="2d"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep"
 
 [importer_defaults]
 
