@@ -38,7 +38,7 @@ func _physics_process(_delta):
 	var friction = false
 
 	if Input.is_action_just_pressed("start_%s" % id):
-		get_tree().change_scene("res://Levels/HubTest.tscn")
+		get_tree().change_scene("res://Levels/Tutorial/FirstWorld.tscn")
 
 # Throw
 	if Input.is_action_just_pressed("fire_%s" % id):
