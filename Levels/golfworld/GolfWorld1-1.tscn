@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/Tiles/GolfTile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/hubassets/evergreentree.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/Weather Effects/RainEffect.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Shaders/StandardGlow.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Enemies+Allies/Footballbot/FootballBot.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Player/PlayerCamera.tscn" type="PackedScene" id=15]
 
 [sub_resource type="TileSet" id=1]
 0/name = "golfbackgroundplatform.png 0"
@@ -320,6 +321,9 @@ texture = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="PlayerCamera" parent="Player" instance=ExtResource( 15 )]
+position = Vector2( -11.708, 15.348 )
 
 [node name="AllPlayers" parent="." instance=ExtResource( 6 )]
 position = Vector2( -1048, -136 )

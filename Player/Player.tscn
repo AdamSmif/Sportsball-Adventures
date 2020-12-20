@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/player1_run3.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Player/Jump.wav" type="AudioStream" id=10]
 [ext_resource path="res://Music/Coin.wav" type="AudioStream" id=11]
 [ext_resource path="res://Player/player1_throw.png" type="Texture" id=12]
-[ext_resource path="res://Player/PlayerCamera.tscn" type="PackedScene" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -31,9 +30,9 @@ animations = [ {
 "name": "idle",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
-"name": "jump",
+"name": "fire",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -41,9 +40,9 @@ animations = [ {
 "name": "fall",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "fire",
+"name": "jump",
 "speed": 5.0
 } ]
 
@@ -68,8 +67,6 @@ shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="PlayerCamera" parent="." instance=ExtResource( 13 )]
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 17, 11 )

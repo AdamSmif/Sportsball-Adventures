@@ -24,7 +24,7 @@ animations = [ {
 extents = Vector2( 11.2063, 24.9923 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 12.4627, 4.02503 )
+extents = Vector2( 20.8521, 4.02503 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 17.108, 15.8713 )
@@ -32,7 +32,7 @@ extents = Vector2( 17.108, 15.8713 )
 [node name="FootballBot" type="KinematicBody2D"]
 scale = Vector2( 0.5, 0.5 )
 collision_layer = 16
-collision_mask = 99
+collision_mask = 67
 script = ExtResource( 3 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]

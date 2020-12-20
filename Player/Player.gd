@@ -5,15 +5,14 @@ export var id = 1
 # Coin Amount
 var bottles_needed = 0
 # Level Respawn
-# export(String, FILE, "*.tscn")
-var lose_level_world_scene
+export(String, FILE, "*.tscn") var lose_level_world_scene
 # Next Level For Bottle Colelcting Levels
 export(String, FILE, "*.tscn") var bottle_world_scene
 
 # Movement
 export var MAX_SPEED = 250
 export  var ACCELERATION = 150
-export var JUMP_HEIGHT = -600 
+export var JUMP_HEIGHT = -650 
 export var GRAVITY = 20
 var motion = Vector2()
 var coyote_time
@@ -111,4 +110,4 @@ func ouch(var enemyposx):
 	$Timer.start()
 	
 func _on_Timer_timeout():
-	get_tree().change_scene("res://Levels/golfworld/GolfWorld1-1.tscn")
+	get_tree().change_scene(lose_level_world_scene)
