@@ -69,7 +69,20 @@ func _on_top_checker_body_entered(body):
 func _on_sides_checker_body_entered(body):
 	print("ouch!")
 	body.ouch(position.x)
+	
 
 
 func _on_Timer_timeout():
 	queue_free()
+
+func _on_disc_checker_body_entered(body):
+	$Sprite.play("squashed")
+	speed = 0
+	set_collision_layer_bit(5,false)
+	set_collision_mask_bit(0,false)
+	$top_checker.set_collision_layer_bit(5,false)
+	$top_checker.set_collision_mask_bit(0,false)
+	$sides_checker.set_collision_layer_bit(5,false)
+	$sides_checker.set_collision_mask_bit(0,false)
+	$Timer.start()
+	body.bounce()

@@ -92,7 +92,7 @@ func _on_FallZone_body_entered(body):
 	
 	
 func bounce():
-	motion.y = JUMP_HEIGHT * 0.7
+	motion.y = JUMP_HEIGHT * 0.8
 	
 func ouch(var enemyposx):
 	print("ouch!")
