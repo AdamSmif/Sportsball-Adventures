@@ -335,13 +335,13 @@ collision_mask = 3
 position = Vector2( 353.931, 130.463 )
 
 [node name="Bottle2" parent="Bottles" instance=ExtResource( 6 )]
-position = Vector2( 4117.52, 325.975 )
+position = Vector2( 3325.43, 520.254 )
 
 [node name="Bottle3" parent="Bottles" instance=ExtResource( 6 )]
 position = Vector2( -165.11, 448.52 )
 
 [node name="Bottle4" parent="Bottles" instance=ExtResource( 6 )]
-position = Vector2( 1343.73, 67.8129 )
+position = Vector2( 3004.1, 275.165 )
 
 [node name="Bottle5" parent="Bottles" instance=ExtResource( 6 )]
 position = Vector2( -219.827, 232.621 )
@@ -353,7 +353,7 @@ position = Vector2( 2791.51, 338.867 )
 position = Vector2( 1272.45, 721.689 )
 
 [node name="Bottle8" parent="Bottles" instance=ExtResource( 6 )]
-position = Vector2( 1797.06, -52.0768 )
+position = Vector2( 3895.56, 515.66 )
 
 [node name="FallZone" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1898.79, 1469.78 )
