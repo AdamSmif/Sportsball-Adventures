@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Tiles/Cliffs.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/GrassMap.tscn" type="PackedScene" id=2]
@@ -11,8 +11,10 @@
 [ext_resource path="res://Assets/Shaders/CircleParticleSystem.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/hubassets/Rock1.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/hubassets/evergreentree.png" type="Texture" id=11]
+[ext_resource path="res://Levels/Tutorial/FirstWorld.gd" type="Script" id=12]
 
 [node name="FirstWorld" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="GrassMap" parent="." instance=ExtResource( 2 )]
 position = Vector2( 96, 216 )

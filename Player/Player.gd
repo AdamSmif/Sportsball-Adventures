@@ -12,51 +12,52 @@ export(String, FILE, "*.tscn") var bottle_world_scene
 # Movement
 export var MAX_SPEED = 250
 export  var ACCELERATION = 150
-export var JUMP_HEIGHT = -650 
-export var GRAVITY = 20
+export var MAX_SPRINT_SPEED = 450
+export  var SPRINT_ACCELERATION = 350
 var motion = Vector2()
-var coyote_time
-var is_sprinting = false
+# Jump Stats
+export var JUMP_HEIGHT = -500 
+export var GRAVITY = 30
+# Coyote Time
+var CoyoteJump = true
+var jumpWasPressed = false
 
 # Attack Variables
 const throw = preload("res://Player/Disc.tscn")
 const throwright = preload("res://Player/Disc.tscn")
 const throwleft = preload("res://Player/DiscLeft.tscn")
- 
-
-
-# Score 
-var score = 0
+# Cool Down
+onready var discDelayTimer := $DiscTimer
+export var throwDelay: float = 0.8
+var vel := Vector2(0, 0)
 
 # allows rigid bodies to stay rigid
 export (int, 0, 200) var push = 5    
 
 func _ready():
-	coyote_time = Timer.new()
-	coyote_time.one_shot = true
-	coyote_time.wait_time = .02
-	add_child(coyote_time)
+	pass
+
 
 func _physics_process(_delta):
 	motion.y += GRAVITY
 	var friction = false
 
 # Throw
-	if Input.is_action_just_pressed("throwright_%s" % id):
+	if Input.is_action_just_pressed("throwright_%s" % id) and discDelayTimer.is_stopped():
 		$Sprite.play("fire")
+		discDelayTimer.start(throwDelay)
 		#spawn disc
 		var throwInstance = throw.instance()
 		throwInstance.position = $Position2D.global_position
 		get_tree().get_root().add_child(throwInstance)
-		$DiscTimer.start()
 		
-	if Input.is_action_just_pressed("throwleft_%s" % id):
+	if Input.is_action_just_pressed("throwleft_%s" % id) and discDelayTimer.is_stopped():
 		$Sprite.play("fire")
+		discDelayTimer.start(throwDelay)
 		#spawn disc
 		var throwLeftInstance = throwleft.instance()
 		throwLeftInstance.position = $Position2D.global_position
 		get_tree().get_root().add_child(throwLeftInstance)
-		$DiscTimer.start()
 		
 #	if Input.is_action_just_pressed("throwright_%s" % id):
 #		$Sprite.play("fire")
@@ -84,32 +85,63 @@ func _physics_process(_delta):
 		$Sprite.play("idle")
 		friction = true
 		
-	if Input.is_action_pressed('shift_%s' % id):
-		print("sprint right")
-		is_sprinting = true
+	if Input.is_action_pressed('down_%s' % id):
+		$Sprite.flip_h = false
+		$Sprite.play("down")
+		if sign($Position2D.position.x) == -1:
+			$Position2D.position.x *= 1
 
-	if coyote_time.is_stopped():
-		motion.y += GRAVITY
+# Sprinting
+#	if Input.is_action_pressed('sprint_%s' % id) and ('right_%s' % id):
+#		print("sprint right")
+#		motion.x = lerp(motion.x + SPRINT_ACCELERATION, MAX_SPRINT_SPEED, .75)
+#		$Sprite.flip_h = false
+#		$Sprite.play("right")
+#		if sign($Position2D.position.x) == -1:
+#			$Position2D.position.x *= -1
+#	elif Input.is_action_pressed('sprint_%s' % id) and ('left_%s' % id):
+#		print("sprint right")
+#		motion.x = lerp(motion.x + -SPRINT_ACCELERATION, -MAX_SPRINT_SPEED, .75)
+#		$Sprite.flip_h = true
+#		$Sprite.play("right")
+#		if sign($Position2D.position.x) == 1:
+#			$Position2D.position.x *= -1
 
 	if is_on_floor():
+		CoyoteJump = true
+		if jumpWasPressed == true:
+			motion.y = JUMP_HEIGHT
 		pass
 		if Input.is_action_pressed('up_%s' % id):
-			$JumpSound.play()
-			motion.y = JUMP_HEIGHT
-		if friction == true:
-			motion.x = lerp(motion.x, 0, 0.2)
+			jumpWasPressed = true
+			rememberJumpTime()
+			if CoyoteJump == true:
+				$JumpSound.play()
+				motion.y = JUMP_HEIGHT
+				if friction == true:
+					motion.x = lerp(motion.x, 0, 0.2)
 	else:
+		coyoteTime()
 		if motion.y < 0: 
 			$Sprite.play("jump")
 		else:
 			$Sprite.play("fall")
 		if friction == true:
-			motion.x = lerp(motion.x, 0, 0.5)
+			motion.x = lerp(motion.x, 0, 0.2)
 
 	var _was_on_floor = is_on_floor()
 	# For interacting with rigid bodies
 	motion = move_and_slide(motion, Vector2.UP, false, 4, PI/4, false)
 
+func coyoteTime():
+	yield(get_tree().create_timer(0.9), "timeout")
+	CoyoteJump = false
+	pass
+
+func rememberJumpTime():
+	yield(get_tree().create_timer(0.2), "timeout")
+	jumpWasPressed = false
+	pass
 
 func _on_FallZone_body_entered(body):
 	get_tree().change_scene(lose_level_world_scene)

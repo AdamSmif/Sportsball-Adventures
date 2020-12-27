@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Ocean/Ocean.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/StartGame.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://UI/PlayerMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/FallZone.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/nightsky/NightSkyAnimated.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/TitleScreen.gd" type="Script" id=7]
 [ext_resource path="res://PlayersTwoThruEight/BaseballBat.tscn" type="PackedScene" id=11]
 [ext_resource path="res://PlayersTwoThruEight/GolfballPlayer/GolfballPlayer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://PlayersTwoThruEight/FootballGuy.tscn" type="PackedScene" id=13]
@@ -21,6 +22,7 @@ anchor_right = 0.5
 margin_left = -320.0
 margin_right = 320.0
 margin_bottom = 380.0
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -28,15 +30,12 @@ __meta__ = {
 
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 192 )
-frame = 1
 
 [node name="NightSkyAnimated3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 960, 192 )
-frame = 1
 
 [node name="NightSkyAnimated2" parent="." instance=ExtResource( 6 )]
 position = Vector2( -320, 192 )
-frame = 1
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 margin_left = 256.0
@@ -74,14 +73,14 @@ __meta__ = {
 
 [node name="Ocean" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512, 288 )
-frame = 1
+frame = 2
 
 [node name="Ocean2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 256, 288 )
+frame = 1
 
 [node name="Ocean3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 288 )
-frame = 2
 
 [node name="BeachTile" parent="." instance=ExtResource( 3 )]
 position = Vector2( 288, 352 )
