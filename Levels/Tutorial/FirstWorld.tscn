@@ -53,6 +53,11 @@ position = Vector2( -2.698, 10.0045 )
 scale = Vector2( 2, 2 )
 next_world_scene = "res://Levels/Tutorial/TutorialHubFight.tscn"
 
+[node name="Exit" parent="Levels" instance=ExtResource( 6 )]
+position = Vector2( -7.22656, 222.379 )
+scale = Vector2( 10, 1 )
+next_world_scene = "res://Levels/HubTest.tscn"
+
 [node name="HubAssets" type="YSort" parent="."]
 
 [node name="Rock1" parent="HubAssets" instance=ExtResource( 10 )]
@@ -83,3 +88,13 @@ position = Vector2( 96, 136 )
 
 [node name="PlayerCamera" parent="GolfCartPlayer" instance=ExtResource( 5 )]
 position = Vector2( -264, 64 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -42.823
+margin_top = 207.0
+margin_right = 87.177
+margin_bottom = 245.0
+text = "Walk Here For Test Concepts"
+__meta__ = {
+"_edit_use_anchors_": false
+}
