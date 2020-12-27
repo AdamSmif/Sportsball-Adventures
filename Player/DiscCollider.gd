@@ -8,6 +8,8 @@ func _physics_process(_delta):
 #	print(bodies)
 	for body in bodies:
 		if body.name == "Disc" or "DiscLeft":
+			$SceneChanger.transition()
 #			$NextLevelSound.play()
 			get_tree().change_scene(next_world_scene)
+			
 

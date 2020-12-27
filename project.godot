@@ -25,6 +25,7 @@ config/windows_native_icon="res://icon-export.ico"
 [autoload]
 
 MusicController="*res://AutoLoads/MusicController.tscn"
+SceneChanger="*res://Levels/LevelTransition/SceneChanger.tscn"
 
 [display]
 
