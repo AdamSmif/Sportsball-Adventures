@@ -12,7 +12,7 @@ var direction = 1
 func set_throw_direction(dir):
 	direction = dir
 	if dir == -1:
-		$Sprite.flip_h = true
+		$Sprite.flip_h = false
 
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta

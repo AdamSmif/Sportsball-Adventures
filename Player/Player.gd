@@ -16,11 +16,12 @@ export var JUMP_HEIGHT = -650
 export var GRAVITY = 20
 var motion = Vector2()
 var coyote_time
+var is_sprinting = false
 
 # Attack Variables
 const throw = preload("res://Player/Disc.tscn")
-var is_dead = false
-var is_attacking = false
+const throwright = preload("res://Player/Disc.tscn")
+const throwleft = preload("res://Player/DiscLeft.tscn")
 
 # Score 
 var score = 0
@@ -39,12 +40,29 @@ func _physics_process(_delta):
 	var friction = false
 
 # Throw
-	if Input.is_action_just_pressed("fire_%s" % id):
+	if Input.is_action_just_pressed("throwright_%s" % id):
 		$Sprite.play("fire")
 		#spawn disc
 		var throwInstance = throw.instance()
 		throwInstance.position = $Position2D.global_position
 		get_tree().get_root().add_child(throwInstance)
+		$DiscTimer.start()
+		
+	if Input.is_action_just_pressed("throwleft_%s" % id):
+		$Sprite.play("fire")
+		#spawn disc
+		var throwLeftInstance = throwleft.instance()
+		throwLeftInstance.position = $Position2D.global_position
+		get_tree().get_root().add_child(throwLeftInstance)
+		$DiscTimer.start()
+		
+#	if Input.is_action_just_pressed("throwright_%s" % id):
+#		$Sprite.play("fire")
+#		#spawn disc
+#		var throwRightInstance = throwright.instance()
+#		throwRightInstance.position = $Position2DRight.global_position
+#		get_tree().get_root().add_child(throwRightInstance)
+#		$DiscTimer.start()
 
 # Movment
 	if Input.is_action_pressed('right_%s' % id):
@@ -63,6 +81,10 @@ func _physics_process(_delta):
 		motion.x = 0
 		$Sprite.play("idle")
 		friction = true
+		
+	if Input.is_action_pressed('shift_%s' % id):
+		print("sprint right")
+		is_sprinting = true
 
 	if coyote_time.is_stopped():
 		motion.y += GRAVITY
@@ -111,3 +133,7 @@ func ouch(var enemyposx):
 	
 func _on_Timer_timeout():
 	get_tree().change_scene(lose_level_world_scene)
+
+
+func _on_DiscTimer_timeout():
+	pass # Replace with function body.

@@ -41,7 +41,6 @@ script = ExtResource( 3 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.159576, 0.797058 )
 frames = SubResource( 1 )
-frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -73,7 +72,7 @@ collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="disc_checker"]
-position = Vector2( -0.467453, 0.779095 )
+position = Vector2( -0.31356, 8.47359 )
 shape = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]

@@ -60,7 +60,7 @@ tile_data = PoolIntArray( -65537, 0, 0, -131072, 0, 1, -131071, 0, 1, -131070, 0
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( -1539.03, 251.843 )
-lose_level_world_scene = "res://Levels/Tutorial/FirstWorld.tscn"
+lose_level_world_scene = "res://Levels/Tutorial/TutorialHubFight.tscn"
 
 [node name="PlayerCamera" parent="Player" instance=ExtResource( 2 )]
 position = Vector2( -56, 32 )

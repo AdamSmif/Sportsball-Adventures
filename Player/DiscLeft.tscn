@@ -7,6 +7,9 @@
 extents = Vector2( 5.90841, 1.2492 )
 
 [node name="DiscLeft" type="KinematicBody2D"]
+modulate = Color( 0, 1, 0.0862745, 1 )
+collision_layer = 32
+collision_mask = 17
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -16,4 +19,4 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-[connection signal="viewport_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_viewport_exited"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

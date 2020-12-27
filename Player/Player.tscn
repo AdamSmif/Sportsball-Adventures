@@ -30,6 +30,11 @@ animations = [ {
 "name": "idle",
 "speed": 15.0
 }, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "fire",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "fall",
@@ -38,11 +43,6 @@ animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "fire",
 "speed": 5.0
 } ]
 
@@ -60,7 +60,6 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( -0.0153142, 6.85169 )
 scale = Vector2( 0.75, 0.5 )
 shape = SubResource( 2 )
@@ -70,9 +69,14 @@ __meta__ = {
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 17, 11 )
-__meta__ = {
-"_edit_lock_": true
-}
+
+[node name="Position2DLeft" type="Position2D" parent="."]
+visible = false
+position = Vector2( -17, 11 )
+
+[node name="Position2DRight" type="Position2D" parent="."]
+visible = false
+position = Vector2( 17, 11 )
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 10 )
@@ -89,4 +93,7 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7
 one_shot = true
+
+[node name="DiscTimer" type="Timer" parent="."]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="DiscTimer" to="." method="_on_DiscTimer_timeout"]
