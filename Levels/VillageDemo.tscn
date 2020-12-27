@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/BeachTile.tscn" type="PackedScene" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://Assets/FallZone.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Assets/Bottle.tscn" type="PackedScene" id=26]
 [ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Player/PlayerCamera.tscn" type="PackedScene" id=28]
 
 [node name="VillageDemo" type="Node2D"]
 modulate = Color( 0.686275, 0.317647, 0.552941, 1 )
@@ -209,6 +210,9 @@ position = Vector2( -138.771, -432.838 )
 position = Vector2( -714.127, -428.91 )
 collision_mask = 31
 bottle_world_scene = "res://Levels/World.tscn"
+
+[node name="PlayerCamera" parent="Player" instance=ExtResource( 28 )]
+position = Vector2( -34.8723, 55.9109 )
 
 [node name="RockClimbingGrips" type="YSort" parent="."]
 

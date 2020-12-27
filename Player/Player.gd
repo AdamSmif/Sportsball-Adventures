@@ -15,12 +15,13 @@ export  var ACCELERATION = 150
 export var MAX_SPRINT_SPEED = 450
 export  var SPRINT_ACCELERATION = 350
 var motion = Vector2()
-# Jump Stats
+# Jump
 export var JUMP_HEIGHT = -500 
 export var GRAVITY = 30
 # Coyote Time
 var CoyoteJump = true
 var jumpWasPressed = false
+onready var coyoteTimer := $CoyoteTimer
 
 # Attack Variables
 const throw = preload("res://Player/Disc.tscn")
@@ -134,7 +135,7 @@ func _physics_process(_delta):
 	motion = move_and_slide(motion, Vector2.UP, false, 4, PI/4, false)
 
 func coyoteTime():
-	yield(get_tree().create_timer(0.9), "timeout")
+	coyoteTimer
 	CoyoteJump = false
 	pass
 
