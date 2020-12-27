@@ -30,7 +30,7 @@ extents = Vector2( 20.8521, 4.02503 )
 extents = Vector2( 17.108, 15.8713 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 16.0702, 26.7681 )
+extents = Vector2( 16.7353, 28.3138 )
 
 [node name="FootballBot" type="KinematicBody2D"]
 scale = Vector2( 0.5, 0.5 )
@@ -72,7 +72,7 @@ collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="disc_checker"]
-position = Vector2( -0.31356, 8.47359 )
+position = Vector2( 0.174797, 10.6712 )
 shape = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]

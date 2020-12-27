@@ -95,5 +95,6 @@ wait_time = 0.7
 one_shot = true
 
 [node name="DiscTimer" type="Timer" parent="."]
+one_shot = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="DiscTimer" to="." method="_on_DiscTimer_timeout"]

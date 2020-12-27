@@ -22,6 +22,8 @@ var is_sprinting = false
 const throw = preload("res://Player/Disc.tscn")
 const throwright = preload("res://Player/Disc.tscn")
 const throwleft = preload("res://Player/DiscLeft.tscn")
+ 
+
 
 # Score 
 var score = 0
