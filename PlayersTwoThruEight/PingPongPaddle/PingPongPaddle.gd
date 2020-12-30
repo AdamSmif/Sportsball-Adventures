@@ -3,8 +3,8 @@ extends KinematicBody2D
 # Player Number
 export var id = 6
 
-export var MAX_SPEED = 250
-export var ACCELERATION = 1000
+export var MAX_SPEED = 350
+export var ACCELERATION = 900
 var motion = Vector2.ZERO
 
 func _physics_process(delta):
