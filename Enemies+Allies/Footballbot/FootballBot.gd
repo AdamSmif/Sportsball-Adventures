@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+onready var stats = $Stats
+
 export var speed = 50
 var velocity = Vector2()
 #-1 move left +1 move right
@@ -8,6 +10,9 @@ export var direction = -1
 export var detects_cliffs = true
 
 func _ready():
+	print(stats.max_health)
+	print(stats.health)
+	
 	#if moving right move sprite to the right
 	if direction == 1:
 		$Sprite.flip_h = true
@@ -52,6 +57,11 @@ func _on_Timer_timeout():
 	queue_free()
 
 func _on_disc_checker_body_entered(body):
+	stats.health -= 1
+	body.bounce()
+
+
+func _on_Stats_no_health():
 	$Sprite.play("squashed")
 	speed = 0
 	set_collision_layer_bit(5,false)
@@ -61,4 +71,4 @@ func _on_disc_checker_body_entered(body):
 	$sides_checker.set_collision_layer_bit(5,false)
 	$sides_checker.set_collision_mask_bit(0,false)
 	$Timer.start()
-	body.bounce()
+
