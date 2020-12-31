@@ -154,7 +154,7 @@ func bounce():
 func ouch(var enemyposx):
 	print("ouch!")
 	set_modulate(Color(1,0.3,0.3,0.4))
-	motion.y = JUMP_HEIGHT * 0.7
+	motion.y = JUMP_HEIGHT * 0.2
 	
 	if position.x < enemyposx:
 		motion.x = -800
