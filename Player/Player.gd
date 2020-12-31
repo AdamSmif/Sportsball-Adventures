@@ -11,7 +11,7 @@ export(String, FILE, "*.tscn") var bottle_world_scene
 
 # Movement
 export var MAX_SPEED = 250
-export  var ACCELERATION = 150
+export  var ACCELERATION = 75
 export var MAX_SPRINT_SPEED = 450
 export  var SPRINT_ACCELERATION = 350
 var motion = Vector2()
