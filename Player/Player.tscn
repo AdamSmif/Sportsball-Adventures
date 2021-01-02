@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player/player1_run3.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -55,7 +55,11 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 18.0369 )
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 6.71245, 7.69621 )
+
 [node name="Player" type="KinematicBody2D"]
+collision_mask = 16
 script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
@@ -66,12 +70,20 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -0.0153142, 6.85169 )
 scale = Vector2( 0.75, 0.5 )
 shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2( 0.0730972, 7.67526 )
+shape = SubResource( 3 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 17, 11 )
@@ -107,5 +119,6 @@ one_shot = true
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="DiscTimer" to="." method="_on_DiscTimer_timeout"]

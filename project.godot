@@ -26,6 +26,7 @@ config/windows_native_icon="res://icon-export.ico"
 
 MusicController="*res://AutoLoads/MusicController.tscn"
 SceneChanger="*res://Levels/LevelTransition/SceneChanger.tscn"
+PlayerStats="*res://Player/PlayerStats.tscn"
 
 [display]
 

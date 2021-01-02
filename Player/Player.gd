@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 # Player Number
 export var id = 1
+# Stats
+#var stats = PlayerStats
+
 # Coin Amount
 var bottles_needed = 0
 # Level Respawn
@@ -152,18 +155,17 @@ func bounce():
 	motion.y = JUMP_HEIGHT * 0.8
 	
 func ouch(var enemyposx):
-	print("ouch!")
 	set_modulate(Color(1,0.3,0.3,0.4))
 	motion.y = JUMP_HEIGHT * 0.2
-	
+#
 	if position.x < enemyposx:
 		motion.x = -800
 	elif position.x > enemyposx:
 		motion.x = 800
-		
+
 	Input.action_release("left_%s" % id)
 	Input.action_release("right_%s" % id)
-	
+
 	$Timer.start()
 	
 func _on_Timer_timeout():
@@ -172,3 +174,9 @@ func _on_Timer_timeout():
 
 func _on_DiscTimer_timeout():
 	pass # Replace with function body.
+
+
+#func _on_Hurtbox_area_entered(area):
+#	stats.health -= 1
+
+
