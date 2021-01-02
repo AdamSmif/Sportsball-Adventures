@@ -16,11 +16,20 @@ func _physics_process(delta):
 
 
 func _on_Hurtbox_area_entered(area):
+	stats.health -= 1
 	knockback = Vector2.RIGHT * 150
 	knockback = Vector2.LEFT * 150
+#	$Timer.start()
+
+
 
 
 
 func _on_Stats_no_health():
-	print("Test")
 	queue_free()
+
+
+#func _on_Timer_timeout():
+#	$Sprite.play("explosion")
+#	speed = 0
+#	queue_free()

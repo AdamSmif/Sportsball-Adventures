@@ -102,4 +102,4 @@ __meta__ = {
 position = Vector2( -65.9139, 47.88 )
 
 [node name="RobotBall" parent="." instance=ExtResource( 12 )]
-position = Vector2( 59.8478, 273.949 )
+position = Vector2( -69.1517, 283.949 )
