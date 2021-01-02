@@ -176,7 +176,4 @@ func _on_DiscTimer_timeout():
 	pass # Replace with function body.
 
 
-#func _on_Hurtbox_area_entered(area):
-#	stats.health -= 1
-
 

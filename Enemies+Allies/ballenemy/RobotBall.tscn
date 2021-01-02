@@ -1,0 +1,49 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Enemies+Allies/ballenemy/ballenemy4.png" type="Texture" id=1]
+[ext_resource path="res://Enemies+Allies/ballenemy/ballenemy2.png" type="Texture" id=2]
+[ext_resource path="res://Enemies+Allies/ballenemy/ballenemy1.png" type="Texture" id=3]
+[ext_resource path="res://Enemies+Allies/ballenemy/ballenemy3.png" type="Texture" id=4]
+[ext_resource path="res://Collisions/Hurtbox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies+Allies/ballenemy/RobotBall.gd" type="Script" id=6]
+[ext_resource path="res://AutoLoads/Stats.tscn" type="PackedScene" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 11.2464
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 14.3249
+
+[node name="RobotBall" type="KinematicBody2D"]
+collision_layer = 16
+script = ExtResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0769463, 4.46057 )
+shape = SubResource( 2 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 5 )]
+collision_layer = 256
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( -0.0769463, 4.5397 )
+shape = SubResource( 3 )
+
+[node name="Stats" parent="." instance=ExtResource( 7 )]
+max_health = 2
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+
+[editable path="Hurtbox"]

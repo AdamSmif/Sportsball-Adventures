@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Enemies+Allies/musclebot/musclebot4.png" type="Texture" id=1]
 [ext_resource path="res://Enemies+Allies/musclebot/musclebot3.png" type="Texture" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://Enemies+Allies/musclebot/musclebot1.png" type="Texture" id=4]
 [ext_resource path="res://Enemies+Allies/musclebot/MuscleBot.gd" type="Script" id=5]
 [ext_resource path="res://Enemies+Allies/musclebot/musclebot5.png" type="Texture" id=6]
+[ext_resource path="res://Collisions/Hurtbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/explosion/explosion4.png" type="Texture" id=8]
+[ext_resource path="res://Assets/explosion/explosion5.png" type="Texture" id=9]
+[ext_resource path="res://Assets/explosion/explosion6.png" type="Texture" id=10]
+[ext_resource path="res://Assets/explosion/explosion1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/explosion/explosion3.png" type="Texture" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -18,13 +24,18 @@ animations = [ {
 "loop": true,
 "name": "squashed",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "boom",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 12.5264, 10.6608 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 33.3432, 26.8505 )
+extents = Vector2( 32.0742, 23.5964 )
 
 [node name="MuscleBot" type="KinematicBody2D"]
 collision_layer = 16
@@ -32,9 +43,10 @@ collision_mask = 99
 script = ExtResource( 5 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( -0.356216, -44.0868 )
+position = Vector2( -0.609443, -42.3179 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -42,19 +54,21 @@ position = Vector2( -0.211918, -1.52438 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 2 )
 
+[node name="Hurtbox" parent="." instance=ExtResource( 7 )]
+collision_layer = 256
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( -0.996498, -5.31464 )
+shape = SubResource( 3 )
+
 [node name="floor_checker" type="RayCast2D" parent="."]
 position = Vector2( 0.170181, 0.405825 )
 scale = Vector2( 0.5, 0.5 )
 enabled = true
 collision_mask = 2
 
-[node name="disc_checker" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 32
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="disc_checker"]
-shape = SubResource( 3 )
-
 [node name="Timer" type="Timer" parent="."]
-[connection signal="body_entered" from="disc_checker" to="." method="_on_disc_checker_body_entered"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[editable path="Hurtbox"]

@@ -51,14 +51,10 @@ func _on_Timer_timeout():
 	queue_free()
 
 
-func _on_disc_checker_body_entered(body):
+
+
+func _on_Hurtbox_area_entered(area):
+	$Sprite.play("boom")
 	speed = 0
-	$Sprite.play("squashed")
-	set_collision_layer_bit(5,false)
-	set_collision_mask_bit(0,false)
-	$disc_checker.set_collision_layer_bit(5,false)
-	$disc_checker.set_collision_mask_bit(0,false)
-	$disc_checker.set_collision_layer_bit(5,false)
-	$disc_checker.set_collision_mask_bit(0,false)
 	$Timer.start()
-	body.bounce()
+	queue_free()

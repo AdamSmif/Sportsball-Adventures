@@ -2,9 +2,10 @@ extends KinematicBody2D
 
 
 const SPEED = 500
-const GRAVITY = .2
+const GRAVITY = .3
 var JUMP_HEIGHT = -700 
 var velocity = Vector2()
+var knockback_vector = Vector2.ZERO
 var direction = 1
 # 1 is right -1 is left
 
