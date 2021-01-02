@@ -33,7 +33,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 11.2063, 24.9923 )
+extents = Vector2( 11.2063, 27.5469 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 20.8521, 4.02503 )
@@ -72,6 +72,9 @@ collision_mask = 33
 [node name="CollisionShape2D" type="CollisionShape2D" parent="top_checker"]
 position = Vector2( 0.257019, -19.3849 )
 shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="sides_checker" type="Area2D" parent="."]
 collision_layer = 0
@@ -85,11 +88,11 @@ collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="disc_checker"]
-position = Vector2( 0.174797, 10.6712 )
+position = Vector2( 0.174797, 11.7619 )
 shape = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 1.2
 one_shot = true
 
 [node name="Stats" parent="." instance=ExtResource( 7 )]
