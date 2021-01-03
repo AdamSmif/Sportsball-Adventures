@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Player/disc.png" type="Texture" id=1]
+[ext_resource path="res://Player/discleft.png" type="Texture" id=1]
 [ext_resource path="res://Player/DiscLeft.gd" type="Script" id=2]
 [ext_resource path="res://Collisions/Hitbox.tscn" type="PackedScene" id=3]
 

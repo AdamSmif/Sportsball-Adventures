@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Player/player1_run3.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Player/player1_idle2.png" type="Texture" id=13]
 [ext_resource path="res://Collisions/Hitbox.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Collisions/Hurtbox.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Player/PlayerCamera.tscn" type="PackedScene" id=16]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -130,6 +131,8 @@ one_shot = true
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="PlayerCamera" parent="." instance=ExtResource( 16 )]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="DiscTimer" to="." method="_on_DiscTimer_timeout"]
