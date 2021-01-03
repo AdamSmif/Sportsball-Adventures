@@ -3,7 +3,7 @@ extends KinematicBody2D
 # Player Number
 export var id = 1
 # Stats
-#var stats = PlayerStats
+var stats = PlayerStats
 
 # Coin Amount
 var bottles_needed = 0
@@ -174,6 +174,5 @@ func _on_Timer_timeout():
 
 func _on_DiscTimer_timeout():
 	pass # Replace with function body.
-
 
 
