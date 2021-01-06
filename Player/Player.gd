@@ -54,7 +54,7 @@ func _physics_process(_delta):
 		var throwInstance = throw.instance()
 		throwInstance.position = $Position2D.global_position
 		get_tree().get_root().add_child(throwInstance)
-		
+
 	if Input.is_action_just_pressed("throwleft_%s" % id) and discDelayTimer.is_stopped():
 		$Sprite.play("fire")
 		discDelayTimer.start(throwDelay)
