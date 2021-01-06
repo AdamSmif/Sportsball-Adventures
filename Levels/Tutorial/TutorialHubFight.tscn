@@ -77,3 +77,5 @@ texture = ExtResource( 4 )
 [node name="FallZone" parent="." instance=ExtResource( 10 )]
 position = Vector2( 141.435, 891.975 )
 lose_level_world_scene = "res://Levels/Tutorial/FirstWorld.tscn"
+
+[editable path="Player"]
