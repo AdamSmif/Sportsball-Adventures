@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Assets/Tiles/GrassPlatform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Enemies+Allies/Footballbot/FootballBot.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Tiles/GolfTile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Bottle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/backgrounds/bluesky.png" type="Texture" id=7]
 [ext_resource path="res://Player/PlayerCamera.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Basketball.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/FallZone.tscn" type="PackedScene" id=10]
@@ -274,6 +275,10 @@ position = Vector2( -952.284, -267.838 )
 lose_level_world_scene = "res://Levels/Tutorial/TutorialLevel1.tscn"
 bottle_world_scene = "res://Levels/HubTest.tscn"
 
+[node name="Sprite" parent="Player/ParallaxBackground" index="0"]
+position = Vector2( 320, 184 )
+texture = ExtResource( 7 )
+
 [node name="PlayerCamera" parent="Player" instance=ExtResource( 8 )]
 position = Vector2( -8.58679, 43.6393 )
 offset = Vector2( 0, 0 )
@@ -391,3 +396,5 @@ position = Vector2( -1141.53, -259.114 )
 [connection signal="body_entered" from="Bottles/Bottle6" to="HUD" method="_on_Bottle_body_entered"]
 [connection signal="body_entered" from="Bottles/Bottle7" to="HUD" method="_on_Bottle_body_entered"]
 [connection signal="body_entered" from="Bottles/Bottle8" to="HUD" method="_on_Bottle_body_entered"]
+
+[editable path="Player"]

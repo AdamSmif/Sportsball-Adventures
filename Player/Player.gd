@@ -94,6 +94,8 @@ func _physics_process(_delta):
 		$Sprite.play("down")
 		if sign($Position2D.position.x) == -1:
 			$Position2D.position.x *= 1
+		Input.action_release("left_%s" % id)
+		Input.action_release("right_%s" % id)
 
 # Sprinting
 #	if Input.is_action_pressed('sprint_%s' % id) and ('right_%s' % id):

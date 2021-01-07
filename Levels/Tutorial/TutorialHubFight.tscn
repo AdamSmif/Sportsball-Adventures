@@ -64,15 +64,15 @@ tile_data = PoolIntArray( -65537, 0, 0, -131072, 0, 1, -131071, 0, 1, -131070, 0
 position = Vector2( -1539.03, 251.843 )
 lose_level_world_scene = "res://Levels/Tutorial/TutorialHubFight.tscn"
 
+[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground" index="1"]
+position = Vector2( 344.8, 151.846 )
+scale = Vector2( 1.3, 1.3 )
+texture = ExtResource( 4 )
+
 [node name="PlayerCamera" parent="Player" instance=ExtResource( 2 )]
 position = Vector2( -56, 32 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
-
-[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground"]
-position = Vector2( 344.8, 151.846 )
-scale = Vector2( 1.3, 1.3 )
-texture = ExtResource( 4 )
 
 [node name="FallZone" parent="." instance=ExtResource( 10 )]
 position = Vector2( 141.435, 891.975 )
