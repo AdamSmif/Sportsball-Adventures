@@ -12,3 +12,7 @@ func _input(event):
 func set_visible(is_visible):
 	for node in get_children():
 		node.visible = is_visible
+
+
+func _on_Button_pressed():
+	set_visible(false)
