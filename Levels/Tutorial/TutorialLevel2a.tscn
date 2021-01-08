@@ -38,7 +38,7 @@ texture = ExtResource( 8 )
 [node name="DiscCollider" parent="." instance=ExtResource( 9 )]
 position = Vector2( 38.1002, 137.453 )
 scale = Vector2( 2, 2 )
-next_world_scene = "res://Levels/Tutorial/FirstWorld.tscn"
+next_world_scene = "res://Levels/Tutorial/TutorialLevel2b.tscn"
 
 [node name="GrassPlatform" parent="." instance=ExtResource( 6 )]
 position = Vector2( -328, 104 )

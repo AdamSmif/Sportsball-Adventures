@@ -5,9 +5,15 @@ export var id = 1
 
 const MAX_SPEED = 300
 const ACCELERATION = 250
-const JUMP = -250 
+const JUMP = -300 
 const GRAVITY = 15
  
+# Coin Amount
+var bottles_needed = 0
+# Level Respawn
+export(String, FILE, "*.tscn") var lose_level_world_scene
+# Next Level For Bottle Colelcting Levels
+export(String, FILE, "*.tscn") var bottle_world_scene
 
 var jump_was_pressed = false
 var can_jump = false
@@ -50,3 +56,27 @@ func _physics_process(_delta):
 
 	var was_on_floor = is_on_floor()
 	motion = move_and_slide(motion, Vector2.UP)
+	
+	
+func bounce():
+	motion.y = JUMP * 10
+	
+func ouch(var enemyposx):
+	set_modulate(Color(1,0.3,0.3,0.4))
+	motion.y = JUMP * 0.2
+#
+	if position.x < enemyposx:
+		motion.x = -800
+	elif position.x > enemyposx:
+		motion.x = 800
+
+	Input.action_release("left_%s" % id)
+	Input.action_release("right_%s" % id)
+
+	$Timer.start()
+	
+
+
+
+func _on_Timer_timeout():
+	get_tree().change_scene(lose_level_world_scene)
