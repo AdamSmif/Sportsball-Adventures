@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Button" type="Button" parent="."]
+margin_left = 200.0
+margin_top = 120.0
+margin_right = 304.0
+margin_bottom = 152.0
+text = "yes"
+__meta__ = {
+"_edit_use_anchors_": false
+}

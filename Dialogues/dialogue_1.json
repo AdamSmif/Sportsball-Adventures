@@ -5,13 +5,13 @@
 	 [
 		{
 			"id"      : 0,
-			"name"    : "John",
-			"text"    : "Want more Dialogue?",
+			"name"    : "Bob",
+			"text"    : "How ya doing",
 			"next_id" : 1,
 			"choices" : [
 				
 				{
-					"text"    : "Yes",
+					"text"    : "Pretty Good",
 					"next_id" : 1
 				},
 
@@ -24,7 +24,7 @@
 
 		{
 			"id"      : 1,
-			"name"    : "Josh",
+			"name"    : "Bob",
 			"text"    : "Good for you!",
 			"next_id" : -1,
 			"choices" : []
