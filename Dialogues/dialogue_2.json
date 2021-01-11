@@ -1,0 +1,37 @@
+{
+	"Force" : 0,
+	"Random": 0,
+	"Nodes" :
+	 [
+		{
+			"id"      : 0,
+			"name"    : "Vern Acovado",
+			"text"    : "Have you heard about the secret stadium",
+			"next_id" : 1,
+			"choices" : [
+				
+				{
+					"text"    : "Tell me more...",
+					"next_id" : 1
+				},
+
+				{
+					"text"    : "Yeah I heard about it",
+					"next_id" : -1
+				}
+
+			]
+		},
+
+		{
+			"id"      : 1,
+			"name"    : "Bob",
+			"text"    : "Good for you!",
+			"next_id" : -1,
+			"choices" : []
+		}
+
+
+	]
+
+}

@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://UI/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Dialogues/dialoguebox.png" type="Texture" id=2]
+[ext_resource path="res://Dialogues/dialogueManager2.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
+
+[node name="dialogue_manager" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = -116.0
+margin_right = -40.0
+margin_bottom = -20.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogueText" type="RichTextLabel" parent="NinePatchRect"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 536.0
+margin_bottom = 80.0
+theme = SubResource( 2 )
+text = "In the name of ploob. How ya doing?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogueName" type="RichTextLabel" parent="NinePatchRect"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 536.0
+margin_bottom = 32.0
+theme = SubResource( 2 )
+text = "Name:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Choicebox" type="NinePatchRect" parent="."]
+anchor_left = 0.062
+anchor_top = 0.695
+anchor_right = 0.062
+anchor_bottom = 0.695
+margin_left = 416.32
+margin_top = -72.1
+margin_right = 560.32
+margin_bottom = -8.10001
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button1" type="Button" parent="Choicebox"]
+margin_top = 8.0
+margin_right = 144.0
+margin_bottom = 34.0
+theme = SubResource( 4 )
+text = "Continue"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Choicebox"]
+margin_top = 32.0
+margin_right = 144.0
+margin_bottom = 52.0
+theme = SubResource( 6 )
+text = "Continue"
+flat = true

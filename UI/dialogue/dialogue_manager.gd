@@ -1,28 +1,8 @@
-#----NOTES:
-#--Curent script supports up to 4 possible answers, if you need more make sure to set up the buttons and
-#change the number acordingly at the clamp() function
-#--Conditionals are not Implemented, if you need conditionals concider the solution found at:
-# https://godotengine.org/asset-library/asset/273
-#--This is a very simple demo, made for people getting started with json parsing / graph traversing
-#--The setup of this graph traversion is perfect for loops and jumping around, but due to the free form 
-#of the json format and id tracking you could get mixed up quite fast, quite easily, if you need a really
-#intricate dialogue mapping it out on papper or drawing software is advised
-#--Force and Random are stored as a common typecast int->bool (where 0 == false else true)
-
-#----HOW TO----#
-#-- Get a reference of the script in whatever way you prefer
-#-- Use LoadFile(string x) and pass it the name of the dialogue file you want loaded (IMPORTANT: path and extension are already set, do not add the .json extension)
-#-- Call StartDialogue() whenever you want the dialogue to start
-#-- The rest is handled in the script already , and the buttons are updated dynamicly.
-
-
-
-extends Panel
+extends CanvasLayer
 
 #---File---#
-var file_name = "dialogue_1.json" # You could pass a new file here on area body enter or whenever you feel like
-var nodes # containes all the nodes of the current dialogue
-
+var file_name: String = "dialogue_1" # File Name Imported from Tiled
+var nodes # contains all the nodes of the current dialogue
 
 #----DATA (from file)-----#
 var curent_node_id = -1 # handles the current node we are traversing Note: -1 exits the dialogue
@@ -34,33 +14,41 @@ var curent_node_choices = [] # If you want more than one possible answear, you s
 var force = false # force start the dialogue
 var random = false # Start from random node
 
+var finished = false
+var visible = false
+
+
 #------UI--------#
-onready var dialogueText = $DialogueText 
-onready var dialoguePanel = self #Less rewritting if you want to move the script to another object
-onready var dialogueName = $DialogueName
-onready var dialogueButtons = [$CanvasLayer/DialogueButton,$CanvasLayer/DialogueButton2,$CanvasLayer/DialogueButton3,$CanvasLayer/DialogueButton4]
+onready var choiceBox = $DialogueUI/ChoiceBox
+onready var dialogueText = $DialogueUI/DialogueText 
+onready var dialoguePanel = $DialogueUI #Less rewritting if you want to move the script to another object
+onready var dialogueName = $DialogueUI/DialogueName
+onready var tween = $DialogueUI/Tween
+onready var dialogueButtons = [$DialogueUI/ChoiceBox/Button1,$DialogueUI/ChoiceBox/Button2]
 
+signal finished
 
-
-
-func _ready():
-	rand_seed(OS.get_unix_time())
-	#----HERE FOR PREVIEW----#
-	LoadFile(file_name)
-	StartDialogue()
-
-
+func _input(event):
+	if Input.is_action_pressed("B"):
+		tween.set_speed_scale(2.0)
+	else:
+		tween.set_speed_scale(1.0)
+	if Input.is_action_just_pressed("UP"):
+		dialogueButtons[0].grab_focus()
+	if Input.is_action_just_pressed("DOWN"):
+		dialogueButtons[1].grab_focus()
+	
+#-----Load JSON File-----#
 func LoadFile(fname):
 	file_name = fname
 	var file = File.new()
-	if file.file_exists("res://Dialogues/"+file_name):
-		file.open("res://Dialogues/" + file_name, file.READ)
+	if file.file_exists("res://dialogue/"+file_name+".json"):
+		file.open("res://dialogue/" + file_name + ".json", file.READ)
 		var json_result = parse_json(file.get_as_text())
 		force = bool(json_result["Force"])
 		random = bool(json_result["Random"])
 		curent_node_id = 0
 		nodes = json_result["Nodes"]
-
 	else:
 		print("Dialogue: File Open Error")
 	file.close()
@@ -78,11 +66,12 @@ func StartDialogue():
 		else:
 			curent_node_id = 0
 		HandleNode()
+		
 	else:
 		print("Dialogue: Could not Find Nodes")
 
 func EndDialogue():
-	curent_node_id = -1
+		curent_node_id = -1
 
 func NextNode(id):
 	curent_node_id = id
@@ -109,7 +98,10 @@ func GrabNode(id):
 
 #----Update UI-----#
 func UpdateUI():
+	if dialogueText.percent_visible < 1:
+		choiceBox.hide()
 	if curent_node_id >= 0:
+		Dialogue_Anim()
 		dialoguePanel.show()
 		for x in dialogueButtons:
 			x.hide()
@@ -127,16 +119,52 @@ func UpdateUI():
 				dialogueButtons[x].connect("pressed",self,"_on_Button_Pressed", [curent_node_choices[x]["next_id"]])
 				
 				dialogueButtons[x].show()
+				dialogueButtons[0].grab_focus()
 				
 		else:
 			dialogueButtons[0].text = "Continue"
+			if dialogueButtons[0].text == "Continue":
+				choiceBox.rect_position.y = 700
 			dialogueButtons[0].show()
 			#connect to the button
 			dialogueButtons[0].connect("pressed",self,"_on_Button_Pressed", [curent_node_next_id])
 
 	else:
-		dialoguePanel.hide()
+		get_parent().action_cooldown = 10
+		get_parent().state = "default"
+		dialogueText.percent_visible = 0
+		emit_signal("finished")
+		queue_free()
+		
+
+#-----Text Animation-----#
+func Dialogue_Anim():
+	finished = false
+	$"DialogueUI/next-indicator".hide()
+	var line_speed = (curent_node_text.length() * 0.02)
+	tween.interpolate_property(dialogueText,"percent_visible",0,1,line_speed, Tween.TRANS_LINEAR)
+	tween.start()
 
 #-----On Button Pressed-----#
 func _on_Button_Pressed(id):
+#	sfx.play("item_select")
 	NextNode(id)
+
+#-----Initiate Dialogue-----#
+func Begin_Dialogue():
+	choiceBox.rect_position.y = -33
+	LoadFile(file_name)
+	StartDialogue()
+
+#-----Prompt Once Text Complete-----#
+func _on_Tween_tween_all_completed():
+	finished = true
+	$"DialogueUI/next-indicator".show()
+	if curent_node_choices.size() != null:
+		choiceBox.show()
+		dialogueButtons[0].grab_focus()
+
+#-----Text Tween Sound Effect----#
+func _on_Tween_tween_step(object, key, elapsed, value):
+	queue_free()
+#	sfx.play("dialogue")
