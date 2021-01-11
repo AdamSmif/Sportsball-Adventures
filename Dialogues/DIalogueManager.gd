@@ -83,6 +83,9 @@ func StartDialogue():
 
 func EndDialogue():
 	curent_node_id = -1
+	$CanvasLayer/DialogueButton.hide()
+	$CanvasLayer/DialogueButton2.hide()
+	$CanvasLayer/EndChat.hide()
 
 func NextNode(id):
 	curent_node_id = id
@@ -143,4 +146,8 @@ func _on_Button_Pressed(id):
 
 
 func _on_EndChat_pressed():
-	EndDialogue()
+	get_tree().paused = false
+	set_visible(false)
+	$CanvasLayer/DialogueButton.hide()
+	$CanvasLayer/DialogueButton2.hide()
+	$CanvasLayer/EndChat.hide()

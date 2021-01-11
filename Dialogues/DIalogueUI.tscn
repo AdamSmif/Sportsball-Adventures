@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Dialogues/DIalogueManager.gd" type="Script" id=1]
 [ext_resource path="res://UI/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=2]
@@ -30,6 +30,12 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=10]
+default_font = SubResource( 9 )
 
 [node name="DialogueUI" type="Panel"]
 anchor_top = 1.0
@@ -87,11 +93,10 @@ __meta__ = {
 }
 
 [node name="DialogueButton2" type="Button" parent="CanvasLayer"]
-visible = false
 margin_left = 472.0
-margin_top = 304.0
+margin_top = 272.0
 margin_right = 568.0
-margin_bottom = 356.0
+margin_bottom = 324.0
 custom_fonts/font = SubResource( 8 )
 text = "Continue"
 flat = true
@@ -119,15 +124,16 @@ __meta__ = {
 }
 
 [node name="EndChat" type="Button" parent="CanvasLayer"]
-anchor_left = 0.737
-anchor_top = 0.526
-anchor_right = 0.737
-anchor_bottom = 0.526
-margin_left = 16.32
-margin_top = 8.12
-margin_right = 83.32
-margin_bottom = 28.12
-text = "End Chat"
+anchor_left = 0.75
+anchor_top = 0.611
+anchor_right = 0.75
+anchor_bottom = 0.611
+margin_left = -3.05176e-05
+margin_top = 87.82
+margin_right = 78.0
+margin_bottom = 113.82
+theme = SubResource( 10 )
+text = "Good bye!"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
