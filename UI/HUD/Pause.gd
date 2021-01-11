@@ -5,7 +5,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		set_visible(get_tree().paused)
+		set_visible(!get_tree().paused)
 		get_tree().paused = !get_tree().paused
 
 
