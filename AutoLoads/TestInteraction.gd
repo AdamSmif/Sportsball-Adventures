@@ -13,5 +13,4 @@ func _input(event):
 
 		
 func set_visible(is_visible):
-	for node in Card:
-		Card.hide()
+	queue_free()
