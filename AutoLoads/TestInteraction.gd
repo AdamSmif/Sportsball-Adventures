@@ -1,4 +1,7 @@
-extends CanvasLayer
+extends Area2D
+
+
+export(String, FILE, "*.tscn") var Card
 
 func _ready():
 	set_visible(false)
@@ -6,13 +9,9 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		print("card here!")
-		set_visible(true)
+		set_visible(Card)
 
 		
 func set_visible(is_visible):
-	for node in get_children():
-		node.visible = is_visible
-
-
-func _on_Button_pressed():
-	$CanvasLayer.hide()
+	for node in Card:
+		Card.hide()
