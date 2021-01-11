@@ -140,3 +140,7 @@ func UpdateUI():
 #-----On Button Pressed-----#
 func _on_Button_Pressed(id):
 	NextNode(id)
+
+
+func _on_EndChat_pressed():
+	EndDialogue()

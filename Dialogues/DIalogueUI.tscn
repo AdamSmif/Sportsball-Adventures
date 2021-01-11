@@ -19,16 +19,16 @@ font_data = ExtResource( 2 )
 [sub_resource type="Theme" id=4]
 default_font = SubResource( 3 )
 
-[sub_resource type="DynamicFont" id=7]
-font_data = ExtResource( 2 )
-
-[sub_resource type="Theme" id=8]
-default_font = SubResource( 7 )
-
 [sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 2 )
 
 [node name="DialogueUI" type="Panel"]
@@ -65,7 +65,7 @@ margin_left = 16.0
 margin_top = 16.0
 margin_right = -111.0
 margin_bottom = -92.0
-theme = SubResource( 8 )
+theme = SubResource( 6 )
 text = "Name:"
 scroll_active = false
 __meta__ = {
@@ -79,7 +79,7 @@ margin_left = 472.0
 margin_top = 240.0
 margin_right = 568.0
 margin_bottom = 292.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "Continue"
 flat = true
 __meta__ = {
@@ -87,11 +87,12 @@ __meta__ = {
 }
 
 [node name="DialogueButton2" type="Button" parent="CanvasLayer"]
+visible = false
 margin_left = 472.0
 margin_top = 304.0
 margin_right = 568.0
 margin_bottom = 356.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "Continue"
 flat = true
 __meta__ = {
@@ -116,3 +117,19 @@ text = "Continue"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="EndChat" type="Button" parent="CanvasLayer"]
+anchor_left = 0.737
+anchor_top = 0.526
+anchor_right = 0.737
+anchor_bottom = 0.526
+margin_left = 16.32
+margin_top = 8.12
+margin_right = 83.32
+margin_bottom = 28.12
+text = "End Chat"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="CanvasLayer/EndChat" to="." method="_on_EndChat_pressed"]
