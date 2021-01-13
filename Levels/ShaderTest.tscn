@@ -38,6 +38,7 @@ environment = ExtResource( 5 )
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 1 )]
 position = Vector2( 299.214, -146.267 )
 scale = Vector2( 8, 8 )
+frame = 1
 
 [node name="YSort" type="YSort" parent="."]
 
