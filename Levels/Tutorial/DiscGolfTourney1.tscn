@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Tiles/GolfTile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -13,9 +13,8 @@
 [ext_resource path="res://Assets/FallZone.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/trampoline/Trampoline.tscn" type="PackedScene" id=12]
 [ext_resource path="res://PlayersTwoThruEight/AllPlayers.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Music/On and on - Cartoon.wav" type="AudioStream" id=14]
 
-[sub_resource type="Environment" id=3]
+[sub_resource type="Environment" id=1]
 background_mode = 4
 ssao_enabled = true
 ssao_radius = 19.6
@@ -27,10 +26,10 @@ glow_strength = 0.8
 glow_bloom = 0.14
 glow_blend_mode = 0
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 160, 8 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 176, 8 )
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -39,7 +38,7 @@ extents = Vector2( 272, 7.97627 )
 [node name="DiscGolfTourney1" type="Node2D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 3 )
+environment = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -32, 192 )
@@ -57,7 +56,6 @@ texture = ExtResource( 3 )
 
 [node name="On and On" type="AudioStreamPlayer2D" parent="Player"]
 position = Vector2( 227.185, -2.52103 )
-stream = ExtResource( 14 )
 autoplay = true
 
 [node name="Nature" type="YSort" parent="."]
@@ -91,12 +89,12 @@ tile_data = PoolIntArray( -393170, 0, 0, -393169, 1, 0, -393168, 1, 0, -393167, 
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrassPlatform/StaticBody2D"]
 position = Vector2( 1248, -88 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="GrassPlatform/StaticBody2D"]
 position = Vector2( 1648, -184 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="GrassPlatform/StaticBody2D"]
