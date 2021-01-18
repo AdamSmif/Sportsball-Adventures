@@ -21,7 +21,9 @@ var motion = Vector2()
 # Jump
 export var JUMP_HEIGHT = -500 
 export var GRAVITY = 30
+#trampoline
 export var spring = -1200
+export var springDown = 1200
 # Coyote Time
 var CoyoteJump = true
 var jumpWasPressed = false
@@ -177,8 +179,6 @@ func _on_Timer_timeout():
 
 func _on_DiscTimer_timeout():
 	pass # Replace with function body.
-
-
 
 
 func _on_Trampoline_body_entered(body):
