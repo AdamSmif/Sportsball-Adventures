@@ -13,21 +13,29 @@ export(String, FILE, "*.tscn") var lose_level_world_scene
 export(String, FILE, "*.tscn") var bottle_world_scene
 
 # Movement
+
 export var MAX_SPEED = 250
 export  var ACCELERATION = 75
 export var MAX_SPRINT_SPEED = 450
 export  var SPRINT_ACCELERATION = 350
 var motion = Vector2()
+
 # Jump
 export var JUMP_HEIGHT = -500 
 export var GRAVITY = 30
+
 #trampoline
 export var spring = -1200
 export var springDown = 1200
+
 # Coyote Time
 var CoyoteJump = true
 var jumpWasPressed = false
 onready var coyoteTimer := $CoyoteTimer
+
+# Stairs
+var stair_on = false
+
 
 # Attack Variables
 const throw = preload("res://Player/Disc.tscn")
@@ -159,6 +167,8 @@ func _on_FallZone_body_entered(body):
 func bounce():
 	motion.y = JUMP_HEIGHT * 0.8
 	
+# Enemy Collision
+
 func ouch(var enemyposx):
 	set_modulate(Color(1,0.3,0.3,0.4))
 	motion.y = JUMP_HEIGHT * 0.2
@@ -173,6 +183,8 @@ func ouch(var enemyposx):
 
 	$Timer.start()
 	
+### Signals ###
+	
 func _on_Timer_timeout():
 	get_tree().change_scene(lose_level_world_scene)
 
@@ -181,9 +193,16 @@ func _on_DiscTimer_timeout():
 	pass # Replace with function body.
 
 
+# Trampoline Signals
+
 func _on_Trampoline_body_entered(body):
 	motion.y = spring
 
 
 func _on_DownTrampoline_body_entered(body):
 	motion.y = springDown
+
+# Stairs Signals
+
+func _on_Stairs_body_entered(body):
+	pass # Replace with function body.
