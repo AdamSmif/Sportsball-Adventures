@@ -183,3 +183,7 @@ func _on_DiscTimer_timeout():
 
 func _on_Trampoline_body_entered(body):
 	motion.y = spring
+
+
+func _on_DownTrampoline_body_entered(body):
+	motion.y = springDown

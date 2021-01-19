@@ -7,6 +7,10 @@ export var MAX_SPEED = 300
 export var ACCELERATION = 250
 export var JUMP = -500 
 export var GRAVITY = 15
+
+#Trampoline
+export var spring = -1200
+export var springDown = 1200
  
 # Coin Amount
 var bottles_needed = 0
@@ -80,3 +84,11 @@ func ouch(var enemyposx):
 
 func _on_Timer_timeout():
 	get_tree().change_scene(lose_level_world_scene)
+
+
+func _on_Trampoline_body_entered(body):
+	motion.y = spring
+
+
+func _on_DownTrampoline_body_entered(body):
+	motion.y = springDown
