@@ -12,7 +12,7 @@ func _physics_process(_delta):
 			$AnimationPlayer.play("Net")
 			yield(get_tree().create_timer(1), "timeout")
 			get_tree().change_scene(next_world_scene)
-			queue_free()
+			yield(get_tree().create_timer(0.2), "timeout")
 			
 func next_level():
 	var ERR = get_tree().change_scene_to(next_world_scene)
