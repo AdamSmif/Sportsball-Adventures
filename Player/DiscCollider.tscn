@@ -1,13 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player/DiscCollider.gd" type="Script" id=1]
+[ext_resource path="res://UI/UI Animations/fade.anim" type="Animation" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="DiscCollider" type="Area2D"]
-collision_layer = 32
+collision_layer = 33
 collision_mask = 32
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1309.0
+margin_top = -1000.0
+margin_right = 1731.0
+margin_bottom = 1119.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fade = ExtResource( 2 )

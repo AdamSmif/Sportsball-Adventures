@@ -15,6 +15,5 @@ animations = [ {
 
 [node name="chow der\' anene" type="AnimatedSprite"]
 frames = SubResource( 1 )
-frame = 1
 speed_scale = 0.25
 playing = true
