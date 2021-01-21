@@ -16,8 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Sportsball Adventures"
-run/main_scene="res://UI/TitleScreen.tscn"
-boot_splash/image="res://Assets/nightsky/nightsky1.png"
+run/main_scene="res://UI/Title.tscn"
 config/icon="res://icon.png"
 config/macos_native_icon="res://icon-export.icns"
 config/windows_native_icon="res://icon-export.ico"
