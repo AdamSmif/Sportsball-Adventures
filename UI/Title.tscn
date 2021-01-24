@@ -24,7 +24,7 @@ current = true
 
 [node name="chow der\' anene" parent="." instance=ExtResource( 2 )]
 scale = Vector2( 3, 3 )
-frame = 2
+frame = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_left = 0.5

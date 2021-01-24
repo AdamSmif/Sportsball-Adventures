@@ -180,6 +180,7 @@ func ouch(var enemyposx):
 
 	Input.action_release("left_%s" % id)
 	Input.action_release("right_%s" % id)
+	
 
 	$Timer.start()
 	
