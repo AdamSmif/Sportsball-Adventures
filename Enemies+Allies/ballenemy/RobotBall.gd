@@ -28,9 +28,9 @@ func _on_Hurtbox_area_entered(area):
 func _on_Stats_no_health():
 	$Sprite.play("explosion")
 	speed = 0
-	set_collision_layer_bit(5,false)
+	set_collision_layer_bit(4,false)
 	set_collision_mask_bit(0,false)
-	$Hurtbox.set_collision_layer_bit(5,false)
+	$Hurtbox.set_collision_layer_bit(4,false)
 	$Hurtbox.set_collision_mask_bit(0,false)
 	$Timer.start()
 	

@@ -26,3 +26,11 @@ func _on_VisibilityNotifier2D_screen_exited():
 func bounce():
 	queue_free()
 	
+
+
+func _on_Hitbox_area_entered(area):
+	queue_free()
+#	set_collision_layer_bit(5,false)
+#	set_collision_mask_bit(0,false)
+#	$Hitbox.set_collision_layer_bit(5,false)
+#	$Hitbox.set_collision_mask_bit(0,false)

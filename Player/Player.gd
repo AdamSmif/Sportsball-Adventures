@@ -19,6 +19,7 @@ export  var ACCELERATION = 75
 export var MAX_SPRINT_SPEED = 450
 export  var SPRINT_ACCELERATION = 350
 var motion = Vector2()
+var knockback = Vector2.ZERO
 
 # Jump
 export var JUMP_HEIGHT = -500 
@@ -50,7 +51,7 @@ var vel := Vector2(0, 0)
 export (int, 0, 200) var push = 5    
 
 func _ready():
-	pass
+	stats.connect("no_health", self, "queue_free")
 
 
 func _physics_process(_delta):
@@ -207,3 +208,9 @@ func _on_DownTrampoline_body_entered(body):
 
 func _on_Stairs_body_entered(body):
 	pass # Replace with function body.
+
+
+func _on_Hurtbox_area_entered(area):
+	stats.health -= 1
+	knockback = Vector2.RIGHT * 150
+	knockback = Vector2.LEFT * 150
