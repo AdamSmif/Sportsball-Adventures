@@ -212,5 +212,6 @@ func _on_Stairs_body_entered(body):
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= 1
+	motion.y = JUMP_HEIGHT * 0.2
 	knockback = Vector2.RIGHT * 150
 	knockback = Vector2.LEFT * 150
