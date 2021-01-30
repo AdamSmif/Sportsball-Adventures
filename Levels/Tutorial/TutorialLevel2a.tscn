@@ -78,3 +78,7 @@ next_world_scene = "res://Levels/Tutorial/TutorialLevel2b.tscn"
 [node name="DiscBasketEndLevel" parent="." instance=ExtResource( 11 )]
 position = Vector2( 529.888, 128.909 )
 next_world_scene = "res://Levels/HubTest.tscn"
+
+[node name="DiscCollider2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 470.833, 143.112 )
+next_world_scene = "res://Levels/AutoRunTest.tscn"

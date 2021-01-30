@@ -50,7 +50,7 @@ position = Vector2( -32, 192 )
 [node name="CollisionShape2D" parent="Player" index="1"]
 visible = true
 
-[node name="PlayerCamera" parent="Player" index="12"]
+[node name="PlayerCamera" parent="Player" index="11"]
 offset = Vector2( 250, -50 )
 
 [node name="Sprite" parent="Player/ParallaxBackground" index="0"]
