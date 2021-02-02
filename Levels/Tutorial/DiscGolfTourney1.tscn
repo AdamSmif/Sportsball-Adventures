@@ -408,7 +408,7 @@ position = Vector2( -54.4357, -87.9205 )
 position = Vector2( 467.325, 70.4535 )
 
 [node name="BaseballBat" parent="AllPlayers" index="5"]
-position = Vector2( 212.588, 75.2071 )
+position = Vector2( 556.31, 148.513 )
 
 [node name="DownTrampoline" parent="." instance=ExtResource( 14 )]
 position = Vector2( -337.374, 146.921 )

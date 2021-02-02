@@ -2,37 +2,10 @@
 
 [ext_resource path="res://PlayersTwoThruEight/GolfballPlayer/GolfballPlayer.gd" type="Script" id=1]
 [ext_resource path="res://PlayersTwoThruEight/GolfballPlayer/Golfballplayer.png" type="Texture" id=2]
+[ext_resource path="res://PlayersTwoThruEight/GolfballPlayer/GrowPlayer.anim" type="Animation" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 16.2778
-
-[sub_resource type="Animation" id=2]
-resource_name = "Grow"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 2, 2 ), Vector2( 2.5, 2.5 ), Vector2( 3, 3 ), Vector2( 2.5, 2.5 ), Vector2( 2, 2 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionShape2D:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 2, 2 ), Vector2( 2.5, 2.5 ), Vector2( 3, 3 ), Vector2( 1.5, 1.5 ), Vector2( 2, 2 ) ]
-}
 
 [node name="GolfballPlayer" type="KinematicBody2D"]
 collision_layer = 64
@@ -47,4 +20,4 @@ scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Grow = SubResource( 2 )
+anims/Grow = ExtResource( 3 )
