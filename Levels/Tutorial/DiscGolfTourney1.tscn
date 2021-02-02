@@ -69,6 +69,18 @@ position = Vector2( 4256, 583.537 )
 shape = SubResource( 5 )
 one_way_collision = true
 
+[node name="AllPlayers" parent="." instance=ExtResource( 13 )]
+position = Vector2( -54.4357, -87.9205 )
+
+[node name="TennisBall" parent="AllPlayers" index="3"]
+position = Vector2( 467.325, 70.4535 )
+
+[node name="BaseballBat" parent="AllPlayers" index="5"]
+position = Vector2( 556.31, 148.513 )
+
+[node name="FootballGuy" parent="AllPlayers" index="6"]
+position = Vector2( 573.895, 64 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -32, 192 )
 
@@ -401,15 +413,6 @@ position = Vector2( 2486.99, 1811.9 )
 scale = Vector2( 2, 2 )
 lose_level_world_scene = "res://Levels/Tutorial/DiscGolfTourney1.tscn"
 
-[node name="AllPlayers" parent="." instance=ExtResource( 13 )]
-position = Vector2( -54.4357, -87.9205 )
-
-[node name="TennisBall" parent="AllPlayers" index="3"]
-position = Vector2( 467.325, 70.4535 )
-
-[node name="BaseballBat" parent="AllPlayers" index="5"]
-position = Vector2( 556.31, 148.513 )
-
 [node name="DownTrampoline" parent="." instance=ExtResource( 14 )]
 position = Vector2( -337.374, 146.921 )
 scale = Vector2( 5, 5 )
@@ -437,6 +440,6 @@ scale = Vector2( 5, 5 )
 [connection signal="bottle_collected" from="Bottles/Bottle4" to="HUD" method="_on_Bottle_bottle_collected"]
 [connection signal="body_entered" from="DownTrampoline" to="Player" method="_on_DownTrampoline_body_entered"]
 
-[editable path="Player"]
-
 [editable path="AllPlayers"]
+
+[editable path="Player"]
