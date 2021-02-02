@@ -21,11 +21,11 @@ animations = [ {
 extents = Vector2( 15.5035, 4.00214 )
 
 [node name="Trampoline" type="Area2D"]
+collision_layer = 0
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 1
 speed_scale = 0.3
 playing = true
 
