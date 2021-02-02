@@ -18,6 +18,11 @@ func _ready():
 	
 func _physics_process(delta):
 	
+	#Knockback
+#	Causes enemy to jitter
+#	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
+#	knockback = move_and_slide(knockback)
+	
 	# moves if bumps into wall
 	if is_on_wall() or not $floor_checker.is_colliding() and detects_cliffs and is_on_floor():
 		direction = direction * -1
@@ -57,6 +62,7 @@ func _on_Timer_timeout():
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= 1
+	$AnimationPlayer.play("hit")
 	knockback = Vector2.RIGHT * 150
 	knockback = Vector2.LEFT * 150
 

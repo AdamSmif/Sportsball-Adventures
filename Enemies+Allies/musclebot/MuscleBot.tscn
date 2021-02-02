@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Enemies+Allies/musclebot/musclebot4.png" type="Texture" id=1]
 [ext_resource path="res://Enemies+Allies/musclebot/musclebot3.png" type="Texture" id=2]
@@ -42,6 +42,22 @@ extents = Vector2( 32.0742, 23.5964 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 33.0074, 22.0776 )
 
+[sub_resource type="Animation" id=5]
+resource_name = "hit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.941176, 0.109804, 0.109804, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="MuscleBot" type="KinematicBody2D"]
 collision_layer = 16
 collision_mask = 99
@@ -51,7 +67,7 @@ script = ExtResource( 5 )
 position = Vector2( -0.609443, -42.3179 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -88,6 +104,9 @@ shape = SubResource( 4 )
 
 [node name="Stats" parent="." instance=ExtResource( 14 )]
 max_health = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hit = SubResource( 5 )
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
