@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://UI/Title.gd" type="Script" id=1]
-[ext_resource path="res://Assets/backgrounds/chow der' anene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/nightsky/NightSkyAnimated.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://UI/UI Animations/fade.anim" type="Animation" id=4]
+[ext_resource path="res://Player/disc.png" type="Texture" id=5]
+[ext_resource path="res://Player/player1_throw.png" type="Texture" id=6]
+[ext_resource path="res://Assets/basket.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
@@ -22,33 +25,46 @@ __meta__ = {
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="chow der\' anene" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1.99999, 3.99998 )
-scale = Vector2( 3.59375, 3.5625 )
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -440.0
+margin_top = -256.0
+margin_right = 432.0
+margin_bottom = 272.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="chow der\' anene2" parent="." instance=ExtResource( 2 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -316, 3.95884 )
-scale = Vector2( 1.4375, 3.56314 )
-frame = 3
+[node name="NightSkyAnimated" parent="." instance=ExtResource( 2 )]
 
-[node name="chow der\' anene3" parent="." instance=ExtResource( 2 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 326, 4 )
-scale = Vector2( 1.59375, 3.5625 )
-frame = 3
+[node name="YSort" type="YSort" parent="."]
+
+[node name="player1_throw" type="Sprite" parent="YSort"]
+position = Vector2( -208, 80 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+
+[node name="disc" type="Sprite" parent="YSort"]
+position = Vector2( -80, 88 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="basket" type="Sprite" parent="YSort"]
+position = Vector2( 208, 96 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
 anchor_top = -0.484
 anchor_right = 0.5
-margin_left = -379.94
-margin_top = -8.08002
-margin_right = -259.94
-margin_bottom = -144.0
+margin_left = -288.0
+margin_top = 63.92
+margin_right = -176.0
+margin_bottom = -96.0
+rect_scale = Vector2( 2, 2 )
 theme = SubResource( 2 )
-text = "Disc Golf Party!"
+text = "Bogey Buddies"
 __meta__ = {
 "_edit_use_anchors_": false
 }
