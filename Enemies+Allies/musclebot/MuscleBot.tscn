@@ -18,6 +18,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "boom",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "default",
@@ -26,11 +31,6 @@ animations = [ {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "squashed",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "boom",
 "speed": 5.0
 } ]
 
@@ -52,7 +52,7 @@ script = ExtResource( 5 )
 position = Vector2( -0.609443, -42.3179 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-frame = 2
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true

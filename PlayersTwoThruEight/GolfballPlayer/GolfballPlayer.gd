@@ -6,6 +6,7 @@ export var id = 2
 export var MAX_SPEED = 400
 export var ACCELERATION = 1000
 var motion = Vector2.ZERO
+var knockback = Vector2.ZERO
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("grow_%s" % id):
@@ -33,3 +34,9 @@ func apply_friction(amount):
 func apply_movement(acceleration):
 	motion += acceleration
 	motion = motion.clamped(MAX_SPEED)
+
+
+
+func _on_Hurtbox_area_entered(area):
+	knockback = Vector2.RIGHT * 150
+	knockback = Vector2.LEFT * 150

@@ -151,3 +151,5 @@ func _on_EndChat_pressed():
 	$CanvasLayer/DialogueButton.hide()
 	$CanvasLayer/DialogueButton2.hide()
 	$CanvasLayer/EndChat.hide()
+
+

@@ -34,9 +34,9 @@ animations = [ {
 "name": "idle",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
-"name": "fall",
+"name": "fire",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ) ],
@@ -49,9 +49,9 @@ animations = [ {
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "fire",
+"name": "fall",
 "speed": 5.0
 } ]
 
@@ -100,6 +100,7 @@ visible = false
 position = Vector2( 17, 11 )
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 250, 0 )
 stream = ExtResource( 10 )
 __meta__ = {
 "_edit_lock_": true
