@@ -25,17 +25,18 @@ current = true
 [node name="chow der\' anene" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1.99999, 3.99998 )
 scale = Vector2( 3.59375, 3.5625 )
-frame = 1
 
 [node name="chow der\' anene2" parent="." instance=ExtResource( 2 )]
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -316, 3.95884 )
 scale = Vector2( 1.4375, 3.56314 )
+frame = 3
 
 [node name="chow der\' anene3" parent="." instance=ExtResource( 2 )]
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 326, 4 )
 scale = Vector2( 1.59375, 3.5625 )
+frame = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 modulate = Color( 0, 0, 0, 1 )
