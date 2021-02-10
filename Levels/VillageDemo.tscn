@@ -350,6 +350,9 @@ max_distance = 800.0
 [node name="AllPlayers" parent="." instance=ExtResource( 22 )]
 position = Vector2( -778.018, -715.067 )
 
+[node name="GolfballPlayer" parent="AllPlayers" index="0"]
+collision_mask = 5
+
 [node name="Bottles" type="YSort" parent="."]
 
 [node name="Bottle" parent="Bottles" instance=ExtResource( 26 )]
@@ -378,7 +381,6 @@ position = Vector2( -344, -424 )
 
 [node name="FallZone" parent="." instance=ExtResource( 25 )]
 position = Vector2( -327.978, 378.538 )
-collision_layer = 5
 lose_level_world_scene = "res://Levels/VillageDemo.tscn"
 
 [node name="HUD" parent="." instance=ExtResource( 27 )]
@@ -401,3 +403,5 @@ position = Vector2( -34.8723, 55.9109 )
 [connection signal="bottle_collected" from="Bottles/Bottle6" to="HUD" method="_on_bottle_collected"]
 [connection signal="bottle_collected" from="Bottles/Bottle7" to="HUD" method="_on_bottle_collected"]
 [connection signal="bottle_collected" from="Bottles/Bottle8" to="HUD" method="_on_bottle_collected"]
+
+[editable path="AllPlayers"]
