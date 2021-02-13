@@ -81,6 +81,7 @@ game_over_scene = "res://UI/GameOver.tscn"
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "skateleft"
+frame = 2
 playing = true
 flip_h = true
 __meta__ = {
