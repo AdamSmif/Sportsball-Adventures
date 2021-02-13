@@ -74,6 +74,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "#"
 valign = 1
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -104,8 +105,8 @@ __meta__ = {
 [node name="HealthCircle" type="Panel" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -18.0
-margin_right = 18.0
+margin_left = -16.0
+margin_right = 20.0
 margin_bottom = 40.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
