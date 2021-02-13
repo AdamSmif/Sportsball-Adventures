@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://UI/HUD/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/bottle.png" type="Texture" id=2]
@@ -16,6 +16,10 @@ size = 32
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 32
 font_data = ExtResource( 3 )
 
@@ -79,5 +83,29 @@ custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "/8"
 __meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthUI" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -9.8855
+margin_top = 3.15719
+margin_right = 9.1145
+margin_bottom = 42.1572
+custom_fonts/font = SubResource( 4 )
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthCircle" type="Panel" parent="."]
+margin_left = 300.035
+margin_top = 1.16855
+margin_right = 339.035
+margin_bottom = 41.1685
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
