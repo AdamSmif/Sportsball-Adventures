@@ -9,6 +9,8 @@ var stats = PlayerStats
 var bottles_needed = 0
 # Level Respawn
 export(String, FILE, "*.tscn") var lose_level_world_scene
+# Game Over
+export(String, FILE, "*.tscn") var game_over_scene
 # Next Level For Bottle Colelcting Levels
 export(String, FILE, "*.tscn") var bottle_world_scene
 
@@ -61,6 +63,8 @@ func _physics_process(_delta):
 # Throw
 	if Input.is_action_just_pressed("throwright_%s" % id) and discDelayTimer.is_stopped():
 		$Sprite.play("fire")
+		Input.action_release("left_%s" % id)
+		Input.action_release("right_%s" % id)
 		discDelayTimer.start(throwDelay)
 		#spawn disc
 		var throwInstance = throw.instance()
@@ -69,19 +73,13 @@ func _physics_process(_delta):
 
 	if Input.is_action_just_pressed("throwleft_%s" % id) and discDelayTimer.is_stopped():
 		$Sprite.play("fire")
+		Input.action_release("left_%s" % id)
+		Input.action_release("right_%s" % id)
 		discDelayTimer.start(throwDelay)
 		#spawn disc
 		var throwLeftInstance = throwleft.instance()
 		throwLeftInstance.position = $Position2D.global_position
 		get_tree().get_root().add_child(throwLeftInstance)
-		
-#	if Input.is_action_just_pressed("throwright_%s" % id):
-#		$Sprite.play("fire")
-#		#spawn disc
-#		var throwRightInstance = throwright.instance()
-#		throwRightInstance.position = $Position2DRight.global_position
-#		get_tree().get_root().add_child(throwRightInstance)
-#		$DiscTimer.start()
 
 # Movment
 	if Input.is_action_pressed('right_%s' % id):
@@ -110,20 +108,20 @@ func _physics_process(_delta):
 		Input.action_release("right_%s" % id)
 
 # Sprinting
-#	if Input.is_action_pressed('sprint_%s' % id) and ('right_%s' % id):
-#		print("sprint right")
-#		motion.x = lerp(motion.x + SPRINT_ACCELERATION, MAX_SPRINT_SPEED, .75)
-#		$Sprite.flip_h = false
-#		$Sprite.play("right")
-#		if sign($Position2D.position.x) == -1:
-#			$Position2D.position.x *= -1
-#	elif Input.is_action_pressed('sprint_%s' % id) and ('left_%s' % id):
-#		print("sprint right")
-#		motion.x = lerp(motion.x + -SPRINT_ACCELERATION, -MAX_SPRINT_SPEED, .75)
-#		$Sprite.flip_h = true
-#		$Sprite.play("right")
-#		if sign($Position2D.position.x) == 1:
-#			$Position2D.position.x *= -1
+	if Input.is_action_pressed('sprintright_%s' % id):
+		print("sprint right")
+		motion.x = lerp(motion.x + SPRINT_ACCELERATION, MAX_SPRINT_SPEED, .75)
+		$Sprite.flip_h = false
+		$Sprite.play("skateright")
+		if sign($Position2D.position.x) == -1:
+			$Position2D.position.x *= -1
+	elif Input.is_action_pressed('sprintleft_%s' % id):
+		print("sprint left")
+		motion.x = lerp(motion.x + -SPRINT_ACCELERATION, -MAX_SPRINT_SPEED, .75)
+		$Sprite.flip_h = true
+		$Sprite.play("skateleft")
+		if sign($Position2D.position.x) == 1:
+			$Position2D.position.x *= -1
 
 	if is_on_floor():
 		CoyoteJump = true
@@ -216,3 +214,4 @@ func _on_Hurtbox_area_entered(area):
 	motion.y = JUMP_HEIGHT * 0.2
 	knockback = Vector2.RIGHT * 150
 	knockback = Vector2.LEFT * 150
+	

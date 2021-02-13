@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Player/player1_run3.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://Enemies+Allies/Animations/Hit.tres" type="Animation" id=14]
 [ext_resource path="res://Collisions/Hurtbox.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Player/PlayerCamera.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Player/playerskateboard/playerskateboard1.png" type="Texture" id=17]
+[ext_resource path="res://Player/playerskateboard/playerskateboard2.png" type="Texture" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -29,10 +31,10 @@ animations = [ {
 "name": "up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "idle",
-"speed": 15.0
+"speed": 0.5
 }, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
@@ -44,15 +46,25 @@ animations = [ {
 "name": "down",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 17 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "fall",
-"speed": 5.0
+"name": "skateleft",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "skateright",
+"speed": 1.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -64,10 +76,13 @@ extents = Vector2( 7.89791, 8.27244 )
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 18
 script = ExtResource( 2 )
+game_over_scene = "res://UI/GameOver.tscn"
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "down"
+animation = "skateleft"
+playing = true
+flip_h = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -124,6 +139,8 @@ one_shot = true
 wait_time = 5.0
 one_shot = true
 
+[node name="GameOverTimer" type="Timer" parent="."]
+
 [node name="PlayerCamera" parent="." instance=ExtResource( 16 )]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -135,5 +152,6 @@ anims/Hit = ExtResource( 14 )
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="DiscTimer" to="." method="_on_DiscTimer_timeout"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_GameOverTimer_timeout"]
 
 [editable path="Hurtbox"]
