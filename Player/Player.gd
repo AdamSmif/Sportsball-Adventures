@@ -213,6 +213,7 @@ func _on_Hurtbox_area_entered(area):
 	if stats.health == 0:
 		$Sprite.play("boom")
 		motion.x = 0
+		$Timer.start()
 		get_tree().change_scene("res://UI/GameOver.tscn")
 	
 
