@@ -62,9 +62,7 @@ func _physics_process(_delta):
 
 # Throw
 	if Input.is_action_just_pressed("throwright_%s" % id) and discDelayTimer.is_stopped():
-		$Sprite.play("fire")
-		Input.action_release("left_%s" % id)
-		Input.action_release("right_%s" % id)
+		$Sprite.play("throw")
 		discDelayTimer.start(throwDelay)
 		#spawn disc
 		var throwInstance = throw.instance()
@@ -72,9 +70,7 @@ func _physics_process(_delta):
 		get_tree().get_root().add_child(throwInstance)
 
 	if Input.is_action_just_pressed("throwleft_%s" % id) and discDelayTimer.is_stopped():
-		$Sprite.play("fire")
-		Input.action_release("left_%s" % id)
-		Input.action_release("right_%s" % id)
+		$Sprite.play("throw")
 		discDelayTimer.start(throwDelay)
 		#spawn disc
 		var throwLeftInstance = throwleft.instance()
@@ -85,13 +81,13 @@ func _physics_process(_delta):
 	if Input.is_action_pressed('right_%s' % id):
 		motion.x = lerp(motion.x + ACCELERATION, MAX_SPEED, .75)
 		$Sprite.flip_h = false
-		$Sprite.play("right")
+		$Sprite.play("move")
 		if sign($Position2D.position.x) == -1:
 			$Position2D.position.x *= -1
 	elif Input.is_action_pressed('left_%s' % id):
 		motion.x = lerp(motion.x - ACCELERATION, -MAX_SPEED, .75)
 		$Sprite.flip_h = true
-		$Sprite.play("right")
+		$Sprite.play("move")
 		if sign($Position2D.position.x) == 1:
 			$Position2D.position.x *= -1
 	else:
@@ -215,3 +211,9 @@ func _on_Hurtbox_area_entered(area):
 	knockback = Vector2.RIGHT * 150
 	knockback = Vector2.LEFT * 150
 	
+
+
+
+
+func _on_Sprite_animation_finished():
+	pass # Replace with function body.
