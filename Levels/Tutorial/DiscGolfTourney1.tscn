@@ -297,10 +297,13 @@ position = Vector2( 573.895, 64 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -32, 192 )
 
-[node name="CollisionShape2D" parent="Player" index="1"]
+[node name="Sprite" parent="Player" index="0"]
+frame = 4
+
+[node name="CollisionShape2D" parent="Player" index="2"]
 visible = true
 
-[node name="PlayerCamera" parent="Player" index="11"]
+[node name="PlayerCamera" parent="Player" index="13"]
 offset = Vector2( 250, -50 )
 
 [node name="Sprite" parent="Player/ParallaxBackground" index="0"]

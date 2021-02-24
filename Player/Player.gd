@@ -210,8 +210,18 @@ func _on_Hurtbox_area_entered(area):
 	motion.y = JUMP_HEIGHT * 0.2
 	knockback = Vector2.RIGHT * 150
 	knockback = Vector2.LEFT * 150
+	if stats.health == 0:
+		$Sprite.play("boom")
+		motion.x = 0
+		get_tree().change_scene("res://UI/GameOver.tscn")
 	
 
 
+func _on_GameOverTimer_timeout():
+	get_tree().change_scene("res://UI/GameOver.tscn")
 
 
+func _on_PlayerStats_no_health():
+	$Sprite.play("boom")
+	motion.x = 0
+	get_tree().change_scene("res://UI/GameOver.tscn")
