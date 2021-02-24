@@ -215,5 +215,3 @@ func _on_Hurtbox_area_entered(area):
 
 
 
-func _on_Sprite_animation_finished():
-	pass # Replace with function body.
