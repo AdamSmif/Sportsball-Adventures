@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player1_idle1.png-1fa61beb14c0e812753a08134d771fc6.stex"
+path="res://.import/palette.png-dd4983d006eb847ad9e50c53ae158ea8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/player1_idle1.png"
-dest_files=[ "res://.import/player1_idle1.png-1fa61beb14c0e812753a08134d771fc6.stex" ]
+source_file="res://Assets/palettes/palette.png"
+dest_files=[ "res://.import/palette.png-dd4983d006eb847ad9e50c53ae158ea8.stex" ]
 
 [params]
 
@@ -23,7 +23,7 @@ flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=1
+flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

@@ -137,7 +137,7 @@ game_over_scene = "res://UI/GameOver.tscn"
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "boom"
-frame = 1
+frame = 3
 playing = true
 __meta__ = {
 "_edit_lock_": true
