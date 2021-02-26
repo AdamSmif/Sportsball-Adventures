@@ -49,21 +49,6 @@ animations = [ {
 "name": "down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "fall",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "move",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "skate",
@@ -73,6 +58,21 @@ animations = [ {
 "loop": true,
 "name": "boom",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "move",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -81,7 +81,7 @@ extents = Vector2( 10, 18.0369 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 7.89791, 8.27244 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 resource_name = "idle"
 length = 10.0
 tracks/0/type = "value"
@@ -97,8 +97,7 @@ tracks/0/keys = {
 "values": [ 4, 5, 4 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "run"
+[sub_resource type="Animation" id=5]
 length = 0.35
 tracks/0/type = "value"
 tracks/0/path = NodePath("SpriteSheet:frame")
@@ -113,8 +112,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "throw"
+[sub_resource type="Animation" id=6]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("SpriteSheet:frame")
@@ -137,7 +135,6 @@ game_over_scene = "res://UI/GameOver.tscn"
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "boom"
-frame = 3
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -210,9 +207,9 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Hit = ExtResource( 14 )
-anims/idle = SubResource( 6 )
-anims/run = SubResource( 4 )
-anims/throw = SubResource( 5 )
+anims/idle = SubResource( 4 )
+anims/run = SubResource( 5 )
+anims/throw = SubResource( 6 )
 
 [node name="PlayerStats" parent="." instance=ExtResource( 20 )]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
