@@ -25,7 +25,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.84344, 7.74564, -1.00494 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.292874, 2.43715, -0.819763 )
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.08061 )
-current = true
