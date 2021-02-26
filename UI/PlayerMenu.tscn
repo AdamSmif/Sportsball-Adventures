@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player/player1_run3.png" type="Texture" id=1]
 [ext_resource path="res://Player/player1_run1.png" type="Texture" id=2]
@@ -9,7 +9,8 @@
 [ext_resource path="res://Player/player1_jump1.png" type="Texture" id=7]
 [ext_resource path="res://Player/player1_fall1.png" type="Texture" id=8]
 [ext_resource path="res://Player/player1_throw.png" type="Texture" id=9]
-[ext_resource path="res://Player/player1_idle1.png" type="Texture" id=10]
+[ext_resource path="res://Player/player_idleframe.png" type="Texture" id=10]
+[ext_resource path="res://Player/player1_idle2.png" type="Texture" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -18,7 +19,7 @@ animations = [ {
 "name": "right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
