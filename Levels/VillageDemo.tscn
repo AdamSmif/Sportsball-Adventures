@@ -370,6 +370,9 @@ position = Vector2( 255.901, -557.317 )
 [node name="Bottle5" parent="Bottles" instance=ExtResource( 26 )]
 position = Vector2( -504, -424 )
 
+[node name="Bottle9" parent="Bottles" instance=ExtResource( 26 )]
+position = Vector2( -540.186, -422.708 )
+
 [node name="Bottle6" parent="Bottles" instance=ExtResource( 26 )]
 position = Vector2( -448, -424 )
 
@@ -384,6 +387,7 @@ position = Vector2( -327.978, 378.538 )
 lose_level_world_scene = "res://Levels/VillageDemo.tscn"
 
 [node name="HUD" parent="." instance=ExtResource( 27 )]
+bottle_world_scene = "res://Levels/VillageDemo.tscn"
 
 [node name="Winston" parent="." instance=ExtResource( 29 )]
 position = Vector2( -69.6715, -417.08 )
@@ -400,6 +404,7 @@ position = Vector2( -34.8723, 55.9109 )
 [connection signal="bottle_collected" from="Bottles/Bottle3" to="HUD" method="_on_bottle_collected"]
 [connection signal="bottle_collected" from="Bottles/Bottle4" to="HUD" method="_on_bottle_collected"]
 [connection signal="bottle_collected" from="Bottles/Bottle5" to="HUD" method="_on_bottle_collected"]
+[connection signal="bottle_collected" from="Bottles/Bottle9" to="HUD" method="_on_bottle_collected"]
 [connection signal="bottle_collected" from="Bottles/Bottle6" to="HUD" method="_on_bottle_collected"]
 [connection signal="bottle_collected" from="Bottles/Bottle7" to="HUD" method="_on_bottle_collected"]
 [connection signal="bottle_collected" from="Bottles/Bottle8" to="HUD" method="_on_bottle_collected"]

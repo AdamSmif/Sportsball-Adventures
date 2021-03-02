@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Tiles/GolfTile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Shaders/PurpleShaderSprite.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Shaders/WorldEnviromentGlow.tres" type="Environment" id=5]
+[ext_resource path="res://Assets/Shaders/GlowInTheDark.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Shaders/CircleParticleSystem.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemies+Allies/Footballbot/FootballBot.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=8]
@@ -32,8 +32,7 @@ shader_param/color = Plane( 1, 0.15, 0.82, 0.5 )
 
 [node name="ShaderTest" type="Node2D"]
 
-[node name="GlowInTheDark" type="WorldEnvironment" parent="."]
-environment = ExtResource( 5 )
+[node name="GlowInTheDark" parent="." instance=ExtResource( 5 )]
 
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 1 )]
 position = Vector2( 299.214, -146.267 )

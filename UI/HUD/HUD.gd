@@ -32,12 +32,6 @@ func _on_bottle_collected():
 	bottles = bottles + 1
 	_ready()
 
-
-func _on_Bottle_body_entered(body):
-	bottles = bottles + 1
-	_ready()
-
-
 func _on_Bottle_bottle_collected():
 	bottles = bottles + 1
 	_ready()

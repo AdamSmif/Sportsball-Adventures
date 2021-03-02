@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/times they are a moving.wav-0e181c4592f9c92915b802a35b9d453e.sample"
+
+[deps]
+
+source_file="res://Music/times they are a moving.wav"
+dest_files=[ "res://.import/times they are a moving.wav-0e181c4592f9c92915b802a35b9d453e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

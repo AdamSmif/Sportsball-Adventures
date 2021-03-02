@@ -8,10 +8,10 @@
 [ext_resource path="res://Assets/nightsky/NightSkyAnimated.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/TitleScreen.gd" type="Script" id=7]
 [ext_resource path="res://UI/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Music/MAITTRE - Excelsior.wav" type="AudioStream" id=9]
 [ext_resource path="res://PlayersTwoThruEight/BaseballBat.tscn" type="PackedScene" id=11]
 [ext_resource path="res://PlayersTwoThruEight/GolfballPlayer/GolfballPlayer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://PlayersTwoThruEight/FootballGuy.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Music/Gridiron Game 1_5.wav" type="AudioStream" id=15]
 [ext_resource path="res://PlayersTwoThruEight/tennis/TennisBall.tscn" type="PackedScene" id=16]
 [ext_resource path="res://PlayersTwoThruEight/PingPongPaddle/PingPongPaddle.tscn" type="PackedScene" id=17]
 [ext_resource path="res://PlayersTwoThruEight/volleyballnet/VolleyballNet.tscn" type="PackedScene" id=18]
@@ -34,12 +34,15 @@ __meta__ = {
 
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 192 )
+frame = 1
 
 [node name="NightSkyAnimated3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 960, 192 )
+frame = 1
 
 [node name="NightSkyAnimated2" parent="." instance=ExtResource( 6 )]
 position = Vector2( -320, 192 )
+frame = 1
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 margin_left = 240.0
@@ -102,10 +105,6 @@ position = Vector2( 272, 184 )
 position = Vector2( 320, 192 )
 current = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 323.211, 338.291 )
-stream = ExtResource( 15 )
-
 [node name="FootballGuy" parent="." instance=ExtResource( 13 )]
 position = Vector2( 29.0497, 34.0924 )
 
@@ -131,4 +130,9 @@ position = Vector2( 608, 192 )
 [node name="FallZone" parent="." instance=ExtResource( 5 )]
 position = Vector2( 152, 648 )
 lose_level_world_scene = "res://UI/TitleScreen.tscn"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 320, 160 )
+stream = ExtResource( 9 )
+autoplay = true
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
