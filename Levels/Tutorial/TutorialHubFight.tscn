@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Tiles/GolfTile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/PlayerCamera.tscn" type="PackedScene" id=2]
@@ -14,9 +14,12 @@
 [ext_resource path="res://Assets/stairs/Stairs.tscn" type="PackedScene" id=12]
 [ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Enemies+Allies/musclebot/MuscleBot.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Shaders/StandardGlow.tscn" type="PackedScene" id=15]
 
 [node name="TutorialHubFight" type="Node2D"]
 script = ExtResource( 11 )
+
+[node name="StandardGlow" parent="." instance=ExtResource( 15 )]
 
 [node name="Assets" type="YSort" parent="."]
 
@@ -32,7 +35,7 @@ position = Vector2( 1463.9, 259.03 )
 texture = ExtResource( 8 )
 
 [node name="DiscCollider" parent="Basket" instance=ExtResource( 6 )]
-position = Vector2( 1464.73, 271.603 )
+position = Vector2( 1464.73, 273.995 )
 scale = Vector2( 2, 1 )
 next_world_scene = "res://Levels/Tutorial/FirstWorld.tscn"
 

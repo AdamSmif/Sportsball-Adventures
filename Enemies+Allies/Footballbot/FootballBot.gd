@@ -37,13 +37,13 @@ func _physics_process(delta):
 func _on_top_checker_body_entered(body):
 	$Sprite.play("squashed")
 	speed = 0
-	set_collision_layer_bit(4,false)
+	set_collision_layer_bit(5,false)
 	set_collision_mask_bit(0,false)
 	$top_checker.set_collision_layer_bit(4,false)
 	$top_checker.set_collision_mask_bit(0,false)
-	$Hurtbox.set_collision_layer_bit(4,false)
+	$Hurtbox.set_collision_layer_bit(8,false)
 	$Hurtbox.set_collision_mask_bit(0,false)
-	$Hitbox.set_collision_layer_bit(4,false)
+	$Hitbox.set_collision_layer_bit(7,false)
 	$Hitbox.set_collision_mask_bit(0,false)
 	$Timer.start()
 	body.bounce()
@@ -66,17 +66,21 @@ func _on_disc_checker_body_entered(body):
 
 func _on_Stats_no_health():
 	$Sprite.play("explosion")
+	$ExplosionSound.play()
 	speed = 0
-	set_collision_layer_bit(4,false)
+	set_collision_layer_bit(5,false)
 	set_collision_mask_bit(0,false)
-	$Hurtbox.set_collision_layer_bit(4,false)
+	$Hurtbox.set_collision_layer_bit(8,false)
 	$Hurtbox.set_collision_mask_bit(0,false)
+	$Hitbox.set_collision_layer_bit(7,false)
+	$Hitbox.set_collision_mask_bit(0,false)
 	$Timer.start()
 
 
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= 1
-	$AnimationPlayer.play("hit")
+	$AnimationPlayer.play("Hit")
+	$HitBadGuy.play()
 	knockback = Vector2.RIGHT * 150
 	knockback = Vector2.LEFT * 150

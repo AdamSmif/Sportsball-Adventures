@@ -3,9 +3,9 @@ extends Control
 func _ready():
 
 	yield(get_tree().create_timer(2), "timeout")
-	$AnimationPlayer.play("fade")
+	$AnimationPlayer.play("fadetitle")
 	yield(get_tree().create_timer(4), "timeout")
-	$AnimationPlayer.play_backwards("fade")
+	$AnimationPlayer.play_backwards("fadetitle")
 #	yield(get_tree().create_timer(1), "timeout")
 	get_tree().change_scene("res://UI/TitleScreen.tscn")
 	pass # Replace with function body

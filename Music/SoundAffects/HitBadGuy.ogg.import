@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/HitBadGuy.ogg-c891aaf72e2678a772a612168b7619d6.oggstr"
+
+[deps]
+
+source_file="res://Music/SoundAffects/HitBadGuy.ogg"
+dest_files=[ "res://.import/HitBadGuy.ogg-c891aaf72e2678a772a612168b7619d6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
