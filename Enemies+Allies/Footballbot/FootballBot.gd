@@ -4,6 +4,7 @@ onready var stats = $Stats
 
 export var speed = 50
 var velocity = Vector2()
+var knockback = Vector2.ZERO
 #-1 move left +1 move right
 export var direction = -1
 # true does not fall on cliff, false falls off cliff
@@ -40,8 +41,8 @@ func _on_top_checker_body_entered(body):
 	set_collision_mask_bit(0,false)
 	$top_checker.set_collision_layer_bit(4,false)
 	$top_checker.set_collision_mask_bit(0,false)
-	$sides_checker.set_collision_layer_bit(4,false)
-	$sides_checker.set_collision_mask_bit(0,false)
+	$Hurtbox.set_collision_layer_bit(4,false)
+	$Hurtbox.set_collision_mask_bit(0,false)
 	$Timer.start()
 	body.bounce()
 	
@@ -66,9 +67,14 @@ func _on_Stats_no_health():
 	speed = 0
 	set_collision_layer_bit(4,false)
 	set_collision_mask_bit(0,false)
-	$top_checker.set_collision_layer_bit(4,false)
-	$top_checker.set_collision_mask_bit(0,false)
-	$sides_checker.set_collision_layer_bit(4,false)
-	$sides_checker.set_collision_mask_bit(0,false)
+	$Hurtbox.set_collision_layer_bit(4,false)
+	$Hurtbox.set_collision_mask_bit(0,false)
 	$Timer.start()
 
+
+
+func _on_Hurtbox_area_entered(area):
+	stats.health -= 1
+	$AnimationPlayer.play("hit")
+	knockback = Vector2.RIGHT * 150
+	knockback = Vector2.LEFT * 150

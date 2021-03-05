@@ -282,9 +282,6 @@ position = Vector2( -952.284, -267.838 )
 lose_level_world_scene = "res://Levels/Tutorial/TutorialLevel1.tscn"
 bottle_world_scene = "res://Levels/HubTest.tscn"
 
-[node name="Sprite" parent="Player" index="0"]
-frame = 5
-
 [node name="Sprite" parent="Player/ParallaxBackground" index="0"]
 position = Vector2( 340, 160 )
 scale = Vector2( 1.4, 1.4 )
