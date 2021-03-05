@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Player/player1_run3.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Player/PlayerCamera.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Player/playerskateboard/playerskateboard1.png" type="Texture" id=17]
 [ext_resource path="res://Player/playerskateboard/playerskateboard2.png" type="Texture" id=18]
+[ext_resource path="res://Music/SoundAffects/hit.ogg" type="AudioStream" id=19]
 [ext_resource path="res://Player/PlayerStats.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Assets/explosion/explosion5.png" type="Texture" id=21]
 [ext_resource path="res://Assets/explosion/explosion2.png" type="Texture" id=22]
@@ -142,6 +143,10 @@ stream = ExtResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="GotHitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 19 )
+attenuation = 0.31864
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7
