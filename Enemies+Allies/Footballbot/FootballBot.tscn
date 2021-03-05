@@ -24,14 +24,14 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "squashed",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "explosion",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "squashed",
 "speed": 5.0
 } ]
 
@@ -45,7 +45,7 @@ extents = Vector2( 20.8521, 4.02503 )
 extents = Vector2( 14.0143, 23.1048 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 17.254, 22.7638 )
+extents = Vector2( 18.4473, 16.4548 )
 
 [node name="FootballBot" type="KinematicBody2D"]
 scale = Vector2( 0.5, 0.5 )
@@ -56,7 +56,6 @@ script = ExtResource( 3 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.159576, 0.797058 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -80,12 +79,14 @@ __meta__ = {
 }
 
 [node name="Hurtbox" parent="." instance=ExtResource( 14 )]
+collision_layer = 256
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2( 0.170509, 0.852575 )
+position = Vector2( 0.341026, 1.53463 )
 shape = SubResource( 4 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 15 )]
+collision_mask = 128
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2( 0.170517, 1.53464 )

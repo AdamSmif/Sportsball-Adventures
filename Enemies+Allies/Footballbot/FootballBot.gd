@@ -43,6 +43,8 @@ func _on_top_checker_body_entered(body):
 	$top_checker.set_collision_mask_bit(0,false)
 	$Hurtbox.set_collision_layer_bit(4,false)
 	$Hurtbox.set_collision_mask_bit(0,false)
+	$Hitbox.set_collision_layer_bit(4,false)
+	$Hitbox.set_collision_mask_bit(0,false)
 	$Timer.start()
 	body.bounce()
 	
