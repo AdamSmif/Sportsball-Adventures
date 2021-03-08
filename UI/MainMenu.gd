@@ -30,6 +30,7 @@ func _process(delta):
 
 func handle_selection(_current_selection):
 	if _current_selection == 0: # start
+		$YSort/Start.stop()
 		yield(get_tree().create_timer(1), "timeout")
 		get_parent().add_child(first_scene.instance())
 		queue_free()

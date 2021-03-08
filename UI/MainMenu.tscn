@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://UI/fonts/ChiKareGo2Font.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/MainMenu.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Ocean/Ocean.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Music/SoundAffects/menumove.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Music/SoundAffects/menuselect.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Music/mainmenumaybe.ogg" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -62,6 +63,7 @@ __meta__ = {
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 4 )]
 position = Vector2( 320, 192 )
 scale = Vector2( 1.25, 1.25 )
+frame = 1
 
 [node name="Ocean4" type="YSort" parent="."]
 
@@ -203,6 +205,10 @@ volume_db = -3.355
 position = Vector2( 320, 128 )
 stream = ExtResource( 7 )
 volume_db = -3.355
+
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="YSort"]
+stream = ExtResource( 8 )
+autoplay = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
