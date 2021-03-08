@@ -2,7 +2,7 @@
 
 [ext_resource path="res://UI/HUD/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/bottle.png" type="Texture" id=2]
-[ext_resource path="res://UI/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://UI/fonts/ChiKareGo2Font.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.235294 )
@@ -31,9 +31,9 @@ script = ExtResource( 1 )
 bottle_world_scene = "res://Levels/World.tscn"
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = 8.0
+margin_left = 8.21465
 margin_top = 8.0
-margin_right = 112.0
+margin_right = 96.2146
 margin_bottom = 48.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
@@ -65,24 +65,23 @@ __meta__ = {
 }
 
 [node name="Bottles" type="Label" parent="."]
-margin_left = 40.0
-margin_top = 8.0
-margin_right = 64.0
-margin_bottom = 47.0
+margin_left = 43.6092
+margin_top = 14.0
+margin_right = 93.0
+margin_bottom = 44.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "#"
 valign = 1
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="x2" type="Label" parent="."]
-margin_left = 64.0
-margin_top = 8.0
-margin_right = 98.0
-margin_bottom = 47.0
+margin_left = 63.5707
+margin_top = 14.2779
+margin_right = 93.5707
+margin_bottom = 44.2779
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "/8"
@@ -93,9 +92,10 @@ __meta__ = {
 [node name="HealthUI" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -9.5
-margin_right = 9.5
-margin_bottom = 39.0
+margin_left = -6.98047
+margin_top = 4.07816
+margin_right = 12.0195
+margin_bottom = 34.0782
 theme = SubResource( 5 )
 text = "4"
 __meta__ = {
@@ -110,5 +110,6 @@ margin_right = 20.0
 margin_bottom = 40.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }

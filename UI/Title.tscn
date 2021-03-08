@@ -39,6 +39,7 @@ __meta__ = {
 }
 
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 2 )]
+frame = 1
 
 [node name="Ocean" parent="." instance=ExtResource( 9 )]
 position = Vector2( -208, 128 )
