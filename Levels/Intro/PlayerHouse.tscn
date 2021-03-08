@@ -157,5 +157,5 @@ scale = Vector2( 1.5, 1.5 )
 
 [node name="Exit" parent="." instance=ExtResource( 7 )]
 position = Vector2( 811.407, 64.0968 )
-scale = Vector2( 10, 300 )
+scale = Vector2( 1, 300 )
 next_world_scene = "res://Levels/Intro/ToDiscGolfTournament.tscn"

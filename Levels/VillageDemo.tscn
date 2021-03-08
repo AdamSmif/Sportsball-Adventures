@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/BeachTile.tscn" type="PackedScene" id=2]
@@ -29,6 +29,8 @@
 [ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Player/PlayerCamera.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Enemies+Allies/Winston/Winston.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Assets/light/daycycle.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Assets/light/DayNightGradient.tres" type="Gradient" id=31]
 
 [node name="VillageDemo" type="Node2D"]
 modulate = Color( 0.686275, 0.317647, 0.552941, 1 )
@@ -391,7 +393,6 @@ bottle_world_scene = "res://Levels/VillageDemo.tscn"
 
 [node name="Winston" parent="." instance=ExtResource( 29 )]
 position = Vector2( -69.6715, -417.08 )
-frame = 0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -285.7, -429.623 )
@@ -400,6 +401,9 @@ bottle_world_scene = "res://Levels/World.tscn"
 
 [node name="PlayerCamera" parent="Player" instance=ExtResource( 28 )]
 position = Vector2( -34.8723, 55.9109 )
+
+[node name="daycycle" parent="." instance=ExtResource( 30 )]
+col = ExtResource( 31 )
 [connection signal="bottle_collected" from="Bottles/Bottle" to="HUD" method="_on_bottle_collected"]
 [connection signal="bottle_collected" from="Bottles/Bottle2" to="HUD" method="_on_bottle_collected"]
 [connection signal="bottle_collected" from="Bottles/Bottle3" to="HUD" method="_on_bottle_collected"]
