@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://UI/fonts/ChiKareGo2Font.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/MainMenu.gd" type="Script" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://Music/SoundAffects/menumove.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Music/SoundAffects/menuselect.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Music/mainmenumaybe.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Assets/light/LightSource.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/light/daycycle.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/light/Seasons/winter.tres" type="Gradient" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -63,25 +66,28 @@ __meta__ = {
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 4 )]
 position = Vector2( 320, 192 )
 scale = Vector2( 1.25, 1.25 )
-frame = 1
 
 [node name="Ocean4" type="YSort" parent="."]
 
 [node name="Ocean" parent="Ocean4" instance=ExtResource( 5 )]
 position = Vector2( 48, 344 )
-frame = 1
+frame = 2
 
 [node name="Ocean2" parent="Ocean4" instance=ExtResource( 5 )]
 position = Vector2( 304, 344 )
-frame = 1
+frame = 2
 
 [node name="Ocean3" parent="Ocean4" instance=ExtResource( 5 )]
 position = Vector2( 560, 344 )
+frame = 1
 
 [node name="Assets" type="YSort" parent="."]
 
 [node name="AllPlayers" parent="Assets" instance=ExtResource( 3 )]
 position = Vector2( 16, -24 )
+
+[node name="GolfballPlayer" parent="Assets/AllPlayers" index="0"]
+id = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 margin_right = 640.0
@@ -218,3 +224,11 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fade = SubResource( 10 )
+
+[node name="daycycle" parent="." instance=ExtResource( 10 )]
+col = ExtResource( 11 )
+
+[node name="LightSource" parent="." instance=ExtResource( 9 )]
+position = Vector2( 320, 192 )
+
+[editable path="Assets/AllPlayers"]
