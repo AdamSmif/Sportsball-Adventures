@@ -521,9 +521,9 @@ texture = ExtResource( 3 )
 position = Vector2( 176, 800 )
 
 [node name="Exit" parent="." instance=ExtResource( 5 )]
-position = Vector2( 20000, -833.569 )
+position = Vector2( 19997.4, -783.218 )
 scale = Vector2( 1, 100 )
-next_world_scene = "res://Levels/HubTest.tscn"
+next_world_scene = "res://Levels/Tutorial/FirstWorld.tscn"
 
 [node name="BowlingPin" parent="." instance=ExtResource( 6 )]
 position = Vector2( 600, 88 )
