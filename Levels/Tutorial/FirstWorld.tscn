@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Tiles/Cliffs.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/WorldMap.tscn" type="PackedScene" id=2]
@@ -17,6 +17,9 @@
 [ext_resource path="res://Assets/VillageAssets/window1.png" type="Texture" id=15]
 [ext_resource path="res://Assets/VillageAssets/HouseYellow.png" type="Texture" id=16]
 [ext_resource path="res://Assets/VillageAssets/Door1.png" type="Texture" id=17]
+[ext_resource path="res://Assets/hubassets/pond.png" type="Texture" id=18]
+[ext_resource path="res://Assets/bowlingpin.png" type="Texture" id=19]
+[ext_resource path="res://PlayersTwoThruEight/AllPlayers.tscn" type="PackedScene" id=20]
 
 [node name="FirstWorld" type="Node2D"]
 script = ExtResource( 12 )
@@ -62,11 +65,6 @@ position = Vector2( -2.698, 10.0045 )
 scale = Vector2( 2, 2 )
 next_world_scene = "res://Levels/Tutorial/TutorialHubFight.tscn"
 
-[node name="Exit" parent="Levels" instance=ExtResource( 6 )]
-position = Vector2( -7.22656, 222.379 )
-scale = Vector2( 10, 1 )
-next_world_scene = "res://Levels/VillageDemo.tscn"
-
 [node name="HouseYellow" type="Sprite" parent="Levels"]
 position = Vector2( 524.712, 93.5365 )
 scale = Vector2( 0.25, 0.25 )
@@ -96,41 +94,9 @@ __meta__ = {
 }
 
 [node name="Exit" parent="Levels/HouseYellow" instance=ExtResource( 6 )]
-position = Vector2( -6.97339, 18.596 )
+position = Vector2( -9.16187, 18.596 )
 scale = Vector2( 8, 5 )
 next_world_scene = "res://Levels/VillageDemo.tscn"
-
-[node name="HouseYellow2" type="Sprite" parent="Levels"]
-position = Vector2( 399.09, 665.38 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 16 )
-
-[node name="window1" type="Sprite" parent="Levels/HouseYellow2"]
-position = Vector2( -30.4292, 17.8064 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="window2" type="Sprite" parent="Levels/HouseYellow2"]
-position = Vector2( 32.5774, 18.1138 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Door1" type="Sprite" parent="Levels/HouseYellow2/window2"]
-position = Vector2( -8.07312, -4.95416 )
-texture = ExtResource( 17 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Exit" parent="Levels/HouseYellow2" instance=ExtResource( 6 )]
-position = Vector2( -6.97339, 18.596 )
-scale = Vector2( 8, 5 )
 
 [node name="HubAssets" type="YSort" parent="."]
 
@@ -151,7 +117,12 @@ position = Vector2( 62.0063, -37.1729 )
 
 [node name="EvergreenTree7" parent="HubAssets" instance=ExtResource( 11 )]
 modulate = Color( 0.858824, 0.0470588, 1, 1 )
-position = Vector2( 1032.72, 429.579 )
+position = Vector2( 1023.08, 426.824 )
+
+[node name="Exit" parent="HubAssets/EvergreenTree7" instance=ExtResource( 6 )]
+position = Vector2( -5.87598, 2.04953 )
+scale = Vector2( 0.25, 0.25 )
+next_world_scene = "res://Levels/ShaderTest.tscn"
 
 [node name="EvergreenTree2" parent="HubAssets" instance=ExtResource( 11 )]
 position = Vector2( 19.3592, -112.128 )
@@ -264,7 +235,7 @@ position = Vector2( -591.415, 425.755 )
 [node name="Mountains" type="YSort" parent="."]
 
 [node name="Snowmountain" parent="Mountains" instance=ExtResource( 13 )]
-position = Vector2( 951.405, 200.513 )
+position = Vector2( 995.104, 175.999 )
 
 [node name="Snowmountain3" parent="Mountains" instance=ExtResource( 13 )]
 position = Vector2( 929.255, 63.1876 )
@@ -273,7 +244,7 @@ position = Vector2( 929.255, 63.1876 )
 position = Vector2( 1089.45, 53.7076 )
 
 [node name="Snowmountain4" parent="Mountains" instance=ExtResource( 13 )]
-position = Vector2( 1096.09, 166.669 )
+position = Vector2( 1147.25, 141.089 )
 
 [node name="Snowmountain5" parent="Mountains" instance=ExtResource( 13 )]
 position = Vector2( 1142.61, -32.6734 )
@@ -285,13 +256,13 @@ position = Vector2( 978.695, -79.1864 )
 position = Vector2( 1175.83, -92.4762 )
 
 [node name="Snowmountain8" parent="Mountains" instance=ExtResource( 13 )]
-position = Vector2( 1153.68, 219.827 )
+position = Vector2( 1194.18, 202.774 )
 
 [node name="Snowmountain9" parent="Mountains" instance=ExtResource( 13 )]
-position = Vector2( 945.475, 281.844 )
+position = Vector2( 1376.31, 276.113 )
 
 [node name="Snowmountain10" parent="Mountains" instance=ExtResource( 13 )]
-position = Vector2( 1202.41, 330.573 )
+position = Vector2( 1221.59, 310.322 )
 
 [node name="Snowmountain11" parent="Mountains" instance=ExtResource( 13 )]
 position = Vector2( 1297.65, 199.893 )
@@ -324,14 +295,24 @@ position = Vector2( 1479.99, 47.2967 )
 position = Vector2( 1455.38, 196.984 )
 
 [node name="Snowmountain21" parent="Mountains" instance=ExtResource( 13 )]
-position = Vector2( 1432.83, 334.369 )
+position = Vector2( 1487.19, 290.67 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = -42.823
-margin_top = 207.0
-margin_right = 87.177
-margin_bottom = 245.0
-text = "Walk Here For Test Concepts"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="pond" type="Sprite" parent="."]
+position = Vector2( 396.658, 670.055 )
+texture = ExtResource( 18 )
+
+[node name="Exit" parent="pond" instance=ExtResource( 6 )]
+position = Vector2( -2.67935, 1.76379 )
+scale = Vector2( 3, 1 )
+next_world_scene = "res://Levels/SwimTest.tscn"
+
+[node name="bowlingpin" type="Sprite" parent="."]
+position = Vector2( 123.177, 296.321 )
+texture = ExtResource( 19 )
+
+[node name="Exit" parent="bowlingpin" instance=ExtResource( 6 )]
+position = Vector2( -1.0345, 6.207 )
+next_world_scene = "res://Levels/AutoRunTest.tscn"
+
+[node name="AllPlayers" parent="." instance=ExtResource( 20 )]
+position = Vector2( 201.496, 81.0034 )

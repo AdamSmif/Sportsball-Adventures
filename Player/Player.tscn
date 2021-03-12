@@ -62,11 +62,6 @@ animations = [ {
 "name": "boom",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "down",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "move",
@@ -75,6 +70,11 @@ animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "down",
 "speed": 5.0
 } ]
 
