@@ -41,7 +41,7 @@ __meta__ = {
 
 [node name="Exit" parent="." instance=ExtResource( 6 )]
 position = Vector2( -258.512, 291.031 )
-next_world_scene = "res://Levels/HubTest.tscn"
+next_world_scene = "res://Levels/Tutorial/FirstWorld.tscn"
 
 [node name="basket" type="Sprite" parent="."]
 position = Vector2( -259.459, 282.54 )
