@@ -62,24 +62,25 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+next_world_scene = "res://Levels/Intro/LockerRoomStart.tscn"
 
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 4 )]
 position = Vector2( 320, 192 )
 scale = Vector2( 1.25, 1.25 )
+frame = 1
 
 [node name="Ocean4" type="YSort" parent="."]
 
 [node name="Ocean" parent="Ocean4" instance=ExtResource( 5 )]
 position = Vector2( 48, 344 )
-frame = 2
+frame = 1
 
 [node name="Ocean2" parent="Ocean4" instance=ExtResource( 5 )]
 position = Vector2( 304, 344 )
-frame = 2
+frame = 1
 
 [node name="Ocean3" parent="Ocean4" instance=ExtResource( 5 )]
 position = Vector2( 560, 344 )
-frame = 1
 
 [node name="Assets" type="YSort" parent="."]
 

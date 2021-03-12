@@ -1,6 +1,6 @@
 extends MarginContainer
 
-const first_scene = preload("res://Levels/Intro/LockerRoomStart.tscn")
+export(String, FILE, "*.tscn") var next_world_scene
 
 onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/Selector
 onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/Selector
@@ -32,7 +32,7 @@ func handle_selection(_current_selection):
 	if _current_selection == 0: # start
 		$YSort/Start.stop()
 		yield(get_tree().create_timer(1), "timeout")
-		get_parent().add_child(first_scene.instance())
+		get_tree().change_scene(next_world_scene)
 		queue_free()
 	elif _current_selection == 1: # options
 		print("Add options!")
