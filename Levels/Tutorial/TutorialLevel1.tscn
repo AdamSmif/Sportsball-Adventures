@@ -384,7 +384,7 @@ position = Vector2( 1898.79, 1469.78 )
 lose_level_world_scene = "res://Levels/Tutorial/TutorialLevel1.tscn"
 
 [node name="AllPlayers" parent="." instance=ExtResource( 11 )]
-position = Vector2( -192.256, -166.844 )
+position = Vector2( -192, -168 )
 
 [node name="golfcart" type="Sprite" parent="."]
 position = Vector2( -313.446, 688.246 )
@@ -395,7 +395,13 @@ texture = ExtResource( 16 )
 position = Vector2( 2976, 272 )
 
 [node name="RobotBall" parent="." instance=ExtResource( 19 )]
-position = Vector2( -1141.53, -259.114 )
+position = Vector2( 904, 480 )
+
+[node name="RobotBall3" parent="." instance=ExtResource( 19 )]
+position = Vector2( -240, 392 )
+
+[node name="RobotBall2" parent="." instance=ExtResource( 19 )]
+position = Vector2( -24, -32 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -432,7 +438,13 @@ tile_data = PoolIntArray( -458799, 0, 0, -458798, 0, 0, -393263, 0, 0, -393262, 
 position = Vector2( -1455.49, -270.828 )
 scale = Vector2( 1.67686, 1.90247 )
 texture = ExtResource( 20 )
+
+[node name="FootballBot" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1352, 88 )
+[connection signal="disc_thrown" from="Player" to="HUD" method="_on_Player_disc_thrown"]
+[connection signal="disc_thrown" from="Player" to="." method="_on_Player_disc_thrown"]
 [connection signal="body_entered" from="Bottles/Bottle" to="HUD" method="_on_Bottle_body_entered"]
+[connection signal="bottle_collected" from="Bottles/Bottle" to="HUD" method="_on_Bottle_bottle_collected"]
 [connection signal="body_entered" from="Bottles/Bottle2" to="HUD" method="_on_Bottle_body_entered"]
 [connection signal="body_entered" from="Bottles/Bottle3" to="HUD" method="_on_Bottle_body_entered"]
 [connection signal="body_entered" from="Bottles/Bottle4" to="HUD" method="_on_Bottle_body_entered"]
