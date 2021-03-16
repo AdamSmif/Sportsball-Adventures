@@ -26,6 +26,8 @@ tile_data = PoolIntArray( 458739, 0, 0, 458740, 0, 1, 458741, 0, 1, 458742, 0, 1
 position = Vector2( 320, 192 )
 texture = ExtResource( 3 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
+
 [node name="Doors" type="YSort" parent="."]
 
 [node name="Door1" type="Sprite" parent="Doors"]

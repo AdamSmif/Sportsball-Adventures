@@ -1,6 +1,13 @@
 extends CanvasLayer
 
+#time
+var ms = 0
+var s = 0
+var m = 0
+
+# item pickups
 var bottles = 0
+var discs = 0
 # Next Level For Bottle Colelcting Levels
 export(String, FILE, "*.tscn") var bottle_world_scene
 
@@ -21,12 +28,14 @@ func _ready():
 	self.max_hearts = PlayerStats.max_health
 	self.hearts = PlayerStats.health
 	PlayerStats.connect("health_changed", self, "set_hearts")
+	#sets it so UI is converted into string variables
 	$Bottles.text = String(bottles)
+	$Disc.text = String(discs)
 
 func _physics_process(delta):
 		if bottles == 8:
 			get_tree().change_scene(bottle_world_scene)
-
+			
 
 func _on_bottle_collected():
 	bottles = bottles + 1
@@ -34,4 +43,8 @@ func _on_bottle_collected():
 
 func _on_Bottle_bottle_collected():
 	bottles = bottles + 1
+	_ready()
+
+func _on_Player_disc_thrown():
+	discs = discs + 1
 	_ready()

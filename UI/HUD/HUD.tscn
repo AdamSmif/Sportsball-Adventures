@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://UI/HUD/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/bottle.png" type="Texture" id=2]
 [ext_resource path="res://UI/fonts/ChiKareGo2Font.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Player/disc.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.235294 )
@@ -65,10 +66,10 @@ __meta__ = {
 }
 
 [node name="Bottles" type="Label" parent="."]
-margin_left = 43.6092
-margin_top = 14.0
-margin_right = 93.0
-margin_bottom = 44.0
+margin_left = 44.0385
+margin_top = 14.2146
+margin_right = 93.4293
+margin_bottom = 44.2146
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "#"
@@ -96,6 +97,7 @@ margin_left = -6.98047
 margin_top = 4.07816
 margin_right = 12.0195
 margin_bottom = 34.0782
+rect_pivot_offset = Vector2( -281.02, -194.117 )
 theme = SubResource( 5 )
 text = "4"
 __meta__ = {
@@ -113,3 +115,47 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="Disc" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 279.618
+margin_top = 4.74158
+margin_right = 298.618
+margin_bottom = 34.7416
+rect_pivot_offset = Vector2( -281.02, -194.117 )
+theme = SubResource( 5 )
+text = "#"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DiscCircle" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 227.0
+margin_top = 1.0
+margin_right = 307.0
+margin_bottom = 41.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="disc" type="Sprite" parent="."]
+position = Vector2( 571.014, 21.9551 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="TextDisplayer" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 490.962
+margin_top = 4.51251
+margin_right = 530.962
+margin_bottom = 44.5125
+text = "text"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms" type="Timer" parent="TextDisplayer"]

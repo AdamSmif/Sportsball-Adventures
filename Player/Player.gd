@@ -5,6 +5,9 @@ export var id = 1
 # Stats
 var stats = PlayerStats
 
+#signals to HUD that a disc is thrown
+signal disc_thrown
+
 # Coin Amount
 var bottles_needed = 0
 # Level Respawn
@@ -62,6 +65,8 @@ func _physics_process(_delta):
 
 # Throw
 	if Input.is_action_just_pressed("throwright_%s" % id) and discDelayTimer.is_stopped():
+		emit_signal("disc_thrown")
+		print("disc thrown")
 		$Sprite.play("throw")
 		discDelayTimer.start(throwDelay)
 		#spawn disc
@@ -70,6 +75,7 @@ func _physics_process(_delta):
 		get_tree().get_root().add_child(throwInstance)
 
 	if Input.is_action_just_pressed("throwleft_%s" % id) and discDelayTimer.is_stopped():
+		emit_signal("disc_thrown")
 		$Sprite.play("throw")
 		discDelayTimer.start(throwDelay)
 		#spawn disc
