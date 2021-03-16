@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/crazy stuff is about to happen.wav-5c573438c9043444f3f573d8310cf5d0.sample"
+
+[deps]
+
+source_file="res://Audio/crazy stuff is about to happen.wav"
+dest_files=[ "res://.import/crazy stuff is about to happen.wav-5c573438c9043444f3f573d8310cf5d0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

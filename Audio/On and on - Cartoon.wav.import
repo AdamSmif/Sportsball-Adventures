@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/On and on - Cartoon.wav-aad79170a202568713a67b6db31ac07c.sample"
+
+[deps]
+
+source_file="res://Audio/On and on - Cartoon.wav"
+dest_files=[ "res://.import/On and on - Cartoon.wav-aad79170a202568713a67b6db31ac07c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
