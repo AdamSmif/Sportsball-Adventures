@@ -42,6 +42,11 @@ animations = [ {
 "name": "idle",
 "speed": 0.5
 }, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "throw",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "skate",
@@ -70,11 +75,6 @@ animations = [ {
 "frames": [ ExtResource( 13 ) ],
 "loop": true,
 "name": "down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "throw",
 "speed": 5.0
 } ]
 

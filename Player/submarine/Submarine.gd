@@ -1,9 +1,6 @@
 extends KinematicBody2D
 
 export var id = 1
-# Stats
-var stats = PlayerStats
-
 # Coin Amount
 var bottles_needed = 0
 # Level Respawn
@@ -19,7 +16,6 @@ export var ACCELERATION = 30
 var score = 0
 
 var velocity = Vector2()
-var knockback = Vector2.ZERO
 
 func _physics_process(delta):
 	velocity = Vector2()
@@ -54,26 +50,3 @@ func _on_Bottle_body_entered(_delta):
 	$CoinSound.play()
 	score += 1
 	print(score)
-
-
-func _on_PlayerStats_no_health():
-	$Sprite.play("boom")
-	velocity.x = 0
-	get_tree().change_scene("res://UI/PlayerKO.tscn")
-
-
-func _on_Hurtbox_area_entered(area):
-	stats.health -= 1
-	$AnimationPlayer.play("Hit")
-	$GotHitSound.play()
-	knockback = Vector2.RIGHT * 150
-	knockback = Vector2.LEFT * 150
-	if stats.health == 0:
-		$Sprite.play("boom")
-		velocity.x = 0
-		$GameOverTimer.start()
-		get_tree().change_scene("res://UI/PlayerKO.tscn")
-
-
-func _on_GameOverTimer_timeout():
-	get_tree().change_scene("res://UI/PlayerKO.tscn")
