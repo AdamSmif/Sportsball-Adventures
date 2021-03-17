@@ -40,11 +40,10 @@ radius = 18.5822
 [sub_resource type="CircleShape2D" id=4]
 radius = 12.4168
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "New Anim"
 
-[sub_resource type="Animation" id=5]
-resource_name = "default"
+[sub_resource type="Animation" id=6]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -65,7 +64,7 @@ script = ExtResource( 6 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -94,8 +93,8 @@ max_health = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Hit = ExtResource( 15 )
-"anims/New Anim" = SubResource( 6 )
-anims/default = SubResource( 5 )
+"anims/New Anim" = SubResource( 5 )
+anims/default = SubResource( 6 )
 
 [node name="hitbadguy" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 16 )

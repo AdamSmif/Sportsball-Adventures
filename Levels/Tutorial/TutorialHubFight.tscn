@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Tiles/GolfTile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/PlayerCamera.tscn" type="PackedScene" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Enemies+Allies/musclebot/MuscleBot.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Shaders/StandardGlow.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Enemies+Allies/enemytrackstar/EnemyTrack.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Enemies+Allies/ballenemy/RobotBall.tscn" type="PackedScene" id=17]
 
 [node name="TutorialHubFight" type="Node2D"]
 script = ExtResource( 11 )
@@ -61,6 +63,12 @@ position = Vector2( -419.156, 289.587 )
 
 [node name="MuscleBot" parent="Enemies" instance=ExtResource( 14 )]
 position = Vector2( -1177, 277.533 )
+
+[node name="EnemyTrack" parent="Enemies" instance=ExtResource( 16 )]
+position = Vector2( -1383.02, 281.581 )
+
+[node name="RobotBall" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( -834.318, 161.127 )
 
 [node name="AllPlayers" parent="." instance=ExtResource( 9 )]
 position = Vector2( -1666.96, -4.04193 )

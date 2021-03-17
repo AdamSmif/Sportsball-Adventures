@@ -401,7 +401,10 @@ position = Vector2( 904, 480 )
 position = Vector2( -240, 392 )
 
 [node name="RobotBall2" parent="." instance=ExtResource( 19 )]
-position = Vector2( -24, -32 )
+position = Vector2( -112, -56 )
+
+[node name="RobotBall4" parent="." instance=ExtResource( 19 )]
+position = Vector2( 176, 32 )
 
 [node name="YSort" type="YSort" parent="."]
 

@@ -1,9 +1,10 @@
 extends KinematicBody2D
 
 onready var stats = $Stats
+var motion = Vector2()
 var knockback = Vector2.ZERO
 export var speed = 50
-
+export var GRAVITY = 0
 
 func _ready():
 	print(stats.max_health)
@@ -11,9 +12,11 @@ func _ready():
 
 
 func _physics_process(delta):
+	# Since gravity is 0, player will not fall to gravity
+	motion.y += GRAVITY
 	$AnimationPlayer.play("default")
 	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
-	knockback = move_and_slide(knockback)
+#	knockback = move_and_slide(knockback)
 
 
 func _on_Hurtbox_area_entered(area):
