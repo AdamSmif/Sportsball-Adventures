@@ -42,6 +42,16 @@ animations = [ {
 "name": "idle",
 "speed": 0.5
 }, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "throw",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "boom",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "skate",
@@ -50,11 +60,6 @@ animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "fall",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "boom",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 9 ) ],
@@ -70,11 +75,6 @@ animations = [ {
 "frames": [ ExtResource( 13 ) ],
 "loop": true,
 "name": "down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "throw",
 "speed": 5.0
 } ]
 
@@ -94,7 +94,9 @@ length = 0.35
 [sub_resource type="Animation" id=6]
 length = 0.5
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"Saved",
+]]
 collision_mask = 18
 script = ExtResource( 2 )
 game_over_scene = "res://UI/GameOver.tscn"

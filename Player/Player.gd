@@ -233,3 +233,20 @@ func _on_PlayerStats_no_health():
 	$Sprite.play("boom")
 	motion.x = 0
 	get_tree().change_scene("res://UI/PlayerKO.tscn")
+	
+
+### Save Data ####
+
+func _get_save_stats():
+	return {
+		'filename': get_filename(),
+		'parent' : get_parent().get_path(),
+		'x_pos' : global_transform.origin.x,
+		'y_pos' : global_transform.origin.y,
+		'stats' : {
+			'stats' : stats
+		}
+	}
+
+
+
