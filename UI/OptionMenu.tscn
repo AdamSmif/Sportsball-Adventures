@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://UI/fonts/ChiKareGo2Font.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://UI/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://UI/OptionMenu.gd" type="Script" id=2]
 [ext_resource path="res://PlayersTwoThruEight/AllPlayers.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/nightsky/NightSkyAnimated.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Ocean/Ocean.tscn" type="PackedScene" id=5]
@@ -54,7 +54,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="MainMenu" type="MarginContainer"]
+[node name="OptionMenu" type="MarginContainer"]
 modulate = Color( 1, 1, 1, 0.9 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -62,13 +62,14 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-next_world_scene = "res://Levels/Intro/LockerRoomStart.tscn"
+main_menu_scene = "res://UI/MainMenu.tscn"
 to_credits_scene = "res://UI/Credits/Credits.tscn"
 to_options_scene = "res://UI/OptionMenu.tscn"
 
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 4 )]
 position = Vector2( 320, 192 )
 scale = Vector2( 1.25, 1.25 )
+frame = 1
 
 [node name="Ocean4" type="YSort" parent="."]
 
@@ -100,31 +101,31 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 272.0
+margin_left = 290.0
 margin_top = 127.0
-margin_right = 368.0
+margin_right = 350.0
 margin_bottom = 253.0
 custom_constants/separation = 20
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_right = 96.0
+margin_right = 60.0
 margin_bottom = 15.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
-margin_right = 96.0
+margin_left = 5.0
+margin_right = 54.0
 margin_bottom = 15.0
 theme = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Bogey Buddies"
+text = "Options"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 35.0
-margin_right = 96.0
+margin_right = 60.0
 margin_bottom = 126.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
-margin_left = 18.0
-margin_right = 78.0
+margin_right = 60.0
 margin_bottom = 91.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
@@ -150,7 +151,7 @@ margin_bottom = 15.0
 rect_min_size = Vector2( 49, 0 )
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Start"
+text = "Full"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 19.0
@@ -176,7 +177,7 @@ margin_bottom = 15.0
 rect_min_size = Vector2( 49, 0 )
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Load"
+text = "No Bla"
 
 [node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 38.0
@@ -253,7 +254,7 @@ margin_bottom = 15.0
 rect_min_size = Vector2( 49, 0 )
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Exit"
+text = "Back"
 
 [node name="YSort" type="YSort" parent="."]
 
