@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Tiles/WorldMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/golfcartplayer/GolfCartPlayer.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/VillageAssets/Door1.png" type="Texture" id=8]
 [ext_resource path="res://Assets/mountains/Snowmountain.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/cityicon/cityicon.png" type="Texture" id=10]
+[ext_resource path="res://Music/Biscuit-_Prod.-by-Lukrembo_.ogg" type="AudioStream" id=11]
 
 [node name="ToDiscGolfTournament" type="Node2D"]
 
@@ -20,6 +21,10 @@ tile_data = PoolIntArray( -1769499, 15, 0, -1769498, 15, 0, -1769497, 15, 0, -17
 
 [node name="PlayerCamera" parent="GolfCartPlayer" instance=ExtResource( 5 )]
 offset = Vector2( 0, 0 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="GolfCartPlayer"]
+stream = ExtResource( 11 )
+autoplay = true
 
 [node name="basket" type="Sprite" parent="."]
 position = Vector2( 695.4, 4.92299 )

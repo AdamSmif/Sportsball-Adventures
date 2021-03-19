@@ -2,14 +2,14 @@ extends Node
 
 #var battle_music = load("res://resources/audio/Fight.ogg")
 #var basic_music = load("res://resources/audio/Basic.ogg")
-var song1 = load("res://Music/Holidayz2.wav")
+#var song1 = load("res://Music/Holidayz2.wav")
 
 func _ready():
 	pass
 	
-func play_song1():
-	$Music.stream = song1
-	$Music.play()
+#func play_song1():
+#	$Music.stream = song1
+#	$Music.play()
 #func play_battle_music():
 #	$Music.stream = battle_music
 #	$Music.play()
