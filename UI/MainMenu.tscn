@@ -65,6 +65,7 @@ __meta__ = {
 next_world_scene = "res://Levels/Intro/LockerRoomStart.tscn"
 to_credits_scene = "res://UI/Credits/Credits.tscn"
 to_options_scene = "res://UI/OptionMenu.tscn"
+to_minigames_scene = "res://UI/MiniGames.tscn"
 
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 4 )]
 position = Vector2( 320, 192 )
@@ -74,15 +75,13 @@ scale = Vector2( 1.25, 1.25 )
 
 [node name="Ocean" parent="Ocean4" instance=ExtResource( 5 )]
 position = Vector2( 48, 344 )
-frame = 2
 
 [node name="Ocean2" parent="Ocean4" instance=ExtResource( 5 )]
 position = Vector2( 304, 344 )
-frame = 2
 
 [node name="Ocean3" parent="Ocean4" instance=ExtResource( 5 )]
 position = Vector2( 560, 344 )
-frame = 1
+frame = 2
 
 [node name="Assets" type="YSort" parent="."]
 
@@ -101,9 +100,9 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 272.0
-margin_top = 127.0
+margin_top = 117.0
 margin_right = 368.0
-margin_bottom = 253.0
+margin_bottom = 262.0
 custom_constants/separation = 20
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
@@ -120,12 +119,12 @@ text = "Bogey Buddies"
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 35.0
 margin_right = 96.0
-margin_bottom = 126.0
+margin_bottom = 145.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
 margin_left = 18.0
 margin_right = 78.0
-margin_bottom = 91.0
+margin_bottom = 110.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_right = 60.0
@@ -202,7 +201,7 @@ margin_bottom = 15.0
 rect_min_size = Vector2( 49, 0 )
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Options"
+text = "Mini"
 
 [node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 57.0
@@ -210,24 +209,25 @@ margin_right = 60.0
 margin_bottom = 72.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4"]
-margin_right = 59.0
+margin_right = 60.0
 margin_bottom = 15.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer"]
 margin_right = 7.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 7, 0 )
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = ">"
 
 [node name="OptionName" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer"]
 margin_left = 11.0
-margin_right = 59.0
+margin_right = 60.0
 margin_bottom = 15.0
-custom_fonts/font = SubResource( 6 )
+rect_min_size = Vector2( 49, 0 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Credits"
+text = "Options"
 
 [node name="CenterContainer5" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 76.0
@@ -235,10 +235,35 @@ margin_right = 60.0
 margin_bottom = 91.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5"]
-margin_right = 60.0
+margin_right = 59.0
 margin_bottom = 15.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/HBoxContainer"]
+margin_right = 7.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 7, 0 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = ">"
+
+[node name="OptionName" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/HBoxContainer"]
+margin_left = 11.0
+margin_right = 59.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Credits"
+
+[node name="CenterContainer6" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+margin_top = 95.0
+margin_right = 60.0
+margin_bottom = 110.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer6"]
+margin_right = 60.0
+margin_bottom = 15.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer6/HBoxContainer"]
 margin_right = 7.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 7, 0 )
@@ -246,7 +271,7 @@ theme = SubResource( 8 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = ">"
 
-[node name="OptionName" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/HBoxContainer"]
+[node name="OptionName" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer6/HBoxContainer"]
 margin_left = 11.0
 margin_right = 60.0
 margin_bottom = 15.0

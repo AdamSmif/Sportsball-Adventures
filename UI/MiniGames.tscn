@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://UI/fonts/ChiKareGo2Font.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://UI/OptionMenu.gd" type="Script" id=2]
+[ext_resource path="res://UI/MiniGames.gd" type="Script" id=2]
 [ext_resource path="res://PlayersTwoThruEight/AllPlayers.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/nightsky/NightSkyAnimated.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Ocean/Ocean.tscn" type="PackedScene" id=5]
@@ -54,7 +54,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="OptionMenu" type="MarginContainer"]
+[node name="MiniGames" type="MarginContainer"]
 modulate = Color( 1, 1, 1, 0.9 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -62,13 +62,11 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-main_menu_scene = "res://UI/MainMenu.tscn"
-to_credits_scene = "res://UI/Credits/Credits.tscn"
-to_options_scene = "res://UI/OptionMenu.tscn"
 
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 4 )]
 position = Vector2( 320, 192 )
 scale = Vector2( 1.25, 1.25 )
+frame = 1
 
 [node name="Ocean4" type="YSort" parent="."]
 
@@ -100,39 +98,40 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 290.0
+margin_left = 279.0
 margin_top = 127.0
-margin_right = 350.0
+margin_right = 361.0
 margin_bottom = 253.0
 custom_constants/separation = 20
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_right = 60.0
+margin_right = 82.0
 margin_bottom = 15.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
-margin_left = 5.0
-margin_right = 54.0
+margin_left = 3.0
+margin_right = 79.0
 margin_bottom = 15.0
 theme = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Options"
+text = "Mini Games"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 35.0
-margin_right = 60.0
+margin_right = 82.0
 margin_bottom = 126.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
-margin_right = 60.0
+margin_right = 82.0
 margin_bottom = 91.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
-margin_right = 60.0
+margin_right = 82.0
 margin_bottom = 15.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer"]
-margin_right = 60.0
+margin_left = 9.0
+margin_right = 73.0
 margin_bottom = 15.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
@@ -145,20 +144,21 @@ text = ">"
 
 [node name="OptionName" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
 margin_left = 11.0
-margin_right = 60.0
+margin_right = 64.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 49, 0 )
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Full"
+text = "1 Player"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 19.0
-margin_right = 60.0
+margin_right = 82.0
 margin_bottom = 34.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2"]
-margin_right = 60.0
+margin_left = 7.0
+margin_right = 74.0
 margin_bottom = 15.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
@@ -171,20 +171,21 @@ text = ">"
 
 [node name="OptionName" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
 margin_left = 11.0
-margin_right = 60.0
+margin_right = 67.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 49, 0 )
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "No Bla"
+text = "2 Player"
 
 [node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 38.0
-margin_right = 60.0
+margin_right = 82.0
 margin_bottom = 53.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3"]
-margin_right = 60.0
+margin_left = 7.0
+margin_right = 74.0
 margin_bottom = 15.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
@@ -197,20 +198,21 @@ text = ">"
 
 [node name="OptionName" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
 margin_left = 11.0
-margin_right = 60.0
+margin_right = 67.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 49, 0 )
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Options"
+text = "3 Player"
 
 [node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 57.0
-margin_right = 60.0
+margin_right = 82.0
 margin_bottom = 72.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4"]
-margin_right = 59.0
+margin_left = 7.0
+margin_right = 75.0
 margin_bottom = 15.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer"]
@@ -223,19 +225,19 @@ text = ">"
 
 [node name="OptionName" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer"]
 margin_left = 11.0
-margin_right = 59.0
+margin_right = 68.0
 margin_bottom = 15.0
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Credits"
+text = "4 Player"
 
 [node name="CenterContainer5" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 76.0
-margin_right = 60.0
+margin_right = 82.0
 margin_bottom = 91.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5"]
-margin_right = 60.0
+margin_right = 82.0
 margin_bottom = 15.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/HBoxContainer"]
@@ -248,12 +250,12 @@ text = ">"
 
 [node name="OptionName" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/HBoxContainer"]
 margin_left = 11.0
-margin_right = 60.0
+margin_right = 82.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 49, 0 )
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Back"
+text = "5-8 Player"
 
 [node name="YSort" type="YSort" parent="."]
 

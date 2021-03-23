@@ -17,7 +17,7 @@ onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/VBoxC
 onready var selector_three = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/Selector
 onready var selector_four = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer/Selector
 onready var selector_five = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/HBoxContainer/Selector
-onready var selector_six = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer6/HBoxContainer/Selector
+#onready var selector_six = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer6/HBoxContainer/Selector
 
 
 var current_selection = 0
@@ -77,7 +77,7 @@ func set_current_selection(_current_selection):
 	selector_three.text = ""
 	selector_four.text = ""
 	selector_five.text = ""
-	selector_six.text = ""
+#	selector_six.text = ""
 	if _current_selection == 0:
 		selector_one.text = ">"
 	elif _current_selection == 1:
@@ -90,5 +90,5 @@ func set_current_selection(_current_selection):
 		selector_five.text = ">"
 	elif _current_selection == 5:
 		selector_five.text = ">"
-	elif _current_selection == 6:
-		selector_six.text = ">"
+#	elif _current_selection == 6:
+#		selector_six.text = ">"

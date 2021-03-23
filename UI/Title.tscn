@@ -2,7 +2,7 @@
 
 [ext_resource path="res://UI/Title.gd" type="Script" id=1]
 [ext_resource path="res://Assets/nightsky/NightSkyAnimated.tscn" type="PackedScene" id=2]
-[ext_resource path="res://UI/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://UI/fonts/ChiKareGo2Font.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://UI/UI Animations/FadeBlackBar.tres" type="Animation" id=4]
 [ext_resource path="res://Player/disc.png" type="Texture" id=5]
 [ext_resource path="res://Player/player1_throw.png" type="Texture" id=6]
@@ -43,20 +43,21 @@ frame = 1
 
 [node name="Ocean" parent="." instance=ExtResource( 9 )]
 position = Vector2( -208, 128 )
+frame = 1
 
 [node name="Ocean2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 48, 128 )
+frame = 1
 
 [node name="Ocean3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 304, 128 )
+frame = 1
 
 [node name="Ocean4" parent="." instance=ExtResource( 9 )]
 position = Vector2( 560, 128 )
-frame = 2
 
 [node name="Ocean5" parent="." instance=ExtResource( 9 )]
 position = Vector2( -456, 128 )
-frame = 2
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -85,7 +86,7 @@ margin_right = -176.0
 margin_bottom = -96.0
 rect_scale = Vector2( 2, 2 )
 theme = SubResource( 2 )
-text = "Bogey Buddies"
+text = "Birdie Buddies"
 __meta__ = {
 "_edit_use_anchors_": false
 }
