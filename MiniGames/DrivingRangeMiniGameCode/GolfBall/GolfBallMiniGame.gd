@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-var speed = 300
+export var speed = 300
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,7 +10,9 @@ func _ready():
 
 func _physics_process(delta):
 	var collidedObject = move_and_collide(Vector2(0, -speed * delta))
+	$Sprite.play("default")
 	if (collidedObject):
+		$Sprite.play("boom")
 		collidedObject.get_collider().queue_free()
 		queue_free()
 

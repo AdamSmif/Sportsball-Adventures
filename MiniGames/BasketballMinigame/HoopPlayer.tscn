@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://PlayersTwoThruEight/PlayersTwoThroughEight.gd" type="Script" id=1]
+[ext_resource path="res://Assets/hoop.png" type="Texture" id=2]
+[ext_resource path="res://Assets/hoopnet.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 13.1305, 16.0313 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5.10327, 1.01188 )
+
+[node name="HoopPlayer" type="KinematicBody2D"]
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 65
+collision_mask = 67
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="hoopnet" type="Sprite" parent="."]
+position = Vector2( -1.00662, 7.0015 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -1.1215, 0 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="ShotBasket" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShotBasket"]
+position = Vector2( -1.01155, 9.01596 )
+shape = SubResource( 2 )
+one_way_collision = true

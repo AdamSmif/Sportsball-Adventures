@@ -89,6 +89,5 @@ func set_current_selection(_current_selection):
 	elif _current_selection == 4:
 		selector_five.text = ">"
 	elif _current_selection == 5:
-		selector_five.text = ">"
-	elif _current_selection == 6:
 		selector_six.text = ">"
+

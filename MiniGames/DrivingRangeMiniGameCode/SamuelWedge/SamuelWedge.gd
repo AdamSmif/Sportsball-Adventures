@@ -21,8 +21,9 @@ func _ready():
 func _process(delta):
 	velocity = Vector2()
 	if Input.is_action_just_pressed("throwright_%s" % id) and CoolDown.is_stopped():
+		Input.action_release("left_%s" % id)
+		Input.action_release("right_%s" % id)
 		$AnimatedSprite.play("fire")
-		velocity.x = 0
 		CoolDown.start(swingDelay)
 		#spawn bullet
 		var bulletInstance = bullet.instance()
