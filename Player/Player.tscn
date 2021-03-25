@@ -1,18 +1,18 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=38 format=2]
 
-[ext_resource path="res://Player/player1_run3.png" type="Texture" id=1]
+[ext_resource path="res://Player/playergun/player_gun7.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Player/player1_fall1.png" type="Texture" id=3]
 [ext_resource path="res://Player/player1_run2.png" type="Texture" id=4]
-[ext_resource path="res://Player/player_idleframe.png" type="Texture" id=5]
-[ext_resource path="res://Player/player1_jump1.png" type="Texture" id=6]
-[ext_resource path="res://Player/player1_jump2.png" type="Texture" id=7]
-[ext_resource path="res://Player/player1_run1.png" type="Texture" id=8]
-[ext_resource path="res://Player/player1_run4.png" type="Texture" id=9]
+[ext_resource path="res://Player/playergun/player_gun6.png" type="Texture" id=5]
+[ext_resource path="res://Player/playergun/player_gun4.png" type="Texture" id=6]
+[ext_resource path="res://Player/playergun/player_gun1.png" type="Texture" id=7]
+[ext_resource path="res://Player/playergun/player_gun9.png" type="Texture" id=8]
+[ext_resource path="res://Player/playergun/player_gun2.png" type="Texture" id=9]
 [ext_resource path="res://Player/Jump.wav" type="AudioStream" id=10]
 [ext_resource path="res://Music/Coin.wav" type="AudioStream" id=11]
 [ext_resource path="res://Player/player1_throw.png" type="Texture" id=12]
-[ext_resource path="res://Player/player1_idle2.png" type="Texture" id=13]
+[ext_resource path="res://Player/playergun/player_gun5.png" type="Texture" id=13]
 [ext_resource path="res://Enemies+Allies/Animations/Hit.tres" type="Animation" id=14]
 [ext_resource path="res://Collisions/Hurtbox.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Player/PlayerCamera.tscn" type="PackedScene" id=16]
@@ -29,6 +29,8 @@
 [ext_resource path="res://Assets/light/DayNightGradient.tres" type="Gradient" id=27]
 [ext_resource path="res://Assets/light/LightSource.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Assets/light/daycycle.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Player/playergun/player_gun3.png" type="Texture" id=30]
+[ext_resource path="res://Player/playergun/player_gun8.png" type="Texture" id=31]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -37,32 +39,27 @@ animations = [ {
 "name": "up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 30 ) ],
 "loop": true,
 "name": "idle",
 "speed": 0.5
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "down",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "throw",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 25 ) ],
 "loop": true,
-"name": "fall",
+"name": "boom",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 31 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "move",
 "speed": 5.0
@@ -72,9 +69,14 @@ animations = [ {
 "name": "skate",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 25 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "boom",
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "down",
 "speed": 5.0
 } ]
 
@@ -103,8 +105,8 @@ game_over_scene = "res://UI/GameOver.tscn"
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "down"
-playing = true
+animation = "move"
+frame = 2
 __meta__ = {
 "_edit_lock_": true
 }
