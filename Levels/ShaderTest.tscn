@@ -39,7 +39,6 @@ shader_param/color = Plane( 1, 0.15, 0.82, 0.5 )
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 1 )]
 position = Vector2( 299.214, -146.267 )
 scale = Vector2( 8, 8 )
-frame = 1
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -81,7 +80,7 @@ position = Vector2( 64, 152 )
 direction = 1
 
 [node name="Portal" parent="." instance=ExtResource( 14 )]
-position = Vector2( -502.558, 110.176 )
+position = Vector2( -501.45, 110.176 )
 
 [node name="PortalDestination" parent="Portal" instance=ExtResource( 15 )]
 position = Vector2( 1332.04, 6.16354 )
