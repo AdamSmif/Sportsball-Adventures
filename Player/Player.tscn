@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Player/playergun/player_gun7.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -31,6 +31,8 @@
 [ext_resource path="res://Assets/light/daycycle.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Player/playergun/player_gun3.png" type="Texture" id=30]
 [ext_resource path="res://Player/playergun/player_gun8.png" type="Texture" id=31]
+[ext_resource path="res://Player/playergun/player_gunspoked.png" type="Texture" id=32]
+[ext_resource path="res://Player/playergun/player_gunmouthopen.png" type="Texture" id=33]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -54,9 +56,9 @@ animations = [ {
 "name": "boom",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 32 ) ],
 "loop": true,
-"name": "jump",
+"name": "shocked",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 31 ), ExtResource( 8 ) ],
@@ -74,9 +76,14 @@ animations = [ {
 "name": "fall",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 30 ) ],
+"frames": [ ExtResource( 33 ) ],
 "loop": true,
 "name": "down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "jump",
 "speed": 5.0
 } ]
 
@@ -105,8 +112,7 @@ game_over_scene = "res://UI/GameOver.tscn"
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "move"
-frame = 2
+animation = "shocked"
 __meta__ = {
 "_edit_lock_": true
 }

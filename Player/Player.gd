@@ -150,6 +150,10 @@ func _physics_process(_delta):
 	var _was_on_floor = is_on_floor()
 	# For interacting with rigid bodies
 	motion = move_and_slide(motion, Vector2.UP, false, 4, PI/4, false)
+	
+	# if the player goes really fast the player's animation will get spoked
+	if motion.y > 1350 or motion.y < -1350:
+		$Sprite.play("shocked")
 
 func coyoteTime():
 	coyoteTimer

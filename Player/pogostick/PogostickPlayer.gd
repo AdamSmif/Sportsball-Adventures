@@ -61,6 +61,10 @@ func _physics_process(_delta):
 	var was_on_floor = is_on_floor()
 	motion = move_and_slide(motion, Vector2.UP)
 	
+	# if the player goes really fast the player's animation will get spoked
+	if motion.y > 675 or motion.y < -675:
+		$Sprite.play("shocked")
+	
 	
 func bounce():
 	motion.y = JUMP * 1.25

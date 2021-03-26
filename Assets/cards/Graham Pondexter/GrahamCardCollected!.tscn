@@ -1,0 +1,106 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://UI/fonts/ChiKareGo2Font.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/cards/Graham Pondexter.png" type="Texture" id=2]
+[ext_resource path="res://UI/UI Animations/FadeBlackBar.tres" type="Animation" id=3]
+[ext_resource path="res://Assets/cards/GotCardAnimation.anim" type="Animation" id=4]
+[ext_resource path="res://Assets/cards/CardCollected.gd" type="Script" id=5]
+[ext_resource path="res://Assets/sunsetsky.png" type="Texture" id=6]
+[ext_resource path="res://Player/expressions/playerhappy.png" type="Texture" id=7]
+[ext_resource path="res://UI/UI Animations/BlackToTransparent.anim" type="Animation" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
+
+[node name="GrahamCardCollected!" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.814514
+margin_top = -0.814499
+margin_right = -0.814514
+margin_bottom = -0.814514
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+next_world_scene = "res://Levels/Intro/ToDiscGolfTournament.tscn"
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 320.815, 196.815 )
+scale = Vector2( 0.6875, 0.733333 )
+texture = ExtResource( 6 )
+
+[node name="Graham Pondexter" type="Sprite" parent="."]
+position = Vector2( 88.8404, 200.305 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -167.185
+margin_top = 8.8145
+margin_right = 175.815
+margin_bottom = 80.8145
+theme = SubResource( 2 )
+text = "Congrats You Got A Card!"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+margin_left = 504.815
+margin_top = 336.815
+margin_right = 641.815
+margin_bottom = 376.815
+theme = SubResource( 4 )
+text = "Press Start/Enter To Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+margin_left = 193.0
+margin_top = 81.0
+margin_right = 633.0
+margin_bottom = 321.0
+rect_min_size = Vector2( 440, 240 )
+theme = SubResource( 4 )
+text = "A 5 time national champion during his tenure the Zappers, he then demanded that 4 garbage players be traded to the Zappers. The Zappers have never made it to the playoffs since."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="playerhappy" type="Sprite" parent="."]
+position = Vector2( 392.814, 248.815 )
+rotation = 0.195477
+scale = Vector2( 15, 15 )
+texture = ExtResource( 7 )
+flip_h = true
+
+[node name="Black" type="ColorRect" parent="."]
+margin_left = -71.1855
+margin_top = -55.1855
+margin_right = 729.815
+margin_bottom = 433.815
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/BlackToTransparent = ExtResource( 8 )
+anims/FadeBlackBar = ExtResource( 3 )
+anims/GotCard = ExtResource( 4 )

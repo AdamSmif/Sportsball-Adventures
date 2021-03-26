@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Player/player1_run1.png" type="Texture" id=1]
 [ext_resource path="res://Player/player1_jump1.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Player/Jump.wav" type="AudioStream" id=10]
 [ext_resource path="res://Music/Coin.wav" type="AudioStream" id=11]
 [ext_resource path="res://Player/player1_throw.png" type="Texture" id=12]
+[ext_resource path="res://Player/player1_fallspoked.png" type="Texture" id=13]
 [ext_resource path="res://Enemies+Allies/Animations/Hit.tres" type="Animation" id=14]
 [ext_resource path="res://Collisions/Hurtbox.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Player/PlayerCamera.tscn" type="PackedScene" id=16]
@@ -28,6 +29,8 @@
 [ext_resource path="res://Assets/light/DayNightGradient.tres" type="Gradient" id=27]
 [ext_resource path="res://Assets/light/LightSource.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Assets/light/daycycle.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Player/player1_idle1.png" type="Texture" id=30]
+[ext_resource path="res://Player/player_idleframe.png" type="Texture" id=31]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -36,7 +39,7 @@ animations = [ {
 "name": "up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 30 ), ExtResource( 31 ) ],
 "loop": true,
 "name": "idle",
 "speed": 0.5
@@ -51,9 +54,9 @@ animations = [ {
 "name": "boom",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 13 ) ],
 "loop": true,
-"name": "jump",
+"name": "shocked",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 6 ) ],
@@ -74,6 +77,11 @@ animations = [ {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "jump",
 "speed": 5.0
 } ]
 
@@ -101,7 +109,7 @@ script = ExtResource( 9 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "move"
+animation = "shocked"
 __meta__ = {
 "_edit_lock_": true
 }
