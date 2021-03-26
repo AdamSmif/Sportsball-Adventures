@@ -123,16 +123,17 @@ margin_right = 96.0
 margin_bottom = 145.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
-margin_left = 18.0
-margin_right = 78.0
+margin_left = 4.0
+margin_right = 91.0
 margin_bottom = 110.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
-margin_right = 60.0
+margin_right = 87.0
 margin_bottom = 15.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer"]
-margin_right = 60.0
+margin_left = 13.0
+margin_right = 73.0
 margin_bottom = 15.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
@@ -154,11 +155,12 @@ text = "Start"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 19.0
-margin_right = 60.0
+margin_right = 87.0
 margin_bottom = 34.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2"]
-margin_right = 60.0
+margin_left = 13.0
+margin_right = 73.0
 margin_bottom = 15.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
@@ -180,11 +182,11 @@ text = "Load"
 
 [node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 38.0
-margin_right = 60.0
+margin_right = 87.0
 margin_bottom = 53.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3"]
-margin_right = 60.0
+margin_right = 87.0
 margin_bottom = 15.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
@@ -197,20 +199,21 @@ text = ">"
 
 [node name="OptionName" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
 margin_left = 11.0
-margin_right = 60.0
+margin_right = 87.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 49, 0 )
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Mini"
+text = "Mini Games"
 
 [node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 57.0
-margin_right = 60.0
+margin_right = 87.0
 margin_bottom = 72.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4"]
-margin_right = 60.0
+margin_left = 13.0
+margin_right = 73.0
 margin_bottom = 15.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer"]
@@ -232,11 +235,12 @@ text = "Options"
 
 [node name="CenterContainer5" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 76.0
-margin_right = 60.0
+margin_right = 87.0
 margin_bottom = 91.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5"]
-margin_right = 59.0
+margin_left = 14.0
+margin_right = 73.0
 margin_bottom = 15.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/HBoxContainer"]
@@ -257,11 +261,12 @@ text = "Credits"
 
 [node name="CenterContainer6" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 95.0
-margin_right = 60.0
+margin_right = 87.0
 margin_bottom = 110.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer6"]
-margin_right = 60.0
+margin_left = 13.0
+margin_right = 73.0
 margin_bottom = 15.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer6/HBoxContainer"]

@@ -56,17 +56,17 @@ func handle_selection(_current_selection):
 	elif _current_selection == 2: # Mini Games
 		$YSort/Start.stop()
 		yield(get_tree().create_timer(1), "timeout")
-		get_tree().change_scene(to_minigames_scene)
+		get_tree().change_scene(next_world_scene)
 		queue_free()
 	elif _current_selection == 3: # option
 		$YSort/Start.stop()
 		yield(get_tree().create_timer(1), "timeout")
-		get_tree().change_scene(to_options_scene)
+		get_tree().change_scene(next_world_scene)
 		queue_free()
 	elif _current_selection == 4: # Credit
 		$YSort/Start.stop()
 		yield(get_tree().create_timer(1), "timeout")
-		get_tree().change_scene(to_credits_scene)
+		get_tree().change_scene(next_world_scene)
 		queue_free()
 	elif _current_selection == 5: # exit
 		get_tree().quit()

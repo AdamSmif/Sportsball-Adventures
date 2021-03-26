@@ -337,18 +337,21 @@ texture = ExtResource( 20 )
 position = Vector2( -199.104, -444.429 )
 stream = ExtResource( 21 )
 volume_db = 5.149
+autoplay = true
 max_distance = 800.0
 
 [node name="Village Theme2" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 806.555, -454.832 )
 stream = ExtResource( 21 )
 volume_db = 5.149
+autoplay = true
 max_distance = 800.0
 
 [node name="Village Theme3" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( -920.405, -456.566 )
 stream = ExtResource( 21 )
 volume_db = 5.149
+autoplay = true
 max_distance = 800.0
 
 [node name="AllPlayers" parent="." instance=ExtResource( 22 )]
@@ -395,7 +398,6 @@ bottle_world_scene = "res://Levels/VillageDemo.tscn"
 
 [node name="Winston" parent="." instance=ExtResource( 29 )]
 position = Vector2( -69.6715, -417.08 )
-frame = 0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -285.7, -429.623 )

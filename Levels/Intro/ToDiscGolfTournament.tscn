@@ -185,7 +185,7 @@ next_world_scene = "res://Levels/Intro/IntroWorldSkateLevel.tscn"
 [node name="YSort2" type="YSort" parent="."]
 
 [node name="golflag" type="Sprite" parent="YSort2"]
-position = Vector2( 383.723, 440.833 )
+position = Vector2( 410.038, 171.362 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 12 )
 
@@ -203,5 +203,8 @@ scale = Vector2( 6, 6 )
 next_world_scene = "res://Assets/cards/Graham Pondexter/GrahamCardCollected!.tscn"
 
 [node name="Charlie Mcllroy" parent="." instance=ExtResource( 13 )]
-position = Vector2( 417.057, 197.702 )
-frame = 1
+position = Vector2( 412.873, 474.561 )
+frame = 2
+
+[node name="Exit" parent="Charlie Mcllroy" instance=ExtResource( 6 )]
+next_world_scene = "res://Levels/Intro/BeachIntro1.tscn"
