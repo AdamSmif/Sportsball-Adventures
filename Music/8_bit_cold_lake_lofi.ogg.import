@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/8_bit_cold_lake_lofi.ogg-31f423af5120bff67aeb8d1c04f5208b.oggstr"
+
+[deps]
+
+source_file="res://Music/8_bit_cold_lake_lofi.ogg"
+dest_files=[ "res://.import/8_bit_cold_lake_lofi.ogg-31f423af5120bff67aeb8d1c04f5208b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
