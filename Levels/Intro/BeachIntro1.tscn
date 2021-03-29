@@ -59,7 +59,7 @@ texture = ExtResource( 1 )
 
 [node name="Charlie Mcllroy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 357.055, 317.588 )
-frame = 3
+frame = 1
 flip_h = true
 
 [node name="ColorRect" type="ColorRect" parent="Charlie Mcllroy"]
