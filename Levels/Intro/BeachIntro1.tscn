@@ -59,10 +59,11 @@ texture = ExtResource( 1 )
 
 [node name="Charlie Mcllroy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 357.055, 317.588 )
-frame = 1
+frame = 2
 flip_h = true
 
 [node name="ColorRect" type="ColorRect" parent="Charlie Mcllroy"]
+visible = false
 margin_left = -22.0
 margin_top = -73.0
 margin_right = 222.0
@@ -73,6 +74,7 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Charlie Mcllroy"]
+visible = false
 margin_left = -17.1145
 margin_top = -68.1828
 margin_right = 248.886

@@ -10,7 +10,6 @@
 [ext_resource path="res://UI/UI Animations/BlackToTransparent.anim" type="Animation" id=8]
 
 [sub_resource type="DynamicFont" id=1]
-size = 32
 font_data = ExtResource( 1 )
 
 [sub_resource type="Theme" id=2]
@@ -45,21 +44,20 @@ position = Vector2( 88.8404, 200.305 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="YouGotACard" type="RichTextLabel" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -167.185
-margin_top = 8.8145
-margin_right = 175.815
-margin_bottom = 80.8145
+margin_left = -101.5
+margin_right = 101.5
+margin_bottom = 40.0
 theme = SubResource( 2 )
-text = "Congrats You Got A Card!"
+text = "You Got The Graham Pondexter Card!"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+[node name="Exit" type="RichTextLabel" parent="."]
 margin_left = 504.815
 margin_top = 336.815
 margin_right = 641.815
@@ -70,7 +68,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+[node name="CardDesc" type="RichTextLabel" parent="."]
 margin_left = 193.0
 margin_top = 81.0
 margin_right = 633.0
@@ -95,8 +93,9 @@ margin_left = -71.1855
 margin_top = -55.1855
 margin_right = 729.815
 margin_bottom = 433.815
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 

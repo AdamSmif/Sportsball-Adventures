@@ -215,7 +215,7 @@ next_world_scene = "res://Assets/cards/Graham Pondexter/GrahamCardCollected!.tsc
 
 [node name="Charlie Mcllroy" parent="." instance=ExtResource( 13 )]
 position = Vector2( 412.873, 474.561 )
-frame = 4
+frame = 2
 
 [node name="Exit" parent="Charlie Mcllroy" instance=ExtResource( 6 )]
 next_world_scene = "res://Levels/Intro/BeachIntro1.tscn"

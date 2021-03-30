@@ -3,9 +3,6 @@ extends Control
 export(String, FILE, "*.tscn") var next_world_scene
 
 func _ready():
-
-	$AnimationPlayer.play("BlackToTransparent")
-	yield(get_tree().create_timer(1), "timeout")
 	$AnimationPlayer.play("GotCard")
 #	yield(get_tree().create_timer(1), "timeout")
 	pass # Replace with function body
