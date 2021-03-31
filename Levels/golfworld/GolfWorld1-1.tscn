@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/Tiles/GolfTile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/hubassets/evergreentree.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Levels/Exit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/clouds.png" type="Texture" id=5]
 [ext_resource path="res://PlayersTwoThruEight/AllPlayers.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/backgrounds/lowpolyswisterland.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Hurdle.png" type="Texture" id=8]
 [ext_resource path="res://Assets/FallZone.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/golfbackgroundplatform.png" type="Texture" id=10]
@@ -315,6 +316,11 @@ position = Vector2( -904, 72 )
 modulate = Color( 1.23, 1, 1, 1 )
 position = Vector2( -632, 72 )
 
+[node name="Sprite" parent="Player/ParallaxBackground" index="0"]
+position = Vector2( 312, 344 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
 
 [node name="PlayerCamera" parent="Player" instance=ExtResource( 15 )]
@@ -322,3 +328,5 @@ position = Vector2( -11.708, 15.348 )
 
 [node name="AllPlayers" parent="." instance=ExtResource( 6 )]
 position = Vector2( -584, -56 )
+
+[editable path="Player"]

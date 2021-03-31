@@ -222,7 +222,7 @@ next_world_scene = "res://Assets/cards/Graham Pondexter/GrahamCardCollected!.tsc
 position = Vector2( 412.873, 474.561 )
 
 [node name="AnimatedSprite" parent="Charlie Mcllroy" index="0"]
-frame = 1
+frame = 5
 
 [node name="CollisionShape2D" parent="Charlie Mcllroy" index="1"]
 disabled = true
