@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/RainShowersRVX2406.ogg-285789a45ff7788b62e622f4e3bc12f1.oggstr"
+
+[deps]
+
+source_file="res://Music/RainShowersRVX2406.ogg"
+dest_files=[ "res://.import/RainShowersRVX2406.ogg-285789a45ff7788b62e622f4e3bc12f1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

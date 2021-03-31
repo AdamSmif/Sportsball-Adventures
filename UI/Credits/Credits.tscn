@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://UI/fonts/ChiKareGo2Font.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/UI Animations/BlackToTransparent.anim" type="Animation" id=2]
 [ext_resource path="res://UI/Credits/Credits.gd" type="Script" id=3]
 [ext_resource path="res://Assets/backgrounds/lowpolygolf.jpeg" type="Texture" id=4]
-[ext_resource path="res://Music/8_bit_cold_lake_lofi.ogg" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -70,6 +69,9 @@ https://www.youtube.com/c/Tadon
 
 Biscuit (Prod. by Lukrembo)
 
+MikeeUSA: Rain Showers RVX2406
+
+
 Assets:
 
 Paintings Provided By Bryce Dumais
@@ -111,8 +113,3 @@ margin_top = -40.0
 theme = SubResource( 5 )
 text = "Press Start / Enter To Go Back"
 scroll_active = false
-
-[node name="CreditsMusic" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 320, 192 )
-stream = ExtResource( 5 )
-autoplay = true

@@ -25,6 +25,7 @@ var current_selection = 0
 # current selector 0 starts at start
 
 func _ready():
+	MusicController.play_menu_music()
 	set_current_selection(0)
 
 func _process(delta):

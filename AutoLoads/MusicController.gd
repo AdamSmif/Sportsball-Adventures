@@ -1,25 +1,33 @@
 extends Node
 
-#var battle_music = load("res://resources/audio/Fight.ogg")
-#var basic_music = load("res://resources/audio/Basic.ogg")
-#var song1 = load("res://Music/Holidayz2.wav")
+var rain_music = load("res://Music/RainShowersRVX2406.ogg")
+var menu_music = load("res://Music/the_past_8_bit_lofi_.ogg")
+var credits_music = load("res://Music/8_bit_cold_lake_lofi.ogg")
 
 func _ready():
 	pass
 	
-#func play_song1():
-#	$Music.stream = song1
-#	$Music.play()
-#func play_battle_music():
-#	$Music.stream = battle_music
-#	$Music.play()
-#
-#func play_basic_music():
-#	$Music.stream = basic_music
-#	$Music.play()
-#
-#func turn_down_volume():
-#	$Music.volume_db = -12
-#
-#func reset_volume():
-#	$Music.volume_db = 0
+func play_rain_music():
+	$Music.stream = rain_music
+	$Music.play()
+	
+func stop_rain_music():
+	$Music.stream = rain_music
+	$Music.stop()
+
+func play_menu_music():
+	$Music.stream = menu_music
+	$Music.play()
+	
+func stop_menu_music():
+	$Music.stream = menu_music
+	$Music.stop()
+	
+func play_credits_music():
+	$Music.stream = credits_music
+	$Music.play()
+	
+func stop_credits_music():
+	$Music.stream = credits_music
+	$Music.stop()
+	

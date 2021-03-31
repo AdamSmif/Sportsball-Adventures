@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Assets/Tiles/WorldMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/golfcartplayer/GolfCartPlayer.tscn" type="PackedScene" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://Assets/VillageAssets/Door1.png" type="Texture" id=8]
 [ext_resource path="res://Assets/mountains/Snowmountain.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/cityicon/cityicon.png" type="Texture" id=10]
-[ext_resource path="res://Music/Biscuit-_Prod.-by-Lukrembo_.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Music/RainShowersRVX2406.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Assets/golflag.png" type="Texture" id=12]
 [ext_resource path="res://Enemies+Allies/tennisguy/Charlie Mcllroy.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/cards/Graham Pondexter.png" type="Texture" id=14]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Assets/cave/Cave.tscn" type="PackedScene" id=18]
 [ext_resource path="res://UI/fonts/ChiKareGo2Font.ttf" type="DynamicFontData" id=19]
 [ext_resource path="res://Assets/sign/sign.png" type="Texture" id=20]
+[ext_resource path="res://Music/raineffects.ogg" type="AudioStream" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.6385, 30.6236 )
@@ -215,7 +216,7 @@ next_world_scene = "res://Assets/cards/Graham Pondexter/GrahamCardCollected!.tsc
 
 [node name="Charlie Mcllroy" parent="." instance=ExtResource( 13 )]
 position = Vector2( 412.873, 474.561 )
-frame = 2
+frame = 1
 
 [node name="Exit" parent="Charlie Mcllroy" instance=ExtResource( 6 )]
 next_world_scene = "res://Levels/Intro/BeachIntro1.tscn"
@@ -275,6 +276,15 @@ scale = Vector2( 2, 2 )
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="GolfCartPlayer"]
 stream = ExtResource( 11 )
 autoplay = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="GolfCartPlayer"]
+stream = ExtResource( 21 )
+volume_db = -12.0
+autoplay = true
+attenuation = 0.31864
 __meta__ = {
 "_edit_lock_": true
 }
