@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Dialogues/DIalogueManager.gd" type="Script" id=1]
 [ext_resource path="res://UI/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/fonts/ChiKareGo2Font.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="Theme" id=1]
 
@@ -14,22 +15,22 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="Theme" id=4]
 default_font = SubResource( 3 )
 
 [sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="Theme" id=6]
 default_font = SubResource( 5 )
 
 [sub_resource type="DynamicFont" id=7]
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=8]
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=9]
 font_data = ExtResource( 2 )

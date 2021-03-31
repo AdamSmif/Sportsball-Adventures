@@ -216,7 +216,18 @@ next_world_scene = "res://Assets/cards/Graham Pondexter/GrahamCardCollected!.tsc
 
 [node name="Charlie Mcllroy" parent="." instance=ExtResource( 13 )]
 position = Vector2( 412.873, 474.561 )
-frame = 1
+
+[node name="AnimatedSprite" parent="Charlie Mcllroy" index="0"]
+frame = 5
+
+[node name="CollisionShape2D" parent="Charlie Mcllroy" index="1"]
+disabled = true
+
+[node name="ColorRect" parent="Charlie Mcllroy" index="2"]
+visible = false
+
+[node name="Text" parent="Charlie Mcllroy" index="3"]
+visible = false
 
 [node name="Exit" parent="Charlie Mcllroy" instance=ExtResource( 6 )]
 next_world_scene = "res://Levels/Intro/BeachIntro1.tscn"
@@ -275,7 +286,6 @@ scale = Vector2( 2, 2 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="GolfCartPlayer"]
 stream = ExtResource( 11 )
-autoplay = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -335,5 +345,7 @@ position = Vector2( 905.14, -333.201 )
 scale = Vector2( 3, 3 )
 
 [editable path="DiscGolfCourse/SpookyGolfCourse"]
+
+[editable path="Charlie Mcllroy"]
 
 [editable path="Cave"]

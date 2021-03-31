@@ -252,5 +252,3 @@ func _get_save_stats():
 		}
 	}
 
-
-

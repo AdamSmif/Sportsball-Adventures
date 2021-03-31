@@ -75,15 +75,14 @@ frame = 1
 
 [node name="Ocean" parent="Ocean4" instance=ExtResource( 5 )]
 position = Vector2( 48, 344 )
-frame = 2
+frame = 1
 
 [node name="Ocean2" parent="Ocean4" instance=ExtResource( 5 )]
 position = Vector2( 304, 344 )
-frame = 2
+frame = 1
 
 [node name="Ocean3" parent="Ocean4" instance=ExtResource( 5 )]
 position = Vector2( 560, 344 )
-frame = 1
 
 [node name="Assets" type="YSort" parent="."]
 
