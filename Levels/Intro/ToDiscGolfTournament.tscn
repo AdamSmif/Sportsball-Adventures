@@ -62,7 +62,7 @@ scale = Vector2( 4, 4 )
 position = Vector2( -0.696949, 3.94601 )
 
 [node name="Exit" parent="DiscGolfCourse/SpookyGolfCourse" index="4"]
-next_world_scene = "res://Levels/Tutorial/FirstWorld.tscn"
+next_world_scene = "res://Levels/Intro/discgolftourney/TeeTimeIntro1.tscn"
 
 [node name="House" type="YSort" parent="."]
 position = Vector2( 153.466, 51.5645 )
@@ -222,7 +222,7 @@ next_world_scene = "res://Assets/cards/Graham Pondexter/GrahamCardCollected!.tsc
 position = Vector2( 412.873, 474.561 )
 
 [node name="AnimatedSprite" parent="Charlie Mcllroy" index="0"]
-frame = 5
+frame = 2
 
 [node name="CollisionShape2D" parent="Charlie Mcllroy" index="1"]
 disabled = true
@@ -268,6 +268,9 @@ position = Vector2( 781.462, 442.651 )
 
 [node name="PlayerCamera" parent="GolfCartPlayer" instance=ExtResource( 5 )]
 offset = Vector2( 0, 0 )
+
+[node name="RichTextLabel" parent="GolfCartPlayer/PlayerCamera" index="0"]
+text = "Sport County"
 
 [node name="Rain" type="YSort" parent="GolfCartPlayer/PlayerCamera"]
 position = Vector2( -781.462, -442.651 )
@@ -365,3 +368,5 @@ scale = Vector2( 3, 3 )
 [editable path="Charlie Mcllroy"]
 
 [editable path="Cave"]
+
+[editable path="GolfCartPlayer/PlayerCamera"]

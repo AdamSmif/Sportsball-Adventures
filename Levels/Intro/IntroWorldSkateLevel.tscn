@@ -28,6 +28,14 @@ bottle_world_scene = "res://Levels/Intro/PlayerHouse.tscn"
 
 [node name="PlayerCamera" parent="PlayerSkateBoard" instance=ExtResource( 3 )]
 
+[node name="RichTextLabel" parent="PlayerSkateBoard/PlayerCamera" index="0"]
+visible = true
+margin_left = 120.824
+margin_top = -363.478
+margin_right = 368.824
+margin_bottom = -323.478
+text = "Get All The Bottles"
+
 [node name="RainEffect" parent="PlayerSkateBoard/PlayerCamera" instance=ExtResource( 10 )]
 position = Vector2( -49.6581, -381.477 )
 scale = Vector2( 2, 2 )
@@ -132,3 +140,5 @@ position = Vector2( 1114.92, 26.4244 )
 [connection signal="bottle_collected" from="Bottles/Bottle8" to="HUD" method="_on_Bottle_bottle_collected"]
 
 [editable path="PlayerSkateBoard"]
+
+[editable path="PlayerSkateBoard/PlayerCamera"]
