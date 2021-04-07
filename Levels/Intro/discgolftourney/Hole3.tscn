@@ -63,7 +63,7 @@ texture = ExtResource( 7 )
 position = Vector2( 1656, 416 )
 
 [node name="Exit" parent="Basket" index="2"]
-next_world_scene = "res://Levels/Intro/discgolftourney/Hold2.tscn"
+next_world_scene = "res://Levels/Intro/discgolftourney/Hole4.tscn"
 
 [node name="FallZone" parent="." instance=ExtResource( 4 )]
 position = Vector2( 416, 1168 )

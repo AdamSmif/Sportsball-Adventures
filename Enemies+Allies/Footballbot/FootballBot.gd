@@ -35,6 +35,8 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 func _on_top_checker_body_entered(body):
+	$Hitbox.queue_free()
+	$Hurtbox.queue_free()
 	$Sprite.play("squashed")
 	speed = 0
 	set_collision_layer_bit(5,false)
@@ -44,6 +46,11 @@ func _on_top_checker_body_entered(body):
 	$Hurtbox.set_collision_layer_bit(8,false)
 	$Hurtbox.set_collision_mask_bit(0,false)
 	$Hitbox.set_collision_layer_bit(7,false)
+	$Hitbox.set_collision_mask_bit(0,false)
+	###
+	$Hurtbox.set_collision_layer_bit(7,false)
+	$Hurtbox.set_collision_mask_bit(0,false)
+	$Hitbox.set_collision_layer_bit(8,false)
 	$Hitbox.set_collision_mask_bit(0,false)
 	$Timer.start()
 	body.bounce()
@@ -65,6 +72,10 @@ func _on_disc_checker_body_entered(body):
 
 
 func _on_Stats_no_health():
+#	$Hitbox.queue_free()
+#	$Hurtbox.queue_free()
+	$Hurtbox/CollisionShape2D.disabled = true
+	$Hitbox/CollisionShape2D.disabled = true
 	$Sprite.play("explosion")
 	$ExplosionSound.play()
 	speed = 0

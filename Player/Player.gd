@@ -66,7 +66,6 @@ func _physics_process(_delta):
 # Throw
 	if Input.is_action_just_pressed("throwright_%s" % id) and discDelayTimer.is_stopped():
 		emit_signal("disc_thrown")
-		print("disc thrown")
 		$Sprite.play("throw")
 		discDelayTimer.start(throwDelay)
 		#spawn disc

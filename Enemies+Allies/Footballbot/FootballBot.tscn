@@ -26,14 +26,14 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "explosion",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "squashed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "explosion",
 "speed": 5.0
 } ]
 
@@ -41,13 +41,13 @@ animations = [ {
 extents = Vector2( 11.2063, 23.2513 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 20.8521, 4.02503 )
+extents = Vector2( 20.8521, 5.08406 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 14.0143, 23.1048 )
+extents = Vector2( 14.0143, 23.8441 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 18.4473, 16.4548 )
+extents = Vector2( 17.5186, 16.0222 )
 
 [node name="FootballBot" type="KinematicBody2D"]
 scale = Vector2( 0.5, 0.5 )
@@ -58,6 +58,7 @@ script = ExtResource( 3 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.159576, 0.797058 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -74,24 +75,21 @@ collision_layer = 16
 collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="top_checker"]
-position = Vector2( 0.257019, -19.3849 )
+position = Vector2( 0.852402, -21.4092 )
 shape = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Hurtbox" parent="." instance=ExtResource( 14 )]
 collision_layer = 256
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2( 0.341026, 1.53463 )
+position = Vector2( 0.965881, 8.22265 )
 shape = SubResource( 4 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 15 )]
 collision_mask = 128
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2( 0.170517, 1.53464 )
+position = Vector2( 1.14245, 3.6405 )
 shape = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]

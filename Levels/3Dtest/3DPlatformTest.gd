@@ -3,8 +3,7 @@ extends Spatial
 export(String, FILE, "*.tscn") var next_world_scene
 
 func _ready():
-	MusicController.play_synth_music()
-	yield(get_tree().create_timer(120), "timeout")
+	yield(get_tree().create_timer(30), "timeout")
 	get_tree().change_scene(next_world_scene)
 	
 #func _process(delta):
