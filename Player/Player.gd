@@ -55,6 +55,9 @@ var vel := Vector2(0, 0)
 # allows rigid bodies to stay rigid
 export (int, 0, 200) var push = 5    
 
+# Spawn Other Players
+var otherplayers = preload("res://PlayersTwoThruEight/AllPlayers.tscn")
+
 func _ready():
 	stats.connect("no_health", self, "queue_free")
 
@@ -62,6 +65,10 @@ func _ready():
 func _physics_process(_delta):
 	motion.y += GRAVITY
 	var friction = false
+	
+# Spawn Other Players
+	if Input.is_action_just_pressed("ui_accept"):
+		$AllPlayers.visible = true
 
 # Throw
 	if Input.is_action_just_pressed("throwright_%s" % id) and discDelayTimer.is_stopped():

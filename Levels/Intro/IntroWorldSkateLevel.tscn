@@ -26,6 +26,9 @@ tile_data = PoolIntArray( -655318, 0, 0, -655317, 0, 1, -655316, 0, 1, -655315, 
 position = Vector2( -1.02168, 22.4769 )
 bottle_world_scene = "res://Levels/Intro/PlayerHouse.tscn"
 
+[node name="Sprite" parent="PlayerSkateBoard" index="0"]
+frame = 1
+
 [node name="PlayerCamera" parent="PlayerSkateBoard" instance=ExtResource( 3 )]
 
 [node name="RichTextLabel" parent="PlayerSkateBoard/PlayerCamera" index="0"]

@@ -444,8 +444,8 @@ texture = ExtResource( 20 )
 
 [node name="FootballBot" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1352, 88 )
-[connection signal="disc_thrown" from="Player" to="HUD" method="_on_Player_disc_thrown"]
 [connection signal="disc_thrown" from="Player" to="." method="_on_Player_disc_thrown"]
+[connection signal="disc_thrown" from="Player" to="HUD" method="_on_Player_disc_thrown"]
 [connection signal="body_entered" from="Bottles/Bottle" to="HUD" method="_on_Bottle_body_entered"]
 [connection signal="bottle_collected" from="Bottles/Bottle" to="HUD" method="_on_Bottle_bottle_collected"]
 [connection signal="body_entered" from="Bottles/Bottle2" to="HUD" method="_on_Bottle_body_entered"]

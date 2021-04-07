@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+# Player Number
+export var id = 2 or 3 or 4 or 5 or 6 or 7 or 8
+
 onready var stats = $Stats
 export var speed = 50
 var velocity = Vector2()
@@ -17,6 +20,12 @@ func _ready():
 	$floor_checker.enabled = detects_cliffs
 	
 func _physics_process(delta):
+	
+	# Player Control
+	if Input.is_action_pressed('right_%s' % id):
+		velocity.x += 1
+	if Input.is_action_pressed('left_%s' % id):
+		velocity.x -= 1
 	
 	#Knockback
 #	Causes enemy to jitter
