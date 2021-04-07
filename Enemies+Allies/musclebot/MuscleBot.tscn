@@ -54,6 +54,7 @@ script = ExtResource( 5 )
 position = Vector2( -0.609443, -42.3179 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
+frame = 2
 playing = true
 __meta__ = {
 "_edit_lock_": true

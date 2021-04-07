@@ -69,6 +69,7 @@ func _physics_process(_delta):
 # Spawn Other Players
 	if Input.is_action_just_pressed("ui_accept"):
 		$AllPlayers.visible = true
+		$AllPlayers.sort_enabled = true
 
 # Throw
 	if Input.is_action_just_pressed("throwright_%s" % id) and discDelayTimer.is_stopped():

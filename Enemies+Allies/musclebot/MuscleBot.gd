@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Player Number
-export var id = 2 or 3 or 4 or 5 or 6 or 7 or 8
+var id = 2
 
 onready var stats = $Stats
 export var speed = 50
@@ -23,20 +23,22 @@ func _physics_process(delta):
 	
 	# Player Control
 	if Input.is_action_pressed('right_%s' % id):
-		velocity.x += 1
-	if Input.is_action_pressed('left_%s' % id):
-		velocity.x -= 1
-	
+		speed = 200
+		print("controlled muscle")
+	elif Input.is_action_pressed('left_%s' % id):
+		speed = 200
+		print("controlled muscle")
+	else:
 	#Knockback
 #	Causes enemy to jitter
 #	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
 #	knockback = move_and_slide(knockback)
 	
 	# moves if bumps into wall
-	if is_on_wall() or not $floor_checker.is_colliding() and detects_cliffs and is_on_floor():
-		direction = direction * -1
-		$Sprite.flip_h = not $Sprite.flip_h
-		$floor_checker.position.x = $CollisionShape2D.shape.get_extents().x * direction 
+		if is_on_wall() or not $floor_checker.is_colliding() and detects_cliffs and is_on_floor():
+			direction = direction * -1
+			$Sprite.flip_h = not $Sprite.flip_h
+			$floor_checker.position.x = $CollisionShape2D.shape.get_extents().x * direction 
 	
 	#gravity
 	velocity.y += 5

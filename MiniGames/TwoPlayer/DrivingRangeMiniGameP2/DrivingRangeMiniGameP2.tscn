@@ -18,6 +18,9 @@ tile_data = PoolIntArray( -851992, 26, 0, -851991, 26, 0, -851990, 26, 0, -85198
 [node name="Bottle" parent="Items" instance=ExtResource( 7 )]
 position = Vector2( 168, 256 )
 
+[node name="Sprite" parent="Items/Bottle" index="1"]
+frame = 1
+
 [node name="Bottle2" parent="Items" instance=ExtResource( 7 )]
 position = Vector2( -120, 216 )
 
