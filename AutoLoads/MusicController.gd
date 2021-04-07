@@ -3,6 +3,7 @@ extends Node
 var rain_music = load("res://Music/RainShowersRVX2406.ogg")
 var menu_music = load("res://Music/the_past_8_bit_lofi_.ogg")
 var credits_music = load("res://Music/8_bit_cold_lake_lofi.ogg")
+var synth_music = load("res://Music/Dreamstate.ogg")
 
 func _ready():
 	pass
@@ -31,3 +32,10 @@ func stop_credits_music():
 	$Music.stream = credits_music
 	$Music.stop()
 	
+func play_synth_music():
+	$Music.stream = synth_music
+	$Music.play()
+	
+func stop_synth_music():
+	$Music.stream = synth_music
+	$Music.stop()

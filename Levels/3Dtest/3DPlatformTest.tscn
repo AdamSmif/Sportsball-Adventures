@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Levels/3Dtest/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/3D Assets/platform.dae" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/sunsetsky.png" type="Texture" id=5]
 [ext_resource path="res://Assets/palmtree.png" type="Texture" id=6]
 [ext_resource path="res://Assets/3D Assets/firstlandscape.dae" type="PackedScene" id=7]
+[ext_resource path="res://Levels/3Dtest/3DPlatformTest.gd" type="Script" id=8]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 4.08838
@@ -25,6 +26,8 @@ ambient_light_color = Color( 0.807843, 0.113725, 0.113725, 1 )
 height = 0.002
 
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 8 )
+next_world_scene = "res://Levels/ShaderTest.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.552996, 5.95494, -8.31604 )
