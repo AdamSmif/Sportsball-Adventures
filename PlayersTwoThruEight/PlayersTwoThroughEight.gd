@@ -3,10 +3,19 @@ extends KinematicBody2D
 # Player Number
 export var id = 2
 
+# Movement
 export var MAX_SPEED = 400
 export var ACCELERATION = 1000
 var motion = Vector2.ZERO
 var knockback = Vector2.ZERO
+
+# Shooting Mechanic
+var velocity = Vector2()
+var bullet = preload("res://MiniGames/DrivingRangeMiniGameCode/GolfBall/GolfballMiniGame.tscn")
+
+#Cool Down
+onready var CoolDown = $CoolDown
+export var shootDelay: float = 0.1
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("grow_%s" % id):
@@ -18,6 +27,14 @@ func _physics_process(delta):
 	else:
 		apply_movement(axis * ACCELERATION * delta)
 	motion = move_and_slide(motion)
+	
+	if Input.is_action_just_pressed("shoot_%s" % id) and CoolDown.is_stopped():
+		CoolDown.start(shootDelay)
+		$AnimationPlayer.play("Fire")
+		#spawn bullet
+		var bulletInstance = bullet.instance()
+		bulletInstance.position = $Position2D.global_position
+		get_tree().get_root().add_child(bulletInstance)
 
 func get_input_axis():
 	var axis = Vector2.ZERO
@@ -40,3 +57,7 @@ func apply_movement(acceleration):
 func _on_Hurtbox_area_entered(area):
 	knockback = Vector2.RIGHT * 150
 	knockback = Vector2.LEFT * 150
+
+
+func _on_CoolDown_timeout():
+	pass # Replace with function body.

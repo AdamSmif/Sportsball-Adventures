@@ -34,7 +34,6 @@ playing = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.899345, -2.54813 )
 shape = SubResource( 2 )
-disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/GrowPlayer = ExtResource( 8 )

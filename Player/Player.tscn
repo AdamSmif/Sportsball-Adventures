@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Player/playergun/player_gun7.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -33,7 +33,13 @@
 [ext_resource path="res://Player/playergun/player_gun8.png" type="Texture" id=31]
 [ext_resource path="res://Player/playergun/player_gunspoked.png" type="Texture" id=32]
 [ext_resource path="res://Player/playergun/player_gunmouthopen.png" type="Texture" id=33]
-[ext_resource path="res://PlayersTwoThruEight/AllPlayers.tscn" type="PackedScene" id=34]
+[ext_resource path="res://PlayersTwoThruEight/GolfballPlayer/GolfballPlayer.tscn" type="PackedScene" id=35]
+[ext_resource path="res://PlayersTwoThruEight/tennis/TennisBall.tscn" type="PackedScene" id=36]
+[ext_resource path="res://PlayersTwoThruEight/rolletskatesplayer/rollerblades.tscn" type="PackedScene" id=37]
+[ext_resource path="res://PlayersTwoThruEight/BaseballBat.tscn" type="PackedScene" id=38]
+[ext_resource path="res://PlayersTwoThruEight/FootballGuy.tscn" type="PackedScene" id=39]
+[ext_resource path="res://PlayersTwoThruEight/PingPongPaddle/PingPongPaddle.tscn" type="PackedScene" id=40]
+[ext_resource path="res://PlayersTwoThruEight/volleyballnet/VolleyballNet.tscn" type="PackedScene" id=41]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -62,9 +68,14 @@ animations = [ {
 "name": "down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 13 ) ],
 "loop": true,
-"name": "shocked",
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "fall",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 3 ) ],
@@ -77,14 +88,9 @@ animations = [ {
 "name": "move",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 32 ) ],
 "loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "fall",
+"name": "shocked",
 "speed": 5.0
 } ]
 
@@ -196,9 +202,35 @@ position = Vector2( 0, 8 )
 [node name="daycycle" parent="." instance=ExtResource( 29 )]
 col = ExtResource( 27 )
 
-[node name="AllPlayers" parent="." instance=ExtResource( 34 )]
+[node name="AllPlayers" type="YSort" parent="."]
+
+[node name="GolfballPlayer" parent="AllPlayers" instance=ExtResource( 35 )]
 visible = false
-position = Vector2( -48, -248 )
+position = Vector2( -32, -64 )
+
+[node name="PingPongPaddle" parent="AllPlayers" instance=ExtResource( 40 )]
+visible = false
+position = Vector2( 16, -64 )
+
+[node name="rollerblades" parent="AllPlayers" instance=ExtResource( 37 )]
+visible = false
+position = Vector2( 56, -64 )
+
+[node name="TennisBall" parent="AllPlayers" instance=ExtResource( 36 )]
+visible = false
+position = Vector2( 96, -64 )
+
+[node name="VolleyballNet" parent="AllPlayers" instance=ExtResource( 41 )]
+visible = false
+position = Vector2( 160, -64 )
+
+[node name="FootballGuy" parent="AllPlayers" instance=ExtResource( 39 )]
+visible = false
+position = Vector2( 224, -64 )
+
+[node name="BaseballBat" parent="AllPlayers" instance=ExtResource( 38 )]
+visible = false
+position = Vector2( 264, -72 )
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="DiscTimer" to="." method="_on_DiscTimer_timeout"]

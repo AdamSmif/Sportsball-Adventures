@@ -66,10 +66,30 @@ func _physics_process(_delta):
 	motion.y += GRAVITY
 	var friction = false
 	
-# Spawn Other Players
+# Spawn All Players
 	if Input.is_action_just_pressed("ui_accept"):
-		$AllPlayers.visible = true
-		$AllPlayers.sort_enabled = true
+		$AllPlayers/GolfballPlayer.visible = true
+		$AllPlayers/PingPongPaddle.visible = true
+		$AllPlayers/rollerblades.visible = true
+		$AllPlayers/TennisBall.visible = true
+		$AllPlayers/VolleyballNet.visible = true
+		$AllPlayers/FootballGuy.visible = true
+		$AllPlayers/BaseballBat.visible = true
+# Spawn Other Players
+	if Input.is_action_just_pressed("grow_2"):
+		$AllPlayers/GolfballPlayer.visible = true
+	elif Input.is_action_just_pressed("grow_3"):
+		$AllPlayers/PingPongPaddle.visible = true
+	elif Input.is_action_just_pressed("grow_4"):
+		$AllPlayers/rollerblades.visible = true
+	elif Input.is_action_just_pressed("grow_5"):
+		$AllPlayers/TennisBall.visible = true
+	elif Input.is_action_just_pressed("grow_6"):
+		$AllPlayers/VolleyballNet.visible = true
+	elif Input.is_action_just_pressed("grow_7"):
+		$AllPlayers/FootballGuy.visible = true
+	elif Input.is_action_just_pressed("grow_8"):
+		$AllPlayers/BaseballBat.visible = true
 
 # Throw
 	if Input.is_action_just_pressed("throwright_%s" % id) and discDelayTimer.is_stopped():

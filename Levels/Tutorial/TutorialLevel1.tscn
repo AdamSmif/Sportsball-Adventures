@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Assets/Tiles/GrassPlatform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Player/PlayerCamera.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Basketball.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/FallZone.tscn" type="PackedScene" id=10]
-[ext_resource path="res://PlayersTwoThruEight/AllPlayers.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/hubassets/evergreentree.png" type="Texture" id=12]
 [ext_resource path="res://Assets/hubassets/reference.png" type="Texture" id=13]
 [ext_resource path="res://Assets/basket.png" type="Texture" id=14]
@@ -383,9 +382,6 @@ position = Vector2( 3895.56, 515.66 )
 position = Vector2( 1898.79, 1469.78 )
 lose_level_world_scene = "res://Levels/Tutorial/TutorialLevel1.tscn"
 
-[node name="AllPlayers" parent="." instance=ExtResource( 11 )]
-position = Vector2( -192, -168 )
-
 [node name="golfcart" type="Sprite" parent="."]
 position = Vector2( -313.446, 688.246 )
 scale = Vector2( 3, 3 )
@@ -444,8 +440,8 @@ texture = ExtResource( 20 )
 
 [node name="FootballBot" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1352, 88 )
-[connection signal="disc_thrown" from="Player" to="." method="_on_Player_disc_thrown"]
 [connection signal="disc_thrown" from="Player" to="HUD" method="_on_Player_disc_thrown"]
+[connection signal="disc_thrown" from="Player" to="." method="_on_Player_disc_thrown"]
 [connection signal="body_entered" from="Bottles/Bottle" to="HUD" method="_on_Bottle_body_entered"]
 [connection signal="bottle_collected" from="Bottles/Bottle" to="HUD" method="_on_Bottle_bottle_collected"]
 [connection signal="body_entered" from="Bottles/Bottle2" to="HUD" method="_on_Bottle_body_entered"]
