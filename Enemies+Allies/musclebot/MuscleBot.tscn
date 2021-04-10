@@ -54,14 +54,13 @@ script = ExtResource( 5 )
 position = Vector2( -0.609443, -42.3179 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-frame = 2
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( -0.211918, -1.52438 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 2 )

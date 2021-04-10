@@ -35,6 +35,8 @@ func _physics_process(delta):
 		var bulletInstance = bullet.instance()
 		bulletInstance.position = $Position2D.global_position
 		get_tree().get_root().add_child(bulletInstance)
+#	if ("shoot_%s" % id) > 10:
+#		Input.action_release("shoot_%s" % id)
 
 func get_input_axis():
 	var axis = Vector2.ZERO
