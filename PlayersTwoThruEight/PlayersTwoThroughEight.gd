@@ -11,7 +11,7 @@ var knockback = Vector2.ZERO
 
 # Shooting Mechanic
 var velocity = Vector2()
-var bullet = preload("res://MiniGames/DrivingRangeMiniGameCode/GolfBall/GolfballMiniGame.tscn")
+var bullet = preload("res://PlayersTwoThruEight/PlayerBullet.tscn")
 
 #Cool Down
 onready var CoolDown = $CoolDown

@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/explosion/explosion5.png" type="Texture" id=7]
 [ext_resource path="res://Assets/explosion/explosion6.png" type="Texture" id=8]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
@@ -22,7 +22,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4.09532, 4.12041 )
 
 [node name="GolfballMiniGAme" type="KinematicBody2D"]
@@ -30,8 +30,8 @@ script = ExtResource( 2 )
 speed = 600
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -0.513 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
