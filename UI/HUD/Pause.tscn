@@ -4,25 +4,25 @@
 [ext_resource path="res://UI/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://UI/fonts/ChiKareGo2Font.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="DynamicFont" id=6]
-font_data = ExtResource( 3 )
-
-[sub_resource type="Theme" id=7]
-default_font = SubResource( 6 )
-
-[sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 2 )
-
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
 
 [sub_resource type="Theme" id=2]
 default_font = SubResource( 1 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
 font_data = ExtResource( 2 )
 
 [node name="Pause" type="CanvasLayer"]
@@ -48,7 +48,7 @@ margin_left = -38.5
 margin_top = -38.0
 margin_right = 38.5
 margin_bottom = -12.0
-theme = SubResource( 7 )
+theme = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
 text = "Continue"
 flat = true
@@ -65,7 +65,7 @@ margin_left = -48.0
 margin_top = -7.0
 margin_right = 45.0
 margin_bottom = 19.0
-theme = SubResource( 2 )
+theme = SubResource( 5 )
 custom_fonts/font = SubResource( 3 )
 text = "Main Menu"
 flat = true
@@ -82,8 +82,8 @@ margin_left = -21.0
 margin_top = 25.0
 margin_right = 21.0
 margin_bottom = 51.0
-theme = SubResource( 2 )
-custom_fonts/font = SubResource( 4 )
+theme = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Quit"
 flat = true
 __meta__ = {
@@ -96,8 +96,8 @@ anchor_right = 0.5
 margin_left = -44.5
 margin_right = 44.5
 margin_bottom = 26.0
-theme = SubResource( 2 )
-custom_fonts/font = SubResource( 5 )
+theme = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "Fullscreen"
 flat = true
 __meta__ = {

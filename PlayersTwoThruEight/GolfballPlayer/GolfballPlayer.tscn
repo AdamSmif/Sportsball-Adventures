@@ -4,7 +4,7 @@
 [ext_resource path="res://PlayersTwoThruEight/GolfballPlayer/Golfballplayer.png" type="Texture" id=2]
 [ext_resource path="res://PlayersTwoThruEight/GrowPlayer.anim" type="Animation" id=3]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "Fire"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:scale")
@@ -19,7 +19,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.25, 1.25 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=2]
 radius = 16.2778
 
 [node name="GolfballPlayer" type="KinematicBody2D"]
@@ -32,11 +32,11 @@ shootDelay = 0.5
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Fire = SubResource( 2 )
+anims/Fire = SubResource( 1 )
 anims/Grow = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="CoolDown" type="Timer" parent="."]
 one_shot = true

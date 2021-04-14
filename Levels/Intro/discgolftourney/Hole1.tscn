@@ -56,9 +56,11 @@ one_way_collision = true
 
 [node name="RichTextLabel" parent="Player/PlayerCamera" index="0"]
 visible = true
-margin_top = -368.0
-margin_right = 245.655
-margin_bottom = -328.0
+margin_left = 200.0
+margin_top = -150.0
+margin_right = 398.0
+margin_bottom = -110.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Hole 1"
 
 [node name="RainEffect" parent="Player/PlayerCamera" index="2" instance=ExtResource( 8 )]

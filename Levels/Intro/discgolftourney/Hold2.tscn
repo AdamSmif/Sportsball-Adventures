@@ -23,6 +23,12 @@ tile_data = PoolIntArray( -4259937, 0, 0, -4259936, 0, 2, -4194401, 0, 65536, -4
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -34.8419, 76.7205 )
 
+[node name="RichTextLabel" parent="Player/PlayerCamera" index="0"]
+visible = true
+margin_left = 200.0
+margin_right = 400.0
+text = "Hole 2"
+
 [node name="RainEffect" parent="Player/PlayerCamera" index="2" instance=ExtResource( 7 )]
 position = Vector2( -28.3471, -364.651 )
 scale = Vector2( 2, 2 )
@@ -69,3 +75,5 @@ lose_level_world_scene = "res://Levels/Intro/discgolftourney/Hold2.tscn"
 [editable path="Basket"]
 
 [editable path="Player"]
+
+[editable path="Player/PlayerCamera"]
