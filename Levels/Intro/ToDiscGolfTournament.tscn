@@ -221,6 +221,9 @@ next_world_scene = "res://Assets/cards/Graham Pondexter/GrahamCardCollected!.tsc
 [node name="Charlie Mcllroy" parent="." instance=ExtResource( 13 )]
 position = Vector2( 412.873, 474.561 )
 
+[node name="AnimatedSprite" parent="Charlie Mcllroy" index="0"]
+frame = 5
+
 [node name="CollisionShape2D" parent="Charlie Mcllroy" index="1"]
 disabled = true
 
@@ -267,7 +270,14 @@ position = Vector2( 781.462, 442.651 )
 offset = Vector2( 0, 0 )
 
 [node name="RichTextLabel" parent="GolfCartPlayer/PlayerCamera" index="0"]
-text = "Sport County"
+visible = true
+modulate = Color( 1, 1, 1, 0.9 )
+margin_left = -212.317
+margin_top = -158.04
+margin_right = 220.683
+margin_bottom = -65.0396
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Go To The Disc Golf Tournament"
 
 [node name="Rain" type="YSort" parent="GolfCartPlayer/PlayerCamera"]
 position = Vector2( -781.462, -442.651 )
