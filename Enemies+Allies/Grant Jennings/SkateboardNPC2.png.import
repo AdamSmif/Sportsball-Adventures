@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Spike Bulldog.png-65c398e7e3ccd19ed50e08fb217e4ec5.stex"
+path="res://.import/SkateboardNPC2.png-a5d1609765e503d9a66e5efc68cc51d3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies+Allies/Corey/Spike Bulldog.png"
-dest_files=[ "res://.import/Spike Bulldog.png-65c398e7e3ccd19ed50e08fb217e4ec5.stex" ]
+source_file="res://Enemies+Allies/Grant Jennings/SkateboardNPC2.png"
+dest_files=[ "res://.import/SkateboardNPC2.png-a5d1609765e503d9a66e5efc68cc51d3.stex" ]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Enemies+Allies/Footballbot/footballbot3.png" type="Texture" id=1]
 [ext_resource path="res://Enemies+Allies/Footballbot/footballbot4.png" type="Texture" id=2]
@@ -26,14 +26,14 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "squashed",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "explosion",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "squashed",
 "speed": 5.0
 } ]
 
@@ -41,12 +41,9 @@ animations = [ {
 extents = Vector2( 11.2063, 23.2513 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 20.8521, 5.08406 )
-
-[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 14.0143, 23.8441 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 17.5186, 16.0222 )
 
 [node name="FootballBot" type="KinematicBody2D"]
@@ -58,7 +55,7 @@ script = ExtResource( 3 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.159576, 0.797058 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -70,27 +67,19 @@ enabled = true
 cast_to = Vector2( 0, 40 )
 collision_mask = 2
 
-[node name="top_checker" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 33
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="top_checker"]
-position = Vector2( 0.852402, -21.4092 )
-shape = SubResource( 3 )
-
 [node name="Hurtbox" parent="." instance=ExtResource( 14 )]
 collision_layer = 256
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 0.965881, 8.22265 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 15 )]
 collision_mask = 128
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2( 1.14245, 3.6405 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.2
@@ -105,7 +94,6 @@ anims/Hit = ExtResource( 16 )
 [node name="ExplosionSound" parent="." instance=ExtResource( 17 )]
 
 [node name="HitBadGuy" parent="." instance=ExtResource( 18 )]
-[connection signal="body_entered" from="top_checker" to="." method="_on_top_checker_body_entered"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]

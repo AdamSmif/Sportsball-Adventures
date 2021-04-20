@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Assets/Tiles/GrassPlatform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Player/PlayerCamera.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Basketball.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/FallZone.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/circletree/CircleTree.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/hubassets/evergreentree.png" type="Texture" id=12]
 [ext_resource path="res://Assets/hubassets/reference.png" type="Texture" id=13]
 [ext_resource path="res://Assets/basket.png" type="Texture" id=14]
@@ -201,6 +202,9 @@ position = Vector2( -1027.49, -205.155 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 20 )
 
+[node name="CircleTree" parent="." instance=ExtResource( 11 )]
+position = Vector2( -272, 208 )
+
 [node name="Basket" type="YSort" parent="."]
 
 [node name="basket" type="Sprite" parent="Basket"]
@@ -348,7 +352,7 @@ speed = 150
 position = Vector2( 184, 136 )
 
 [node name="Basketball" parent="." instance=ExtResource( 9 )]
-position = Vector2( -256, 216 )
+position = Vector2( -152, 200 )
 collision_layer = 128
 collision_mask = 3
 

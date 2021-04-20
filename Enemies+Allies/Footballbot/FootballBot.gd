@@ -34,26 +34,6 @@ func _physics_process(delta):
 	velocity.x = speed * direction
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
-func _on_top_checker_body_entered(body):
-	$Hitbox.queue_free()
-	$Hurtbox.queue_free()
-	$Sprite.play("squashed")
-	speed = 0
-	set_collision_layer_bit(5,false)
-	set_collision_mask_bit(0,false)
-	$top_checker.set_collision_layer_bit(4,false)
-	$top_checker.set_collision_mask_bit(0,false)
-	$Hurtbox.set_collision_layer_bit(8,false)
-	$Hurtbox.set_collision_mask_bit(0,false)
-	$Hitbox.set_collision_layer_bit(7,false)
-	$Hitbox.set_collision_mask_bit(0,false)
-	###
-	$Hurtbox.set_collision_layer_bit(7,false)
-	$Hurtbox.set_collision_mask_bit(0,false)
-	$Hitbox.set_collision_layer_bit(8,false)
-	$Hitbox.set_collision_mask_bit(0,false)
-	$Timer.start()
-	body.bounce()
 	
 	
 

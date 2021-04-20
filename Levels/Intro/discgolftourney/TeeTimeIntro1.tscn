@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Tiles/GolfTile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/PlayerNoGun.tscn" type="PackedScene" id=2]
@@ -10,9 +10,15 @@
 [ext_resource path="res://Assets/FallZone.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/spookygolfcourse/spookygolfcourse.png" type="Texture" id=9]
 [ext_resource path="res://Assets/hubassets/evergreentree.png" type="Texture" id=10]
+[ext_resource path="res://Enemies+Allies/Blue Guy/Blue Guy.tscn" type="PackedScene" id=11]
 
 [node name="TeeTimeIntro1" type="Node2D"]
 modulate = Color( 0.4, 0.466667, 0.458824, 1 )
+
+[node name="NPCs" type="YSort" parent="."]
+
+[node name="Blue Guy" parent="NPCs" instance=ExtResource( 11 )]
+position = Vector2( 123.773, 240.763 )
 
 [node name="Background" type="YSort" parent="."]
 
@@ -96,7 +102,7 @@ position = Vector2( -84.1244, -349.308 )
 scale = Vector2( 2, 2 )
 
 [node name="Sprite" parent="PlayerNoGun/ParallaxBackground" index="0"]
-position = Vector2( 301.997, 151.402 )
+position = Vector2( 311.948, 152.065 )
 texture = ExtResource( 3 )
 
 [node name="FallZone" parent="." instance=ExtResource( 8 )]
