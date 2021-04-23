@@ -18,9 +18,6 @@ tile_data = PoolIntArray( -851992, 26, 0, -851991, 26, 0, -851990, 26, 0, -85198
 [node name="Bottle" parent="Items" instance=ExtResource( 7 )]
 position = Vector2( 168, 256 )
 
-[node name="Sprite" parent="Items/Bottle" index="1"]
-frame = 2
-
 [node name="Bottle2" parent="Items" instance=ExtResource( 7 )]
 position = Vector2( -120, 216 )
 
@@ -90,19 +87,13 @@ margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 5 )
 
-[node name="HealthUI" parent="HUD" index="5"]
+[node name="HealthUI" parent="HUD" index="4"]
 visible = false
 
-[node name="HealthCircle" parent="HUD" index="6"]
+[node name="Disc" parent="HUD" index="6"]
 visible = false
 
-[node name="Disc" parent="HUD" index="7"]
-visible = false
-
-[node name="DiscCircle" parent="HUD" index="8"]
-visible = false
-
-[node name="disc" parent="HUD" index="9"]
+[node name="disc" parent="HUD" index="8"]
 visible = false
 [connection signal="bottle_collected" from="Items/Bottle" to="HUD" method="_on_Bottle_bottle_collected"]
 [connection signal="bottle_collected" from="Items/Bottle2" to="HUD" method="_on_Bottle_bottle_collected"]

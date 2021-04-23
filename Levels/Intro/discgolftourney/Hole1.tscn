@@ -100,8 +100,6 @@ position = Vector2( 1.47017, 8 )
 
 [node name="Basket" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1699.62, -127.641 )
-
-[node name="Exit" parent="Basket" index="2"]
 next_world_scene = "res://Levels/Intro/discgolftourney/Hold2.tscn"
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]

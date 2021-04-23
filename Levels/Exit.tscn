@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Levels/Exit.gd" type="Script" id=1]
-[ext_resource path="res://Music/LevelTransition2.wav" type="AudioStream" id=2]
+[ext_resource path="res://Music/NextLevelSound.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.11747, 13.1138 )
@@ -14,7 +14,4 @@ script = ExtResource( 1 )
 position = Vector2( 1.2345, -3.4566 )
 shape = SubResource( 1 )
 
-[node name="NextLevelSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
-volume_db = -13.453
-pitch_scale = 0.88
+[node name="NextLevelSound" parent="." instance=ExtResource( 2 )]

@@ -67,8 +67,6 @@ position = Vector2( 1312, -16 )
 
 [node name="Basket" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1672.95, -159.45 )
-
-[node name="Exit" parent="Basket" index="2"]
 next_world_scene = "res://Levels/Intro/discgolftourney/Hole5.tscn"
 [connection signal="disc_thrown" from="Player" to="HUD" method="_on_Player_disc_thrown"]
 

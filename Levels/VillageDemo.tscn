@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/BeachTile.tscn" type="PackedScene" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://Assets/light/daycycle.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Assets/light/DayNightGradient.tres" type="Gradient" id=31]
 [ext_resource path="res://Assets/basket.png" type="Texture" id=32]
+[ext_resource path="res://Enemies+Allies/Vern Avocado/Vern Acovado.tscn" type="PackedScene" id=33]
 
 [node name="VillageDemo" type="Node2D"]
 modulate = Color( 0.686275, 0.317647, 0.552941, 1 )
@@ -155,7 +156,7 @@ position = Vector2( 129.792, -416.432 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="VernAcovado" parent="." instance=ExtResource( 23 )]
-position = Vector2( -183.199, -413.653 )
+position = Vector2( 415.164, -475.686 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="golflag" type="Sprite" parent="VernAcovado"]
@@ -413,6 +414,9 @@ col = ExtResource( 31 )
 [node name="basket" type="Sprite" parent="."]
 position = Vector2( 1083.69, -432.832 )
 texture = ExtResource( 32 )
+
+[node name="Vern Acovado" parent="." instance=ExtResource( 33 )]
+position = Vector2( 20.0013, -418.146 )
 [connection signal="bottle_collected" from="Bottles/Bottle" to="HUD" method="_on_bottle_collected"]
 [connection signal="bottle_collected" from="Bottles/Bottle2" to="HUD" method="_on_bottle_collected"]
 [connection signal="bottle_collected" from="Bottles/Bottle3" to="HUD" method="_on_bottle_collected"]

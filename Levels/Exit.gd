@@ -8,6 +8,11 @@ func _physics_process(_delta):
 #	print(bodies)
 	for body in bodies:
 		if body.name == "Player" or "GolfCartPlayer" or "CYOAPlayer" or "PlayerAutoRun" or "PlayerSkateBoard" or "PogostickPlayer" or "Submarine":
+			emit_signal("level_complete")
 			$NextLevelSound.play()
 			get_tree().change_scene(next_world_scene)
+			
+			
+
+
 

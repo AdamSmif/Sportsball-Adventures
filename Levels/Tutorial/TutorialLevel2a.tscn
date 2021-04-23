@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Tiles/GolfTile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://Assets/Tiles/GrassPlatform.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemies+Allies/Footballbot/FootballBot.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/basket.png" type="Texture" id=8]
-[ext_resource path="res://Player/DiscCollider.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Basket/Basket.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/light/LightSource.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/light/daycycle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/light/Seasons/winter.tres" type="Gradient" id=14]
@@ -31,8 +32,12 @@ __meta__ = {
 }
 
 [node name="basket" type="Sprite" parent="."]
-position = Vector2( 38.0207, 138.593 )
+position = Vector2( 861.919, 24.593 )
 texture = ExtResource( 8 )
+
+[node name="Basket" parent="." instance=ExtResource( 9 )]
+position = Vector2( 57.5297, 139.059 )
+next_world_scene = "res://Levels/Tutorial/TutorialLevel2b.tscn"
 
 [node name="GrassPlatform" parent="." instance=ExtResource( 6 )]
 position = Vector2( -328, 104 )
@@ -68,12 +73,11 @@ position = Vector2( 74.9986, 296.998 )
 position = Vector2( 176, 624 )
 lose_level_world_scene = "res://Levels/Tutorial/TutorialLevel2a.tscn"
 
-[node name="DiscCollider" parent="." instance=ExtResource( 9 )]
-position = Vector2( 38.9502, 137.453 )
-scale = Vector2( 2, 2 )
-next_world_scene = "res://Levels/Tutorial/TutorialLevel2b.tscn"
-
 [node name="LightSource" parent="." instance=ExtResource( 12 )]
 
 [node name="daycycle" parent="." instance=ExtResource( 13 )]
 col = ExtResource( 14 )
+
+[node name="HUD" parent="." instance=ExtResource( 10 )]
+
+[editable path="Basket"]

@@ -13,8 +13,6 @@ modulate = Color( 0.4, 0.466667, 0.458824, 1 )
 
 [node name="Basket" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1157.99, 35.1076 )
-
-[node name="Exit" parent="Basket" index="2"]
 next_world_scene = "res://Levels/Intro/discgolftourney/Hole3.tscn"
 
 [node name="GolfTile" parent="." instance=ExtResource( 3 )]
