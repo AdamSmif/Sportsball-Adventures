@@ -66,6 +66,9 @@ next_world_scene = "res://Levels/Intro/discgolftourney/TeeTimeIntro1.tscn"
 
 [node name="House" type="YSort" parent="."]
 position = Vector2( 153.466, 51.5645 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="House"]
 
@@ -106,6 +109,50 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="House/StaticBody2D"]
 position = Vector2( 760.739, 380.029 )
+shape = SubResource( 2 )
+
+[node name="House2" type="YSort" parent="."]
+position = Vector2( 500, 51.564 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House2"]
+
+[node name="HouseYellow" type="Sprite" parent="House2/StaticBody2D"]
+position = Vector2( 151.495, 131.314 )
+texture = ExtResource( 3 )
+
+[node name="window1" type="Sprite" parent="House2/StaticBody2D/HouseYellow"]
+position = Vector2( -29.2817, 25.981 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="window2" type="Sprite" parent="House2/StaticBody2D/HouseYellow"]
+position = Vector2( 34.7183, 25.981 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Door1" type="Sprite" parent="House2/StaticBody2D/HouseYellow"]
+position = Vector2( 3.18163, 14.2747 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 8 )
+
+[node name="Exit" parent="House2/StaticBody2D/HouseYellow" instance=ExtResource( 6 )]
+position = Vector2( 2.02509, 61.1737 )
+next_world_scene = "res://Levels/Intro/Drewzer Brewzer House.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House2/StaticBody2D"]
+position = Vector2( 117.661, 162.494 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="House2/StaticBody2D"]
+position = Vector2( 117.661, 162.494 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="House2/StaticBody2D"]
+position = Vector2( 191.963, 161.831 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="House2/StaticBody2D"]
+position = Vector2( 156.139, 151.216 )
 shape = SubResource( 2 )
 
 [node name="Mountains" type="YSort" parent="."]
@@ -222,7 +269,7 @@ next_world_scene = "res://Assets/cards/Graham Pondexter/GrahamCardCollected!.tsc
 position = Vector2( 412.873, 474.561 )
 
 [node name="AnimatedSprite" parent="Charlie Mcllroy" index="0"]
-frame = 5
+frame = 3
 
 [node name="CollisionShape2D" parent="Charlie Mcllroy" index="1"]
 disabled = true

@@ -399,6 +399,7 @@ bottle_world_scene = "res://Levels/VillageDemo.tscn"
 
 [node name="Winston" parent="." instance=ExtResource( 29 )]
 position = Vector2( -69.6715, -417.08 )
+frame = 0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -285.7, -429.623 )
@@ -416,7 +417,7 @@ position = Vector2( 1083.69, -432.832 )
 texture = ExtResource( 32 )
 
 [node name="Vern Acovado" parent="." instance=ExtResource( 33 )]
-position = Vector2( 20.0013, -418.146 )
+position = Vector2( 20.9038, -418.146 )
 [connection signal="bottle_collected" from="Bottles/Bottle" to="HUD" method="_on_bottle_collected"]
 [connection signal="bottle_collected" from="Bottles/Bottle2" to="HUD" method="_on_bottle_collected"]
 [connection signal="bottle_collected" from="Bottles/Bottle3" to="HUD" method="_on_bottle_collected"]

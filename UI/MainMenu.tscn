@@ -69,6 +69,7 @@ to_minigames_scene = "res://UI/MiniGames.tscn"
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 4 )]
 position = Vector2( 320, 192 )
 scale = Vector2( 1.25, 1.25 )
+frame = 1
 
 [node name="Ocean4" type="YSort" parent="."]
 
@@ -95,31 +96,31 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 272.0
+margin_left = 276.0
 margin_top = 125.0
-margin_right = 368.0
+margin_right = 363.0
 margin_bottom = 255.0
 custom_constants/separation = 20
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_right = 96.0
+margin_right = 87.0
 margin_bottom = 15.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
-margin_right = 96.0
+margin_left = 5.0
+margin_right = 81.0
 margin_bottom = 15.0
 theme = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Bogey Buddies"
+text = "Goonie Golf"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 35.0
-margin_right = 96.0
+margin_right = 87.0
 margin_bottom = 130.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
-margin_left = 4.0
-margin_right = 91.0
+margin_right = 87.0
 margin_bottom = 95.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]

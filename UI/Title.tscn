@@ -39,24 +39,27 @@ __meta__ = {
 }
 
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 2 )]
+frame = 1
 
 [node name="Ocean" parent="." instance=ExtResource( 9 )]
 position = Vector2( -208, 128 )
-frame = 1
+frame = 2
 
 [node name="Ocean2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 48, 128 )
-frame = 1
+frame = 2
 
 [node name="Ocean3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 304, 128 )
-frame = 1
+frame = 2
 
 [node name="Ocean4" parent="." instance=ExtResource( 9 )]
 position = Vector2( 560, 128 )
+frame = 1
 
 [node name="Ocean5" parent="." instance=ExtResource( 9 )]
 position = Vector2( -456, 128 )
+frame = 1
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -85,7 +88,7 @@ margin_right = -176.0
 margin_bottom = -96.0
 rect_scale = Vector2( 2, 2 )
 theme = SubResource( 2 )
-text = "Birdie Buddies"
+text = "Goonie Golf"
 __meta__ = {
 "_edit_use_anchors_": false
 }

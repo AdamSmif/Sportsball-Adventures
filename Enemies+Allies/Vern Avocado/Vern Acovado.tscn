@@ -16,19 +16,18 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 radius = 160.2
 
-[sub_resource type="DynamicFont" id=6]
-
-[sub_resource type="Theme" id=7]
-default_font = SubResource( 6 )
-
 [sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 4 )
 
 [sub_resource type="Theme" id=4]
 default_font = SubResource( 3 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "Talk"
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
+
+[sub_resource type="Animation" id=7]
 length = 10.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("RichTextLabel:visible_characters")
@@ -97,7 +96,7 @@ margin_left = 16.0
 margin_top = -80.0
 margin_right = 208.0
 margin_bottom = -32.0
-theme = SubResource( 7 )
+theme = SubResource( 4 )
 color = Color( 0, 0, 0, 0.792157 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -108,7 +107,7 @@ margin_left = 24.0
 margin_top = -72.0
 margin_right = 216.0
 margin_bottom = -32.0
-theme = SubResource( 4 )
+theme = SubResource( 6 )
 visible_characters = 0
 text = "I used to be the greatest golfer in all the land"
 __meta__ = {
@@ -120,7 +119,7 @@ margin_left = 24.0
 margin_top = -72.0
 margin_right = 216.0
 margin_bottom = -32.0
-theme = SubResource( 4 )
+theme = SubResource( 6 )
 visible_characters = 0
 text = "I even got a hole in one one time!"
 __meta__ = {
@@ -132,7 +131,7 @@ margin_left = 24.0
 margin_top = -72.0
 margin_right = 216.0
 margin_bottom = -32.0
-theme = SubResource( 4 )
+theme = SubResource( 6 )
 visible_characters = 0
 text = "No one was there to see it but trust me it happened!"
 __meta__ = {
@@ -140,4 +139,4 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Talk = SubResource( 5 )
+anims/Talk = SubResource( 7 )
