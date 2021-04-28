@@ -40,7 +40,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-next_world_scene = "res://UI/MainMenu.tscn"
+next_world_scene = "res://UI/MainMenuUI.tscn"
 
 [node name="lowpolygolf" type="Sprite" parent="."]
 position = Vector2( 312, 280 )

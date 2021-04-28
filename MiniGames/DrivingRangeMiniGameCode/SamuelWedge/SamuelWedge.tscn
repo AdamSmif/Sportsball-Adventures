@@ -13,14 +13,14 @@ extents = Vector2( 16.9471, 25.4216 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -53,4 +53,7 @@ animation = "idle"
 
 [node name="CoolDown" type="Timer" parent="."]
 one_shot = true
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 1.33701, -37.775 )
 [connection signal="timeout" from="CoolDown" to="." method="_on_CoolDown_timeout"]

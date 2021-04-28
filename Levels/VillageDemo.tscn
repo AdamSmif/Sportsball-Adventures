@@ -399,7 +399,6 @@ bottle_world_scene = "res://Levels/VillageDemo.tscn"
 
 [node name="Winston" parent="." instance=ExtResource( 29 )]
 position = Vector2( -69.6715, -417.08 )
-frame = 0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -285.7, -429.623 )

@@ -64,7 +64,7 @@ __meta__ = {
 next_world_scene = "res://Levels/Intro/IntroCutscene.tscn"
 to_credits_scene = "res://UI/Credits/Credits.tscn"
 to_options_scene = "res://UI/OptionMenu.tscn"
-to_minigames_scene = "res://UI/MiniGames.tscn"
+to_minigames_scene = "res://MiniGames/1Player/Player1MiniGameHub.tscn"
 
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 4 )]
 position = Vector2( 320, 192 )
@@ -75,13 +75,15 @@ frame = 1
 
 [node name="Ocean" parent="Ocean4" instance=ExtResource( 5 )]
 position = Vector2( 48, 344 )
+frame = 2
 
 [node name="Ocean2" parent="Ocean4" instance=ExtResource( 5 )]
 position = Vector2( 304, 344 )
+frame = 2
 
 [node name="Ocean3" parent="Ocean4" instance=ExtResource( 5 )]
 position = Vector2( 560, 344 )
-frame = 2
+frame = 1
 
 [node name="Assets" type="YSort" parent="."]
 

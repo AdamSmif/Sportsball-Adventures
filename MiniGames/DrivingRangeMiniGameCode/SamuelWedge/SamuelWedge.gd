@@ -5,7 +5,6 @@ export var speed = 100
 
 var velocity = Vector2()
 var bullet = preload("res://MiniGames/DrivingRangeMiniGameCode/GolfBall/GolfballMiniGame.tscn")
-var players = preload("res://Player/golfcartplayer/GolfCartPlayer.tscn")
 
 
 # Attack variables
@@ -29,15 +28,8 @@ func _process(delta):
 		CoolDown.start(swingDelay)
 		#spawn bullet
 		var bulletInstance = bullet.instance()
-		bulletInstance.position = Vector2(position.x, position.y - 25)
+		bulletInstance.position = $Position2D.global_position
 		get_tree().get_root().add_child(bulletInstance)
-		
-	if Input.is_action_just_pressed("ui_accept"):
-		var playersInstance = players.instance()
-		print("pressed enter")
-		playersInstance.position = Vector2(100.0, 100.0)
-		get_tree().get_root().add_child(playersInstance)
-
 
 	if Input.is_action_pressed('right_%s' % id):
 		$AnimatedSprite.play("right")

@@ -22,6 +22,7 @@ scale = Vector2( 2, 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
+frame = 2
 speed_scale = 0.5
 playing = true
 

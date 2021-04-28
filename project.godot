@@ -50,7 +50,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Sportsball Adventures"
+config/name="Goonie Golf"
 run/main_scene="res://UI/FluffyDogMediaSplashScreen.tscn"
 config/icon="res://icon.png"
 config/macos_native_icon="res://icon-export.icns"
