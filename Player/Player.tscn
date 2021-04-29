@@ -18,7 +18,7 @@
 [ext_resource path="res://Player/PlayerCamera.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Player/playerskateboard/playerskateboard1.png" type="Texture" id=17]
 [ext_resource path="res://Player/playerskateboard/playerskateboard2.png" type="Texture" id=18]
-[ext_resource path="res://Music/SoundAffects/hit.ogg" type="AudioStream" id=19]
+[ext_resource path="res://Music/SoundAffects/GotHitSound.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Player/PlayerStats.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Assets/explosion/explosion5.png" type="Texture" id=21]
 [ext_resource path="res://Assets/explosion/explosion2.png" type="Texture" id=22]
@@ -68,14 +68,14 @@ animations = [ {
 "name": "down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "shocked",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "shocked",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 31 ), ExtResource( 8 ) ],
@@ -164,9 +164,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="GotHitSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 19 )
-attenuation = 0.31864
+[node name="GotHitSound" parent="." instance=ExtResource( 19 )]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7

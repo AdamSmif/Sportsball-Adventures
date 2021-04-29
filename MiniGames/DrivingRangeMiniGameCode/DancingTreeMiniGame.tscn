@@ -1,9 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/dancing tree/dancingtree2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/dancing tree/dancingtree3.png" type="Texture" id=2]
 [ext_resource path="res://Assets/dancing tree/dancingtree4.png" type="Texture" id=3]
 [ext_resource path="res://Assets/dancing tree/dancingtree1.png" type="Texture" id=4]
+[ext_resource path="res://AutoLoads/Stats.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Collisions/Hurtbox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Music/SoundAffects/GotHitSound.tscn" type="PackedScene" id=7]
+[ext_resource path="res://MiniGames/DrivingRangeMiniGameCode/DancingTreeMiniGame.gd" type="Script" id=8]
+[ext_resource path="res://Assets/explosion/explosion2.png" type="Texture" id=9]
+[ext_resource path="res://Assets/explosion/explosion1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/explosion/explosion4.png" type="Texture" id=11]
+[ext_resource path="res://Assets/explosion/explosion5.png" type="Texture" id=12]
+[ext_resource path="res://Assets/explosion/explosion3.png" type="Texture" id=13]
+[ext_resource path="res://Assets/explosion/explosion6.png" type="Texture" id=14]
+[ext_resource path="res://Enemies+Allies/Animations/Hit.tres" type="Animation" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -11,18 +22,27 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "boom",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 12, 10 )
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 31.4221 )
+
 [node name="DancingTree" type="StaticBody2D"]
 scale = Vector2( 2, 2 )
+script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -30,3 +50,22 @@ playing = true
 position = Vector2( -1.56165, 52 )
 rotation = 1.5708
 shape = SubResource( 2 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 6 )]
+collision_layer = 128
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( -1.65852, 32.5072 )
+shape = SubResource( 3 )
+
+[node name="GotHitSound" parent="." instance=ExtResource( 7 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Hit = ExtResource( 15 )
+
+[node name="Stats" parent="." instance=ExtResource( 5 )]
+max_health = 2
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+
+[editable path="Hurtbox"]

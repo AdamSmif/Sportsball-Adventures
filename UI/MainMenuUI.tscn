@@ -29,7 +29,7 @@ __meta__ = {
 next_world_scene = "res://Levels/Intro/IntroCutscene.tscn"
 to_credits_scene = "res://UI/Credits/Credits.tscn"
 to_options_scene = "res://UI/Credits/Options.tscn"
-to_minigames_scene = "res://MiniGames/1Player/Player1MiniGameHub.tscn"
+to_minigames_scene = "res://MiniGames/MiniGameIsland/MiniGameIsland.tscn"
 
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 2 )]
 position = Vector2( 320, 184 )
@@ -37,17 +37,17 @@ scale = Vector2( 1.075, 1.13158 )
 
 [node name="Ocean" parent="." instance=ExtResource( 3 )]
 position = Vector2( 120, 320 )
+frame = 1
 
 [node name="Ocean4" parent="." instance=ExtResource( 3 )]
 position = Vector2( -128, 320 )
+frame = 1
 
 [node name="Ocean2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 376, 320 )
-frame = 2
 
 [node name="Ocean3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 632, 320 )
-frame = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_left = 0.5
@@ -71,6 +71,9 @@ margin_bottom = 128.0
 theme = SubResource( 4 )
 text = "Main Game"
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Mini Game" type="Button" parent="."]
 margin_left = 248.0

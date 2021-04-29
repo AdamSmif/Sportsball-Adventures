@@ -21,14 +21,14 @@ func _physics_process(delta):
 			get_tree().change_scene(victory_scene)
 "
 
-[sub_resource type="Theme" id=4]
+[sub_resource type="Theme" id=2]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 32
 font_data = ExtResource( 2 )
 
-[sub_resource type="Theme" id=3]
-default_font = SubResource( 2 )
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
 
 [node name="GolfBallMiniGameHud" type="CanvasLayer"]
 script = SubResource( 1 )
@@ -39,7 +39,7 @@ margin_left = 8.00003
 margin_top = 9.00003
 margin_right = 106.0
 margin_bottom = 49.0
-theme = SubResource( 4 )
+theme = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -54,7 +54,7 @@ margin_left = 54.0868
 margin_top = 16.2386
 margin_right = 101.087
 margin_bottom = 53.2386
-theme = SubResource( 3 )
+theme = SubResource( 4 )
 text = "#"
 scroll_active = false
 __meta__ = {
