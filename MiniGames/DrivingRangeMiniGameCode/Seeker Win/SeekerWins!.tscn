@@ -35,12 +35,13 @@ next_world_scene = "res://MiniGames/MiniGameIsland/MiniGameIsland.tscn"
 [node name="NightSkyAnimated" parent="." instance=ExtResource( 1 )]
 position = Vector2( 312.072, 185.477 )
 scale = Vector2( 1.2, 1.2 )
+frame = 1
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 316.54, 174.851 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 1 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
