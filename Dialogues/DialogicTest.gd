@@ -8,5 +8,5 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var dialog = Dialogic.start("talk")
+	var dialog = Dialogic.start("hey")
 	add_child(dialog)

@@ -2,8 +2,6 @@ extends Area2D
 
 # Player Number
 export var id = 1
-onready var talk_tween = get_node("TalkTween")
-
 
 func _physics_process(_delta):
 	var bodies = get_overlapping_bodies()
@@ -13,4 +11,4 @@ func _physics_process(_delta):
 			if Input.is_action_just_pressed('talk_%s' % id):
 				$CollisionShape2D.disabled
 				$AnimationPlayer.play("Talk")
-				
+				print("talk")

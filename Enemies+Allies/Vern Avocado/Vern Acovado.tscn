@@ -140,3 +140,5 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Talk = SubResource( 7 )
+
+[node name="TalkTween" type="Tween" parent="."]

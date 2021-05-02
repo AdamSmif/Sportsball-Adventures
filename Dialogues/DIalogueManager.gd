@@ -20,7 +20,7 @@
 extends Panel
 
 #---File---#
-var file_name = "dialogue_1.json" # You could pass a new file here on area body enter or whenever you feel like
+export var file_name = "dialogue_1.json" # You could pass a new file here on area body enter or whenever you feel like
 var nodes # containes all the nodes of the current dialogue
 
 

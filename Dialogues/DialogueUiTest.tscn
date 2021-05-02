@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Dialogues/DIalogueUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies+Allies/Grant Jennings/SkateboardNPC2.png" type="Texture" id=2]
+[ext_resource path="res://Enemies+Allies/Grant Jennings/SkateboardNPC1.png" type="Texture" id=3]
+[ext_resource path="res://Dialogues/DialogueUiTest.gd" type="Script" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 96.0
+
+[sub_resource type="Animation" id=3]
+resource_name = "Talk"
+tracks/0/type = "value"
+tracks/0/path = NodePath("DialogueUI:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DialogueUI:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="DialogueUiTest" type="Area2D"]
+script = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.11
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="DialogueUI" parent="." instance=ExtResource( 1 )]
+visible = false
+margin_left = -304.0
+margin_top = -168.0
+margin_right = 328.0
+margin_bottom = -40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Talk = SubResource( 3 )
