@@ -68,14 +68,14 @@ animations = [ {
 "name": "down",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 6 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "fall",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "shocked",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 31 ), ExtResource( 8 ) ],
@@ -83,9 +83,9 @@ animations = [ {
 "name": "move",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 32 ) ],
 "loop": true,
-"name": "jump",
+"name": "shocked",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 3 ) ],

@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/house/Bed.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/house/Table.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/Exit.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Music/off to do great things.wav" type="AudioStream" id=8]
+[ext_resource path="res://Music/8_bit_cold_lake_lofi.ogg" type="AudioStream" id=8]
 
 [node name="PlayerHouse" type="Node2D"]
 
